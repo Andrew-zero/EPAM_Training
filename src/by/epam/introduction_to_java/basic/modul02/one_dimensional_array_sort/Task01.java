@@ -26,7 +26,7 @@ public class Task01 {
         double[] resultArray = DoubleStream.concat(DoubleStream.concat(Arrays.stream(array, 0, k + 1), Arrays.stream(array2, 0, array2.length)),
                 Arrays.stream(array, k + 1, array.length)).toArray();
 
-        ViewHelper.ViewHelperArray(resultArray);
+        ViewHelper.helPViewArray(resultArray);
 
         return resultArray;
     }
@@ -48,7 +48,7 @@ public class Task01 {
             array[i] = array2[index];
         }
 
-        ViewHelper.ViewHelperArray(array);
+        ViewHelper.helPViewArray(array);
 
         return array;
     }
@@ -61,6 +61,10 @@ public class Task01 {
 
         double[] resultArray = new double[newLength];
 
+        for (int i = 0; i < k + 1; i++) {
+            resultArray[i] = array[i];
+        }
+
         for (int i = k + 1, index = 0; index < array2.length; i++, index++) {
             resultArray[i] = array2[index];
         }
@@ -69,7 +73,7 @@ public class Task01 {
             resultArray[i] = array[index];
         }
 
-        ViewHelper.ViewHelperArray(resultArray);
+        ViewHelper.helPViewArray(resultArray);
 
         return resultArray;
     }

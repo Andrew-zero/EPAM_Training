@@ -20,13 +20,13 @@ public class ViewHelper {
         }
     }
 
-    public static void ViewHelperArray(double[] array){
+    public static void helPViewArray(double[] array){
         for (double d : array) {
             System.out.print(d + " ");
         }
         System.out.println();
     }
-    public static void ViewHelperArray(int[] array){
+    public static void helPViewArray(int[] array){
         for (double d : array) {
             System.out.print(d + " ");
         }
