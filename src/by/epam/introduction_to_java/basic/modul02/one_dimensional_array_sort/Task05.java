@@ -1,6 +1,7 @@
 package by.epam.introduction_to_java.basic.modul02.one_dimensional_array_sort;
 
 
+import java.util.Arrays;
 
 /*
 Сортировка вставками. Дана последовательность чисел a1, a1, ... an. Требуется переставить числа в порядке
@@ -14,8 +15,23 @@ public class Task05 {
 
     static double[] array = {9, 5, 7, 0, 5, 6, 7, 8, 0};
 
-    public static double[] sortByInserts(double[] array){
+    public static double[] sortByInserts(double[] array) {
 
+
+        return array;
+    }
+
+    public static int binarySearch(double[] array, int fromIndex, int toIndex, double k) {
+        if(toIndex < fromIndex)
+            return -1;
+
+        int mid = (fromIndex + toIndex - 1) >>> 1;
+
+
+        double midNumbar = array[mid];
+
+
+        return -1;
     }
 
 }
