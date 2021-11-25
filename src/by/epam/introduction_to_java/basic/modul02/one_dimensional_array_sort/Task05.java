@@ -22,14 +22,31 @@ public class Task05 {
     }
 
     public static int binarySearch(double[] array, int fromIndex, int toIndex, double k) {
-        if(toIndex < fromIndex)
+        if (toIndex < fromIndex)
             return -1;
 
-        int mid = (fromIndex + toIndex - 1) >>> 1;
+        int low;
+        int hight;
 
+        low = fromIndex;
+        hight = toIndex - 1;
 
-        double midNumbar = array[mid];
+        while (low <= hight) {
+            int mid;
+            double midNumber;
 
+            mid = low + ((hight - low) >> 1);
+            midNumber = array[mid];
+
+            if (midNumber < k) {
+                low = mid + 1;
+            }else if(midNumber > k){
+                hight = mid - 1;
+            }else{
+                return mid;
+            }
+
+        }
 
         return -1;
     }
