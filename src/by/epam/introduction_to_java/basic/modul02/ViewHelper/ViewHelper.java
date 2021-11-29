@@ -12,9 +12,9 @@ public class ViewHelper {
     }
 
     public static void helpViewArray(double[][] array){
-        for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array[i].length; j++){
-                System.out.print(array[i][j] + " ");
+        for (double[] doubles : array) {
+            for (double aDouble : doubles) {
+                System.out.print(aDouble + " ");
             }
             System.out.println();
         }
