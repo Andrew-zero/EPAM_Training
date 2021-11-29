@@ -1,6 +1,8 @@
 package by.epam.introduction_to_java.basic.modul02.one_dimensional_array_sort;
 
 
+import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
+
 import java.util.Arrays;
 
 /*
@@ -13,42 +15,42 @@ a1<=a2<=...<=an. Берется следующее число ai+1 и встав
  */
 public class Task05 {
 
-    static double[] array = {9, 5, 7, 0, 5, 6, 7, 8, 0};
+    static double[] array = {-3, 5, 7, 0, 5, 6, 7, 8, 0};
 
     public static double[] sortByInserts(double[] array) {
 
+        for (int i = 1; i < array.length; i++) {
+            double current = array[i];
+            int index = binarySearch(array, -1, i, current);
+
+            for (int j = i; j > index; j--) {
+                array[j] = array[j - 1];
+            }
+            array[index] = current;
+        }
+
+        ViewHelper.helPViewArray(array);
 
         return array;
     }
 
-    public static int binarySearch(double[] array, int fromIndex, int toIndex, double k) {
+    public static int binarySearch(double[] array, int fromIndex, int toIndex, double key) {
         if (toIndex < fromIndex)
             return -1;
 
-        int low;
-        int hight;
+        int low = fromIndex;
+        int hight = toIndex;
 
-        low = fromIndex;
-        hight = toIndex - 1;
+        while (low < hight - 1) {
+            int mid = low + (hight - low) / 2;
 
-        while (low <= hight) {
-            int mid;
-            double midNumber;
-
-            mid = low + ((hight - low) >> 1);
-            midNumber = array[mid];
-
-            if (midNumber < k) {
-                low = mid + 1;
-            }else if(midNumber > k){
-                hight = mid - 1;
-            }else{
-                return mid;
+            if (array[mid] < key) {
+                low = mid;
+            } else {
+                hight = mid;
             }
-
         }
 
-        return -1;
+        return hight;
     }
-
 }
