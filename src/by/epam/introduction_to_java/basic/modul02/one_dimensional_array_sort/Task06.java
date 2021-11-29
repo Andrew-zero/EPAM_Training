@@ -9,4 +9,5 @@ package by.epam.introduction_to_java.basic.modul02.one_dimensional_array_sort;
 Составить алгоритм этой сортировки.
  */
 public class Task06 {
+
 }
