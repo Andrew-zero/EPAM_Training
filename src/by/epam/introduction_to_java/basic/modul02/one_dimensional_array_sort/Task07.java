@@ -17,8 +17,16 @@ public class Task07 {
         int j = 0;
 
         for(int k = 0; k < array.length + array2.length; k++){
-
+            if(array[i] > array2[j]){
+                System.out.printf("array2[%.2f] insert position: %d \n", array2[j], k);
+                j++;
+            }else if(array[i] < array2[j]){
+                System.out.printf("array[%.2f] insert position: %d \n", array[i], k);
+                i++;
+            }else{
+                System.out.printf("array[%.2f] insert position: %d \n", array[i], k);
+                i++;
+            }
         }
     }
-
 }

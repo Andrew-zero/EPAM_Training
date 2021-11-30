@@ -14,7 +14,7 @@ public class Main {
 //        Task04.sortingByExchanged(Task04.array);
 //        Task05.sortByInserts(Task05.array);
 //        Task06.sortByShell(Task06.array);
-
+        Task07.sorted2Array(Task07.array, Task07.array2);
 
     }
 }
