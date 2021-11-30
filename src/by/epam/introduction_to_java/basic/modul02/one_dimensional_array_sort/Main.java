@@ -13,7 +13,7 @@ public class Main {
 //        Task03.sortByChoiceArray(Task03.array);
 //        Task04.sortingByExchanged(Task04.array);
 //        Task05.sortByInserts(Task05.array);
-
+//        Task06.sortByShell(Task06.array);
 
 
     }
