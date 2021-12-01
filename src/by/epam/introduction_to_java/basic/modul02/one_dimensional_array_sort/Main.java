@@ -1,6 +1,5 @@
 package by.epam.introduction_to_java.basic.modul02.one_dimensional_array_sort;
 
-import java.util.Arrays;
 
 public class Main {
 
@@ -14,7 +13,7 @@ public class Main {
 //        Task04.sortingByExchanged(Task04.array);
 //        Task05.sortByInserts(Task05.array);
 //        Task06.sortByShell(Task06.array);
-        Task07.sorted2Array(Task07.array, Task07.array2);
-
+//        Task07.sorted2Array(Task07.array, Task07.array2);
+        Task08.processAndSort();
     }
 }
