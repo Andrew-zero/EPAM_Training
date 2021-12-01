@@ -19,7 +19,7 @@ public class Task07 {
         for (int k = 0; k < barrier; k++) {
 
             if (checkIndex(i) || checkIndex(j)) {
-                if(checkIndex(i)){
+                if (checkIndex(i)) {
                     printPosition(j, k, barrier);
                 }
                 break;
