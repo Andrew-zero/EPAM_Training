@@ -14,6 +14,11 @@ public class Main {
 //        Task05.sortByInserts(Task05.array);
 //        Task06.sortByShell(Task06.array);
 //        Task07.sorted2Array(Task07.array, Task07.array2);
-        Task08.processAndSort();
+//        Task08.processAndSort();
+
+
+
+
+
     }
 }
