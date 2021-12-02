@@ -82,11 +82,12 @@ public class Task08 {
 
         while (d > 0) {
             for (int i = 0; i < (array.length - d); i++) {
-                while (d >= 0 && array[i] > array[i + d]) {
-                    int temp = array[i];
-                    array[i] = array[i + d];
-                    array[i + d] = temp;
-                    d--;
+                int j = i;
+                while (d >= 0 && array[j] > array[j + d]) {
+                    int temp = array[j];
+                    array[j] = array[j + d];
+                    array[j + d] = temp;
+                    j--;
                 }
             }
             d /= 2;
