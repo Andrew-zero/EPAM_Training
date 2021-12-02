@@ -3,7 +3,7 @@ package by.epam.introduction_to_java.basic.modul02.one_dimensional_array_sort;
 
 import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
 
-import java.util.Arrays;
+
 
 /*
 Сортировка вставками. Дана последовательность чисел a1, a1, ... an. Требуется переставить числа в порядке
@@ -39,18 +39,18 @@ public class Task05 {
             return -1;
 
         int low = fromIndex;
-        int hight = toIndex;
+        int high = toIndex;
 
-        while (low < hight - 1) {
-            int mid = low + (hight - low) / 2;
+        while (low < high - 1) {
+            int mid = low + (high - low) / 2;
 
             if (array[mid] < key) {
                 low = mid;
             } else {
-                hight = mid;
+                high = mid;
             }
         }
 
-        return hight;
+        return high;
     }
 }
