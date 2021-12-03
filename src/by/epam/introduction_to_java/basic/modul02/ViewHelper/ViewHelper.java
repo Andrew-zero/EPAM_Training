@@ -36,18 +36,17 @@ public class ViewHelper {
         }
     }
 
-    public static void helPViewArray(double[] array) {
+    public static void helpViewArray(double[] array) {
         for (double d : array) {
             System.out.print(d + " ");
         }
         System.out.println();
     }
 
-    public static void helPViewArray(int[] array) {
-        for (double d : array) {
-            System.out.print(d + " ");
+    public static void helpViewArray(int[] array) {
+        for (int i : array) {
+            System.out.print(i + " ");
         }
         System.out.println();
     }
-
 }

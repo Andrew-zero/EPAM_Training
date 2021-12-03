@@ -25,7 +25,7 @@ public class Task03 {
             }
         }
 
-        ViewHelper.helPViewArray(array);
+        ViewHelper.helpViewArray(array);
 
         return array;
     }

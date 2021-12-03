@@ -1,7 +1,5 @@
 package by.epam.introduction_to_java.basic.modul02.decomposition;
 
-import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -15,6 +13,12 @@ public class Main {
 //        Task07.sumFactorialOddNumber();
 //        Task08.sumOfThreeNumbers(Task08.array, 3, 6);
 //        Task09.tetragonS(Task09.x, Task09.y, Task09.z, Task09.t);
+//        Task10.createArrayFromNumber(Task10.n);
+//        Task11.isMoreNumbers(Task11.y, Task11.x);
+
+
+
+
 
     }
 }

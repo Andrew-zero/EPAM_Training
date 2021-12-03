@@ -29,7 +29,7 @@ public class Task05 {
             array[index] = current;
         }
 
-        ViewHelper.helPViewArray(array);
+        ViewHelper.helpViewArray(array);
 
         return array;
     }

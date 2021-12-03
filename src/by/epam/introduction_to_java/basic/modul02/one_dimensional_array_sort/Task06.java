@@ -29,7 +29,7 @@ public class Task06 {
             d = d >> 1;
         }
 
-        ViewHelper.helPViewArray(array);
+        ViewHelper.helpViewArray(array);
 
         return array;
     }

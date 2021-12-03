@@ -33,7 +33,7 @@ public class Task04 {
             }
         }
 
-        ViewHelper.helPViewArray(array);
+        ViewHelper.helpViewArray(array);
         System.out.println("Количество перестановок составило: " + count);
 
         return array;
