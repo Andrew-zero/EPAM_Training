@@ -10,7 +10,7 @@ public class Main {
         ViewHelper.helpViewResult(Task03.hexagonSFromTriangle(Task03.sideT));
 
         Task04.maxDistance(Task04.point);
-
+        Task05.secondMax(Task05.array);
 
     }
 }
