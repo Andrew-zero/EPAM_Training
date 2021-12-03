@@ -8,8 +8,8 @@ import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
  */
 public class Task06 {
 
-    static int a = 1;
-    static int b = 3;
+    static int a = 12;
+    static int b = 8;
     static int c = 4;
 
 

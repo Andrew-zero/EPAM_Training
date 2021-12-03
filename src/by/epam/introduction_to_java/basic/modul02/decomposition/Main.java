@@ -11,7 +11,9 @@ public class Main {
 //
 //        Task04.maxDistance(Task04.point);
 //        Task05.secondMax(Task05.array);
-        Task06.relativePrime(Task06.a, Task06.b, Task06.c);
+//        Task06.relativePrime(Task06.a, Task06.b, Task06.c);
+//        Task07.sumFactorialOddNumber();
+
 
     }
 }
