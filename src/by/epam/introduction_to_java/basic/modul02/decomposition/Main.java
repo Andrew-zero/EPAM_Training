@@ -13,7 +13,8 @@ public class Main {
 //        Task05.secondMax(Task05.array);
 //        Task06.relativePrime(Task06.a, Task06.b, Task06.c);
 //        Task07.sumFactorialOddNumber();
-
+//        Task08.sumOfThreeNumbers(Task08.array, 3, 6);
+//        Task09.tetragonS(Task09.x, Task09.y, Task09.z, Task09.t);
 
     }
 }
