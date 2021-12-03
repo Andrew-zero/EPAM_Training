@@ -15,8 +15,7 @@ public class Main {
 //        Task09.tetragonS(Task09.x, Task09.y, Task09.z, Task09.t);
 //        Task10.createArrayFromNumber(Task10.n);
 //        Task11.isMoreNumbers(Task11.y, Task11.x);
-
-
+//        Task12.createArray(Task12.k, Task12.n);
 
 
 
