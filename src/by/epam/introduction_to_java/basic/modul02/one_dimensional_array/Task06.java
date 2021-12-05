@@ -11,7 +11,6 @@ public class Task06 {
     static double[] d = {-5, -7, 0, 2, 3.7, 9, -0.0, 24.22, -2, -18, 13, 17.86, 16};
 
     public static double processing(double[] d) {
-        System.out.println();
         boolean[] simpleNumber = new boolean[d.length+1];
         double sum = 0;
 
