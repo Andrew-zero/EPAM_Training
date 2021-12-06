@@ -16,7 +16,7 @@ public class Main {
 //        Task10.createArrayFromNumber(Task10.n);
 //        Task11.isMoreNumbers(Task11.y, Task11.x);
 //        Task12.createArray(Task12.k, Task12.n);
-
+//        Task13.findTwins(Task13.array, 10);
 
 
     }
