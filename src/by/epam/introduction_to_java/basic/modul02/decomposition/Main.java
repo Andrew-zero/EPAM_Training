@@ -17,7 +17,7 @@ public class Main {
 //        Task11.isMoreNumbers(Task11.y, Task11.x);
 //        Task12.createArray(Task12.k, Task12.n);
 //        Task13.findTwins(Task13.array, 10);
-
+//        Task14.armstrongNumber(1000);
 
     }
 }

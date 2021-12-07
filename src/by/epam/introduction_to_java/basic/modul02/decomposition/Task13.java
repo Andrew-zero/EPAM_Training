@@ -43,7 +43,6 @@ public class Task13 {
 
 
     public static boolean isSimpleNumber(int number) {
-
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
