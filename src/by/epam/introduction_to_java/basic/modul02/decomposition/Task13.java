@@ -19,16 +19,15 @@ public class Task13 {
         int simpleNumber2 = 0;
         boolean isWrite1 = false;
         boolean isWrite2 = false;
-        boolean[] simpleNumber = findSimpleNumber(array);
 
         for (int i = n; i <= 2 * n; i++) {
-            if (simpleNumber[i] && !isWrite1) {
-                simpleNumber1 = array[i - 1];
+            if (isSimpleNumber(array[i]) && !isWrite1) {
+                simpleNumber1 = array[i];
                 isWrite1 = true;
             }
 
-            if (simpleNumber[i] && !isWrite2) {
-                simpleNumber2 = array[i - 1];
+            if (isSimpleNumber(array[i]) && !isWrite2) {
+                simpleNumber2 = array[i];
                 isWrite2 = true;
             }
 
@@ -43,21 +42,14 @@ public class Task13 {
     }
 
 
-    public static boolean[] findSimpleNumber(int[] array) {
-        boolean[] simpleNumber = new boolean[array.length];
+    public static boolean isSimpleNumber(int number) {
 
-        Arrays.fill(simpleNumber, true);
-        simpleNumber[0] = false;
-        simpleNumber[1] = false;
-
-        for (int i = 2; i < array.length; i++) {
-            if (simpleNumber[i]) {
-                for (int j = 2; j * i < array.length; j++) {
-                    simpleNumber[i * j] = false;
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
                 }
             }
-        }
 
-        return simpleNumber;
+        return true;
     }
 }
