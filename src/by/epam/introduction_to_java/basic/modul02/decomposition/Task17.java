@@ -13,7 +13,6 @@ import javax.swing.text.View;
  */
 public class Task17 {
 
-
     public static int countMinusSumOfDigit(int n) {
         int count = 0;
 
