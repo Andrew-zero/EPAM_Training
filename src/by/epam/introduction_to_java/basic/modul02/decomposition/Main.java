@@ -20,8 +20,10 @@ public class Main {
 //        Task12.createArray(Task12.k, Task12.n);
 //        Task13.findTwins(Task13.array, 10);
 //        Task14.armstrongNumber(1000);
-         Task15.allNaturalGrowingDigit(2);
-//        ViewHelper.helpViewResult(Task15.isGrowingDigit(4567));
+//        Task15.allNaturalGrowingDigit(2);
+//        Task16.sumNumberFromOddDigit(5);
+//        Task17.countMinusSumOfDigit(12453);
+
 
     }
 }
