@@ -1,5 +1,7 @@
 package by.epam.introduction_to_java.basic.modul02.decomposition;
 
+import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,6 +20,8 @@ public class Main {
 //        Task12.createArray(Task12.k, Task12.n);
 //        Task13.findTwins(Task13.array, 10);
 //        Task14.armstrongNumber(1000);
+         Task15.allNaturalGrowingDigit(2);
+//        ViewHelper.helpViewResult(Task15.isGrowingDigit(4567));
 
     }
 }
