@@ -9,16 +9,16 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class;
 public class Student {
 
     private String surName;
-    private String initial;
+    private String initials;
     private int groupNumber;
     private int[] arrayMark = new int[5];
 
     public Student() {
     }
 
-    public Student(String surName, String initial, int groupNumber) {
+    public Student(String surName, String initials, int groupNumber) {
         this.surName = surName;
-        this.initial = initial;
+        this.initials = initials;
         this.groupNumber = groupNumber;
     }
 
@@ -57,9 +57,9 @@ public class Student {
 
         for (int i = 0; i < groupOfStudent.length; i++) {
             String surName = "SurName" + i;
-            String initial = "Initial" + i + "Name";
+            String initials = "Initials" + i + "Name";
             int groupNumber = 1;
-            groupOfStudent[i] = new Student(surName, initial, groupNumber);
+            groupOfStudent[i] = new Student(surName, initials, groupNumber);
         }
 
         int mark = 1;

@@ -12,30 +12,5 @@ import java.util.Objects;
 назначения должны быть упорядочены по времени отправления.
  */
 public class Train {
-    private String destination;
-    private int trainNumber;
-    private Date departureTime;
-    Train[] trainPark = new Train[5];
 
-    public Train(){
-
-    }
-
-
-    public void viewNumberTrain(int number){
-        System.out.println("Номер поезда " + trainNumber);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Train train = (Train) o;
-        return trainNumber == train.trainNumber && destination.equals(train.destination) && departureTime.equals(train.departureTime);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(destination, trainNumber, departureTime);
-    }
 }
