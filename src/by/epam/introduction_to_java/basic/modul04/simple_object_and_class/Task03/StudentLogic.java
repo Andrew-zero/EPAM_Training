@@ -2,6 +2,8 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 public class StudentLogic {
 
+    public StudentLogic(){}
+
     public Student[] initializeStudent() {
         Student[] groupOfStudent = new Student[10];
 
