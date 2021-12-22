@@ -6,7 +6,6 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 Добавьте возможность сортировки массива по пункту назначения, причем поезда с одинаковыми пунктами
 назначения должны быть упорядочены по времени отправления.
  */
- */
 public class TrainLogic {
 
     public TrainLogic(){}
