@@ -1,9 +1,7 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
 
 
 import javax.xml.crypto.Data;
-import java.util.Date;
-import java.util.Objects;
 
 /*
 Создайте класс Train, содержащий поля: название пункта назначения, номер поезда, время отправления.
