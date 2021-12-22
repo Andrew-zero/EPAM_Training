@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task02;
 
 
 /*
@@ -10,6 +10,11 @@ public class Task02 {
     public class Test2 {
         private int oneValue;
         private int twoValue;
+
+        public Test2(){
+            this.oneValue = 0;
+            this.twoValue = 0;
+        }
 
         public Test2(int oneValue, int twoValue){
             this.oneValue = oneValue;

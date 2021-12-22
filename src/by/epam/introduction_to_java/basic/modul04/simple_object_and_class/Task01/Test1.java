@@ -20,11 +20,8 @@ public class Test1 {
     public void setFirstValue(int oneValue) {
         this.oneValue = oneValue;
     }
+
     public void setSecondValue(int twoValue) {
-        this.twoValue = twoValue;
-    }
-    public void setBothValue(int oneValue, int twoValue) {
-        this.oneValue = oneValue;
         this.twoValue = twoValue;
     }
 
