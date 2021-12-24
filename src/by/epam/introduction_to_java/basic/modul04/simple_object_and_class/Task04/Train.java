@@ -1,7 +1,9 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
 
 
-import javax.xml.crypto.Data;
+
+import java.util.Date;
+import java.util.Objects;
 
 /*
 Создайте класс Train, содержащий поля:
@@ -18,12 +20,48 @@ public class Train {
 
     private String destination;
     private int trainNumber;
-    private Data departTime;
+    private Date departTime;
 
+    public Train(){}
 
+    public Train(int trainNumber){
+        this.trainNumber = trainNumber;
+    }
 
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
+    public void setTrainNumber(int trainNumber) {
+        this.trainNumber = trainNumber;
+    }
 
+    public void setDepartTime(Date departTime) {
+        this.departTime = departTime;
+    }
 
+    public String getDestination() {
+        return destination;
+    }
 
+    public int getTrainNumber() {
+        return trainNumber;
+    }
+
+    public Date getDepartTime() {
+        return departTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Train train = (Train) o;
+        return trainNumber == train.trainNumber && Objects.equals(destination, train.destination) && Objects.equals(departTime, train.departTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(destination, trainNumber, departTime);
+    }
 }
