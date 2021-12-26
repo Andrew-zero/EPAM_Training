@@ -11,18 +11,18 @@ import java.util.Objects;
 В случае недопустимых значений полей поле устанавливается в значение 0.
 Создать методы изменения времени на заданное количество часов, минут и секунд.
  */
-public class TrainingDate {
+public class Watch {
     private int sec;
     private int min;
     private int hour;
 
-    public TrainingDate() {
+    public Watch() {
         sec = 0;
         min = 0;
         hour = 0;
     }
 
-    public TrainingDate(int sec, int min, int hour) {
+    public Watch(int sec, int min, int hour) {
         this.sec = sec;
         this.min = min;
         this.hour = hour;
@@ -68,7 +68,7 @@ public class TrainingDate {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TrainingDate that = (TrainingDate) o;
+        Watch that = (Watch) o;
         return sec == that.sec && min == that.min && hour == that.hour;
     }
 
