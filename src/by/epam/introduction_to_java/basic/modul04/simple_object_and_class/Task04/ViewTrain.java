@@ -20,10 +20,17 @@ public class ViewTrain {
                 String message = "Destination - %s, train number - %d, departure time - %t";
                 helpView(message, depo[i].getDestination(), depo[i].getTrainNumber(), depo[i].getDepartTime());
             }
-            if(i == depo.length -1 && depo[i].getTrainNumber() != trainNumber){
+            if (i == depo.length - 1 && depo[i].getTrainNumber() != trainNumber) {
                 String message = "Поезда с номером %s не существует.";
                 helpView(message, i);
             }
+        }
+    }
+
+    public void viewAllInfo(Train[] depo) {
+        for (Train train : depo) {
+            String message = "Destination - %s, train number - %d, departure time - %t";
+            helpView(message, train.getDestination(), train.getTrainNumber(), train.getDepartTime());
         }
     }
 
@@ -50,9 +57,11 @@ public class ViewTrain {
     public void helpView(String s) {
         System.out.printf(s);
     }
+
     public void helpView(String s, int number) {
         System.out.printf(s, number);
     }
+
     public void helpView(String s, String dest, int number, Date date) {
         System.out.printf(s, dest, number, date);
     }
