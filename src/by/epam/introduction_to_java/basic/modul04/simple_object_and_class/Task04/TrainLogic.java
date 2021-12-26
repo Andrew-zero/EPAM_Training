@@ -18,11 +18,8 @@ public class TrainLogic {
     public void initializeTrainDepo() {
         Train[] trainDepo = data.getDepo();
 
-        for (int i = 0; i < trainDepo.length; i++) {
+        for (int i = 0, k = 'A'; i < trainDepo.length; i++, k++) {
             trainDepo[i] = new Train(i);
-        }
-
-        for (int i = 0, k = 'A'; i < trainDepo.length; i++) {
             trainDepo[i].setDestination(String.valueOf((char) k));
             trainDepo[i].setDepartTime(new Date());
         }
@@ -32,9 +29,9 @@ public class TrainLogic {
         return data.getDepo();
     }
 
-    public Train getTrainByNumber(int number){
-        for(Train t : getAllTrains()){
-            if(t.getTrainNumber() == number){
+    public Train getTrainByNumber(int number) {
+        for (Train t : getAllTrains()) {
+            if (t.getTrainNumber() == number) {
                 return t;
             }
         }
@@ -48,10 +45,21 @@ public class TrainLogic {
         while (d > 0) {
             for (int i = 0; i < depo.length - d; i++) {
                 int j = i;
-                while((j >= 0) && (depo[j].getDestination().compareToIgnoreCase(depo[j+d].getDestination())) < 0){
-
+                while ((j >= 0) && (depo[j].getDestination().compareToIgnoreCase(depo[j + d].getDestination())) < 0) {
+                    if (depo[j].getDestination().equalsIgnoreCase(depo[j + d].getDestination())) {
+                        if (depo[j].getDepartTime().getTime() > depo[j + d].getDepartTime().getTime()) {
+                            Train temp = depo[j + d];
+                            depo[j + d] = depo[j];
+                            depo[j] = temp;
+                        }
+                    } else {
+                        Train temp = depo[j + d];
+                        depo[j + d] = depo[j];
+                        depo[j] = temp;
+                    }
                 }
             }
+            d /= 2;
         }
     }
 
