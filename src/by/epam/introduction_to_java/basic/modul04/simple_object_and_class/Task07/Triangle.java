@@ -6,15 +6,36 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 вычисления площади, периметра и точки пересечения медиан.
  */
 public class Triangle {
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
     private double a;
     private double b;
     private double c;
     private double height;
-    private double degreeA;
-    private double degreeB;
-    private double degreeC;
+    private float degreeA;
+    private float degreeB;
+    private float degreeC;
 
     public Triangle() {
+    }
+
+    public Triangle(Point pointA, Point pointB, Point pointC){
+        this.pointA = pointA;
+        this.pointB = pointB;
+        this.pointC = pointC;
+    }
+
+    public Triangle(double a){
+        this.a = a;
+        this.b = a;
+        this.c = a;
+    }
+
+    public Triangle(double a, double c){
+        this.a = a;
+        this.b = a;
+        this.c = c;
     }
 
     public Triangle(double a, double b, double c) {
@@ -22,6 +43,19 @@ public class Triangle {
         this.b = b;
         this.c = c;
     }
+
+    public Triangle(double a, float degreeA, float degreeB){
+        this.a = a;
+        this.degreeA = degreeA;
+        this.degreeB = degreeB;
+    }
+
+    public Triangle(double a, double b, float degreeA){
+        this.a = a;
+        this.b = b;
+        this.degreeA = degreeA;
+    }
+
 
     public double getA() {
         return a;
@@ -55,27 +89,51 @@ public class Triangle {
         this.height = height;
     }
 
-    public double getDegreeA() {
+    public float getDegreeA() {
         return degreeA;
     }
 
-    public void setDegreeA(double degreeA) {
+    public void setDegreeA(float degreeA) {
         this.degreeA = degreeA;
     }
 
-    public double getDegreeB() {
+    public float getDegreeB() {
         return degreeB;
     }
 
-    public void setDegreeB(double degreeB) {
+    public void setDegreeB(float degreeB) {
         this.degreeB = degreeB;
     }
 
-    public double getDegreeC() {
+    public float getDegreeC() {
         return degreeC;
     }
 
-    public void setDegreeC(double degreeC) {
+    public void setDegreeC(float degreeC) {
         this.degreeC = degreeC;
+    }
+
+    public Point getPointA() {
+        return pointA;
+    }
+
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
+    }
+
+    public Point getPointB() {
+        return pointB;
+    }
+
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public Point getPointC() {
+        return pointC;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
     }
 }
