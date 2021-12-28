@@ -27,29 +27,29 @@ public class Customer {
     private int creditCardNumber;
 
     public Customer(){
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
     }
 
     public Customer(int bankAccountNumber) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
     }
 
     public Customer(int bankAccountNumber, String lastName) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
     public Customer(int bankAccount, String lastName, String firstName, String middleName) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccount;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -57,7 +57,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -66,7 +66,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, int creditCardNumber) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -75,7 +75,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address, int creditCardNumber) {
-        this.id = CustomerId.id.getAndIncrement();
+        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
