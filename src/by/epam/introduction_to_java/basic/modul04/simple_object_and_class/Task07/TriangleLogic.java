@@ -7,43 +7,36 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 public class TriangleLogic {
 
     public static double perimeter(Triangle triangle) {
-        return triangle.getA() + triangle.getB() + triangle.getC();
+        return triangle.getSideA() + triangle.getSideB() + triangle.getSideC();
     }
 
     public static double squareByTreeSide(Triangle triangle) {
         double p = perimeter(triangle) / 2;
 
-        return Math.sqrt(p * (p - triangle.getA()) * (p - triangle.getB()) * (p - triangle.getC()));
+        return Math.sqrt(p * (p - triangle.getSideA()) * (p - triangle.getSideB()) * (p - triangle.getSideC()));
     }
 
     private static double squareByFoundationAndHeight(Triangle triangle) {
-        return 1.5 * triangle.getA() * triangle.getHeight();
+        return 1.5 * triangle.getSideA() * triangle.getHeight();
     }
 
     private static double squareBy2SideAndDegree(Triangle triangle) {
-        return 1.5 * triangle.getA() * triangle.getB() * triangle.getDegreeA();
+        return 1.5 * triangle.getSideA() * triangle.getSideB() * triangle.getDegreeA();
     }
 
     public static double squareBySideAndTwoDegree(Triangle triangle) {
-        double part1 = Math.pow(triangle.getA(), 2) / 2;
+        double part1 = Math.pow(triangle.getSideA(), 2) / 2;
         double part2 = Math.sin(triangle.getDegreeA()) + Math.sin(triangle.getDegreeB());
         double part3 = Math.sin(180 - (triangle.getDegreeA() + triangle.getDegreeB()));
 
         return part1 + (part2 / part3);
     }
 
-    public static double medianaIntersectionPoint(Point pointA, Point pointB, Point pointC) {
-        Point a1 = new Point();     // середина стороны напротив вершины А
-        Point b1 = new Point();     // середина стороны напротив вершины b
+    public static Point medianaIntersectionPoint(Point pointA, Point pointB, Point pointC) {
+        double medianaX = (pointA.getX() + pointB.getX() + pointC.getX()) / 3;
+        double medianaY = (pointA.getY() + pointB.getY() + pointC.getY()) / 3;
 
-        a1.setX((pointB.getX() + pointC.getX()) / 2);
-        a1.setY((pointB.getY() + pointC.getY()) / 2);
-        b1.setX((pointA.getX() + pointC.getX()) / 2);
-        b1.setY((pointA.getY() + pointC.getY()) / 2);
-
-
-        Point m = new Point();                   // точка пересечения медиан
-
+        return new Point(medianaX, medianaY);
     }
 
 }

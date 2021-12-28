@@ -1,6 +1,8 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07;
 
 
+import java.util.Objects;
+
 /*
 Описать класс, представляющий треугольник. Предусмотреть методы для создания объектов,
 вычисления площади, периметра и точки пересечения медиан.
@@ -9,9 +11,9 @@ public class Triangle {
     private Point pointA;
     private Point pointB;
     private Point pointC;
-    private double a;
-    private double b;
-    private double c;
+    private double sideA;
+    private double sideB;
+    private double sideC;
     private double height;
     private float degreeA;
     private float degreeB;
@@ -26,59 +28,59 @@ public class Triangle {
         this.pointC = pointC;
     }
 
-    public Triangle(double a){
-        this.a = a;
-        this.b = a;
-        this.c = a;
+    public Triangle(double sideA){
+        this.sideA = sideA;
+        this.sideB = sideA;
+        this.sideC = sideA;
     }
 
-    public Triangle(double a, double c){
-        this.a = a;
-        this.b = a;
-        this.c = c;
+    public Triangle(double sideA, double c){
+        this.sideA = sideA;
+        this.sideB = sideA;
+        this.sideC = c;
     }
 
-    public Triangle(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    public Triangle(double sideA, double b, double c) {
+        this.sideA = sideA;
+        this.sideB = b;
+        this.sideC = c;
     }
 
-    public Triangle(double a, float degreeA, float degreeB){
-        this.a = a;
+    public Triangle(double sideA, float degreeA, float degreeB){
+        this.sideA = sideA;
         this.degreeA = degreeA;
         this.degreeB = degreeB;
     }
 
-    public Triangle(double a, double b, float degreeA){
-        this.a = a;
-        this.b = b;
+    public Triangle(double sideA, double b, float degreeA){
+        this.sideA = sideA;
+        this.sideB = b;
         this.degreeA = degreeA;
     }
 
 
-    public double getA() {
-        return a;
+    public double getSideA() {
+        return sideA;
     }
 
-    public void setA(double a) {
-        this.a = a;
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
     }
 
-    public double getB() {
-        return b;
+    public double getSideB() {
+        return sideB;
     }
 
-    public void setB(double b) {
-        this.b = b;
+    public void setSideB(double sideB) {
+        this.sideB = sideB;
     }
 
-    public double getC() {
-        return c;
+    public double getSideC() {
+        return sideC;
     }
 
-    public void setC(double c) {
-        this.c = c;
+    public void setSideC(double sideC) {
+        this.sideC = sideC;
     }
 
     public double getHeight() {
@@ -135,5 +137,34 @@ public class Triangle {
 
     public void setPointC(Point pointC) {
         this.pointC = pointC;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.sideA, sideA) == 0 && Double.compare(triangle.sideB, sideB) == 0 && Double.compare(triangle.sideC, sideC) == 0 && Double.compare(triangle.height, height) == 0 && Float.compare(triangle.degreeA, degreeA) == 0 && Float.compare(triangle.degreeB, degreeB) == 0 && Float.compare(triangle.degreeC, degreeC) == 0 && Objects.equals(pointA, triangle.pointA) && Objects.equals(pointB, triangle.pointB) && Objects.equals(pointC, triangle.pointC);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pointA, pointB, pointC, sideA, sideB, sideC, height, degreeA, degreeB, degreeC);
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "pointA=" + pointA +
+                ", pointB=" + pointB +
+                ", pointC=" + pointC +
+                ", a=" + sideA +
+                ", b=" + sideB +
+                ", c=" + sideC +
+                ", height=" + height +
+                ", degreeA=" + degreeA +
+                ", degreeB=" + degreeB +
+                ", degreeC=" + degreeC +
+                '}';
     }
 }
