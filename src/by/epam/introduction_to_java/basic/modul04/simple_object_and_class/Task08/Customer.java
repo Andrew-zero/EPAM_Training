@@ -1,7 +1,6 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08;
 
 
-
 /*
 Создать класс Customer, спецификация которого приведена ниже.
 
@@ -26,39 +25,98 @@ public class Customer {
     private Address address;
     private int creditCardNumber;
 
-    public Customer(){
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
+    public Customer() {
+        this.id = SecondClass.getId().getAndIncrement();
     }
 
     public Customer(int bankAccountNumber) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
     }
 
     public Customer(int bankAccountNumber, String lastName) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
+    public Customer(int bankAccountNumber, String lastName, Address address) {
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
+        this.lastName = lastName;
+        this.address = address;
+    }
+
+    public Customer(int bankAccountNumber, String lastName, Address address, int creditCardNumber) {
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
+        this.lastName = lastName;
+        this.address = address;
+
+        if (creditCardNumber > 99 && creditCardNumber < 1000) {
+            this.creditCardNumber = creditCardNumber;
+        }
+    }
+
     public Customer(int bankAccount, String lastName, String firstName, String middleName) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccount;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -66,22 +124,40 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, int creditCardNumber) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
-        this.creditCardNumber = creditCardNumber;
+
+        if (creditCardNumber > 99 && creditCardNumber < 1000) {
+            this.creditCardNumber = creditCardNumber;
+        }
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address, int creditCardNumber) {
-        this.id = SecondClassForAgregationCustomer.id.getAndIncrement();
-        this.bankAccountNumber = bankAccountNumber;
+        this.id = SecondClass.getId().getAndIncrement();
+
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
         this.address = address;
-        this.creditCardNumber = creditCardNumber;
+
+        if (creditCardNumber > 99 && creditCardNumber < 1000) {
+            this.creditCardNumber = creditCardNumber;
+        }
     }
 
 
@@ -114,7 +190,11 @@ public class Customer {
     }
 
     public void setBankAccountNumber(int bankAccountNumber) {
-        this.bankAccountNumber = bankAccountNumber;
+        if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
+            this.bankAccountNumber = bankAccountNumber;
+        } else {
+            CustomerView.print("Не верный банковский счёт");
+        }
     }
 
     public void setLastName(String lastName) {
@@ -134,7 +214,9 @@ public class Customer {
     }
 
     public void setCreditCardNumber(int creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
+        if (creditCardNumber > 99 && creditCardNumber < 1000) {
+            this.creditCardNumber = creditCardNumber;
+        }
     }
 
     @Override
