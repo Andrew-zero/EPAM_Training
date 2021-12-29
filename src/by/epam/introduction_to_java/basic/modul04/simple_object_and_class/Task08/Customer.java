@@ -94,7 +94,7 @@ public class Customer {
         }
     }
 
-    public Customer(int bankAccount, String lastName, String firstName, String middleName) {
+    public Customer(int bankAccountNumber, String lastName, String firstName, String middleName) {
         this.id = SecondClass.getId().getAndIncrement();
 
         if (bankAccountNumber > 999_999 && bankAccountNumber < 1_000_000_000) {
