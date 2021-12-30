@@ -10,15 +10,15 @@ import java.util.ArrayList;
 б) список покупателей, у которых номер кредитной карточки находится в заданном интервале.
  */
 public class CustomerLogic {
+    private static final int COUNT_NUMBERS_IN_CREDIT_CARD = 000000000000000000000000000;
+
     private SecondClass secondClass;
     private CustomerView customerView;
-
-
 
     public CustomerLogic() {
     }
 
-    public void setSecondClass(SecondClass secondClass){
+    public void setSecondClass(SecondClass secondClass) {
         this.secondClass = secondClass;
     }
 
@@ -64,17 +64,27 @@ public class CustomerLogic {
         return customerList;
     }
 
-    public ArrayList<Customer> findAllRangeCustomerByCreditCard(ArrayList<Customer> customerList, int rangeFrom, int rangeTo){
+    public ArrayList<Customer> findAllRangeCustomerByCreditCard(ArrayList<Customer> customerList, int rangeFrom, int rangeTo) {
         ArrayList<Customer> result = new ArrayList<>();
 
-        for(Customer customer : customerList){
-            if(customer.getCreditCardNumber() >= rangeFrom && customer.getCreditCardNumber() < rangeTo)
-            result.add(customer);
+        for (Customer customer : customerList) {
+            if (customer.getCreditCardNumber() >= rangeFrom && customer.getCreditCardNumber() < rangeTo)
+                result.add(customer);
         }
 
         return result;
     }
 
+    public boolean checkValueOptions(int number) {
+        return number <= Options.values().length;
+    }
 
+    public static boolean checkValueCreditCard(int number) {
+        return number > 99 && number < 1000;
+    }
+
+    public static boolean checkBankAccountValue(int number) {
+        return number > 999_999 && number < 1_000_000_000;
+    }
 
 }
