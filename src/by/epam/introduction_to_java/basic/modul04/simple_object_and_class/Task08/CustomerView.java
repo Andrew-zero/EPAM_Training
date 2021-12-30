@@ -27,7 +27,17 @@ public class CustomerView {
             case TWO -> {
                 System.out.println("Введите диапазон поиска номера кредитной карты >>");
                 int fromNumber = inputNumber();
+                if(!CustomerLogic.checkValueCreditCard(fromNumber)){
+                    while(!CustomerLogic.checkValueCreditCard(fromNumber)){
+                        fromNumber = inputNumber();
+                    }
+                }
                 int toNumber = inputNumber();
+                if(!CustomerLogic.checkValueCreditCard(toNumber)){
+                    while(!CustomerLogic.checkValueCreditCard(toNumber)){
+                        fromNumber = inputNumber();
+                    }
+                }
                 customers = customerLogic.findAllRangeCustomerByCreditCard(customerLogic.getAllCustomers(), fromNumber, toNumber);
             }
             default -> throw new IllegalStateException("Unexpected value: " + option);
