@@ -10,7 +10,8 @@ import java.util.ArrayList;
 б) список покупателей, у которых номер кредитной карточки находится в заданном интервале.
  */
 public class CustomerLogic {
-    private static final int COUNT_NUMBERS_IN_CREDIT_CARD = 000000000000000000000000000;
+    private static final int COUNT_NUMBERS_IN_CREDIT_CARD = 1_000;
+    private static final int COUNT_NUMBERS_IN_BANK_ACCOUNT = 1_000_000_000;
 
     private SecondClass secondClass;
     private CustomerView customerView;
@@ -35,11 +36,22 @@ public class CustomerLogic {
             } else if (i % 3 == 0) {
                 Address address = new Address("Belarus", "Minsk", "Winners Avenue", i);
                 String lastName = "CustomerLastName " + i;
-                customerArrayList.add(new Customer(99_999_999 + i + 10, lastName, address));
+                int bankAccountNumber = 99_999_999 + i + 10;
+                if(checkBankAccountValue(bankAccountNumber)) {
+                    customerArrayList.add(new Customer(bankAccountNumber, lastName, address));
+                }else{
+                    customerArrayList.add(new Customer(-1, lastName, address));
+                }
             } else {
                 Address address = new Address("Belarus", "Minsk", "Winners Avenue", i);
                 String lastName = "CustomerLastName " + i;
-                customerArrayList.add(new Customer(9_999_999 + i + 100, lastName, address, i * 20 + 100));
+                int bankAccountNumber = 9_999_999 + i + 100;
+                int creditCardNumber = i * 20 + 100;
+                if(checkBankAccountValue(bankAccountNumber) && checkValueCreditCard(creditCardNumber)) {
+                    customerArrayList.add(new Customer(bankAccountNumber, lastName, address, creditCardNumber));
+                }else{
+                    customerArrayList.add(new Customer(-1, lastName, address, -1));
+                }
             }
         }
     }
@@ -80,11 +92,11 @@ public class CustomerLogic {
     }
 
     public static boolean checkValueCreditCard(int number) {
-        return number > 99 && number < 1000;
+        return number > 0 && number < COUNT_NUMBERS_IN_CREDIT_CARD;
     }
 
     public static boolean checkBankAccountValue(int number) {
-        return number > 999_999 && number < 1_000_000_000;
+        return number > 0 && number < COUNT_NUMBERS_IN_BANK_ACCOUNT;
     }
 
 }
