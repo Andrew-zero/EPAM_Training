@@ -26,10 +26,19 @@ public class CustomerView {
         }
     }
 
+    public Options pickOption(int number) {
+        Options option = null;
 
+        for (Options o : Options.values())
+            if (o.getNumber() == number) {
+                option = o;
+            }
+
+        return option;
+    }
 
     public int inputNumber() {
-        int result = -1;
+        int result = 0;
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             result = Integer.parseInt(br.readLine());

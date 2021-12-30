@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(Options.ONE.name());
-        System.out.println(Options.ONE.getDiscribe());
+        System.out.println(Options.ONE.getDiscribe() + " " + Options.ONE.getNumber());
+        System.out.println(Options.TWO.getDiscribe() + " " + Options.TWO.getNumber());
     }
 }
