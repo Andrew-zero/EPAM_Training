@@ -19,7 +19,7 @@ public class CustomerView {
         this.customerLogic = customerLogic;
     }
 
-    public void chosenOptions(Options option){
+    public ArrayList<Customer> returnAction(Options option){
         ArrayList<Customer> customers;
 
         switch (option){
@@ -30,17 +30,10 @@ public class CustomerView {
                 int toNumber = inputNumber();
                 customers = customerLogic.findAllRangeCustomerByCreditCard(customerLogic.getAllCustomers(), fromNumber, toNumber);
             }
+            default -> throw new IllegalStateException("Unexpected value: " + option);
         }
 
         return customers;
-    }
-
-    public void choseOption() {
-        System.out.println("Выберите критерий выбора данных: ");
-
-        for (Options o : Options.values()) {
-            System.out.println(o.name() + " - " + o.getDiscribe());
-        }
     }
 
     public Options pickOption(int number) {
@@ -64,6 +57,14 @@ public class CustomerView {
         }
 
         return result;
+    }
+
+    public void choseOption() {
+        System.out.println("Выберите критерий выбора данных: ");
+
+        for (Options o : Options.values()) {
+            System.out.println(o.name() + " - " + o.getDiscribe());
+        }
     }
 
     public static void print(String s) {

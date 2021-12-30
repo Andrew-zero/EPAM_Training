@@ -13,6 +13,8 @@ public class CustomerLogic {
     private SecondClass secondClass;
     private CustomerView customerView;
 
+
+
     public CustomerLogic() {
     }
 
@@ -72,5 +74,7 @@ public class CustomerLogic {
 
         return result;
     }
+
+
 
 }
