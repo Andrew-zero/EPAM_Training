@@ -2,9 +2,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+
 
 /*
 Найти и вывести:
@@ -12,10 +10,14 @@ import java.util.List;
 б) список покупателей, у которых номер кредитной карточки находится в заданном интервале.
  */
 public class CustomerLogic {
-    CustomerView customerView = new CustomerView();
-    SecondClass secondClass = new SecondClass();
+    private SecondClass secondClass;
+    private CustomerView customerView;
 
     public CustomerLogic() {
+    }
+
+    public void setSecondClass(SecondClass secondClass){
+        this.secondClass = secondClass;
     }
 
     public void initializationCustomer() {
