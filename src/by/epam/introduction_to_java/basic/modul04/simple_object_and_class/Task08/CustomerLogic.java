@@ -2,6 +2,9 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /*
 Найти и вывести:
@@ -12,7 +15,8 @@ public class CustomerLogic {
     CustomerView customerView = new CustomerView();
     SecondClass secondClass = new SecondClass();
 
-    public CustomerLogic(){}
+    public CustomerLogic() {
+    }
 
     public void initializationCustomer() {
         ArrayList<Customer> customerArrayList = secondClass.getCustomers();
@@ -32,9 +36,35 @@ public class CustomerLogic {
         }
     }
 
-    public ArrayList<Customer> getAllCustomers(){
+    public ArrayList<Customer> getAllCustomers() {
         return secondClass.getCustomers();
     }
 
+    public ArrayList<Customer> sortByAlphabet(ArrayList<Customer> customerList) {
+        customerList.sort((o1, o2) -> {
+            if (o1.getLastName().equalsIgnoreCase(o2.getLastName())) {
+                if (o1.getFirstName().equalsIgnoreCase(o2.getFirstName())) {
+                    return o1.getMiddleName().compareTo(o2.getMiddleName());
+                } else {
+                    return o1.getFirstName().compareTo(o2.getFirstName());
+                }
+            } else {
+                return o1.getLastName().compareTo(o2.getLastName());
+            }
+        });
+
+        return customerList;
+    }
+
+    public ArrayList<Customer> findAllRangeCustomerByCreditCard(ArrayList<Customer> customerList, int rangeFrom, int rangeTo){
+        ArrayList<Customer> result = new ArrayList<>();
+
+        for(Customer customer : customerList){
+            if(customer.getCreditCardNumber() >= rangeFrom && customer.getCreditCardNumber() < rangeTo)
+            result.add(customer);
+        }
+
+        return result;
+    }
 
 }
