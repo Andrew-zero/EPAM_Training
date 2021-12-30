@@ -20,6 +20,10 @@ public class CustomerLogic {
         this.secondClass = secondClass;
     }
 
+    public void setCustomerView(CustomerView customerView) {
+        this.customerView = customerView;
+    }
+
     public void initializationCustomer() {
         ArrayList<Customer> customerArrayList = secondClass.getCustomers();
 

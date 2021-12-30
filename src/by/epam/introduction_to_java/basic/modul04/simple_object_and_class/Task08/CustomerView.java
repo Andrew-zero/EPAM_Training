@@ -4,6 +4,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /*
 Задать критерии выбора данных и вывести эти данные на консоль.
@@ -16,6 +17,22 @@ public class CustomerView {
 
     public void setCustomerLogic(CustomerLogic customerLogic) {
         this.customerLogic = customerLogic;
+    }
+
+    public void chosenOptions(Options option){
+        ArrayList<Customer> customers;
+
+        switch (option){
+            case ONE -> customers = customerLogic.sortByAlphabet(customerLogic.getAllCustomers());
+            case TWO -> {
+                System.out.println("Введите диапазон поиска номера кредитной карты >>");
+                int fromNumber = inputNumber();
+                int toNumber = inputNumber();
+                customers = customerLogic.findAllRangeCustomerByCreditCard(customerLogic.getAllCustomers(), fromNumber, toNumber);
+            }
+        }
+
+        return customers;
     }
 
     public void choseOption() {
