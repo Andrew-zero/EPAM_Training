@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
 /*
@@ -14,17 +15,16 @@ public class CustomerLogic {
     private static final int COUNT_NUMBERS_IN_BANK_ACCOUNT = 1_000_000_000;
 
     private SecondClass secondClass;
-    private CustomerView customerView;
 
     public CustomerLogic() {
     }
 
-    public void setSecondClass(SecondClass secondClass) {
+    public CustomerLogic(SecondClass secondClass) {
         this.secondClass = secondClass;
     }
 
-    public void setCustomerView(CustomerView customerView) {
-        this.customerView = customerView;
+    public void setSecondClass(SecondClass secondClass) {
+        this.secondClass = secondClass;
     }
 
     public void initializationCustomer() {
@@ -36,21 +36,25 @@ public class CustomerLogic {
             } else if (i % 3 == 0) {
                 Address address = new Address("Belarus", "Minsk", "Winners Avenue", i);
                 String lastName = "CustomerLastName " + i;
+                String firstName = "CustomerFirstName " + i;
+                String middleName = "CustomerMiddleName " + i;
                 int bankAccountNumber = 99_999_999 + i + 10;
-                if(checkBankAccountValue(bankAccountNumber)) {
-                    customerArrayList.add(new Customer(bankAccountNumber, lastName, address));
-                }else{
-                    customerArrayList.add(new Customer(-1, lastName, address));
+                if (checkBankAccountValue(bankAccountNumber)) {
+                    customerArrayList.add(new Customer(bankAccountNumber, lastName, firstName, middleName, address));
+                } else {
+                    customerArrayList.add(new Customer(-1, lastName, firstName, middleName, address));
                 }
             } else {
                 Address address = new Address("Belarus", "Minsk", "Winners Avenue", i);
                 String lastName = "CustomerLastName " + i;
+                String firstName = "CustomerFirstName " + i;
+                String middleName = "CustomerMiddleName " + i;
                 int bankAccountNumber = 9_999_999 + i + 100;
                 int creditCardNumber = i * 20 + 100;
-                if(checkBankAccountValue(bankAccountNumber) && checkValueCreditCard(creditCardNumber)) {
-                    customerArrayList.add(new Customer(bankAccountNumber, lastName, address, creditCardNumber));
-                }else{
-                    customerArrayList.add(new Customer(-1, lastName, address, -1));
+                if (checkBankAccountValue(bankAccountNumber) && checkValueCreditCard(creditCardNumber)) {
+                    customerArrayList.add(new Customer(bankAccountNumber, lastName, firstName, middleName, address, creditCardNumber));
+                } else {
+                    customerArrayList.add(new Customer(-1, lastName, firstName, middleName, address, -1));
                 }
             }
         }
@@ -61,17 +65,13 @@ public class CustomerLogic {
     }
 
     public ArrayList<Customer> sortByAlphabet(ArrayList<Customer> customerList) {
-        customerList.sort((o1, o2) -> {
-            if (o1.getLastName().equalsIgnoreCase(o2.getLastName())) {
-                if (o1.getFirstName().equalsIgnoreCase(o2.getFirstName())) {
-                    return o1.getMiddleName().compareTo(o2.getMiddleName());
-                } else {
-                    return o1.getFirstName().compareTo(o2.getFirstName());
-                }
-            } else {
-                return o1.getLastName().compareTo(o2.getLastName());
-            }
-        });
+
+        Comparator<Customer> comparator
+                = Comparator.comparing(Customer::getLastName)
+                .thenComparing(Customer::getFirstName)
+                .thenComparing(Customer::getMiddleName);
+
+        customerList.sort(comparator);
 
         return customerList;
     }

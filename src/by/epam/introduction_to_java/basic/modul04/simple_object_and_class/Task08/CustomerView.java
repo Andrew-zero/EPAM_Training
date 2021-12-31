@@ -15,26 +15,34 @@ public class CustomerView {
     public CustomerView() {
     }
 
+    public CustomerView(CustomerLogic customerLogic) {
+        this.customerLogic = customerLogic;
+    }
+
     public void setCustomerLogic(CustomerLogic customerLogic) {
         this.customerLogic = customerLogic;
     }
 
-    public ArrayList<Customer> returnAction(Options option){
+    public void viewResult(ArrayList<Customer> arrayList) {
+        arrayList.forEach((customer) -> System.out.println(customer.toString()));
+    }
+
+    public ArrayList<Customer> returnResultAction(Options option) {
         ArrayList<Customer> customers;
 
-        switch (option){
+        switch (option) {
             case ONE -> customers = customerLogic.sortByAlphabet(customerLogic.getAllCustomers());
             case TWO -> {
                 System.out.println("Введите диапазон поиска номера кредитной карты >>");
                 int fromNumber = inputNumber();
-                if(!CustomerLogic.checkValueCreditCard(fromNumber)){
-                    while(!CustomerLogic.checkValueCreditCard(fromNumber)){
+                if (!CustomerLogic.checkValueCreditCard(fromNumber)) {
+                    while (!CustomerLogic.checkValueCreditCard(fromNumber)) {
                         fromNumber = inputNumber();
                     }
                 }
                 int toNumber = inputNumber();
-                if(!CustomerLogic.checkValueCreditCard(toNumber)){
-                    while(!CustomerLogic.checkValueCreditCard(toNumber)){
+                if (!CustomerLogic.checkValueCreditCard(toNumber)) {
+                    while (!CustomerLogic.checkValueCreditCard(toNumber)) {
                         fromNumber = inputNumber();
                     }
                 }
@@ -47,18 +55,17 @@ public class CustomerView {
     }
 
     public Options pickOption(int number) {
-        Options option = null;
 
-        for (Options o : Options.values())
-            if (o.getNumber() == number) {
-                option = o;
-            }
+        if (!(number >= 0 && number < Options.values().length)) {
+            throw new IllegalArgumentException("Выбор опции не верен.");
+        }
 
-        return option;
+        return Options.values()[number];
     }
 
     public int inputNumber() {
         int result = 0;
+        System.out.println("->");
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             result = Integer.parseInt(br.readLine());
@@ -73,7 +80,7 @@ public class CustomerView {
         System.out.println("Выберите критерий выбора данных: ");
 
         for (Options o : Options.values()) {
-            System.out.println(o.name() + " - " + o.getDiscribe());
+            System.out.println(o.ordinal() + " - " + o.getDiscribe());
         }
     }
 

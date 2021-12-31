@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class SecondClass {
     private static volatile AtomicInteger id = new AtomicInteger(0);
-    private ArrayList<Customer> customers;
+    private ArrayList<Customer> customers = new ArrayList<>();
 
     public SecondClass(){}
 
