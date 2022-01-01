@@ -32,7 +32,10 @@ public class CustomerLogic {
 
         for (int i = 0; i < 30; i++) {
             if (i % 2 == 0) {
-                customerArrayList.add(new Customer());
+                String lastName = "CustomerLastName " + i;
+                String firstName = "CustomerFirstName " + i;
+                String middleName = "CustomerMiddleName " + i;
+                customerArrayList.add(new Customer(lastName, firstName, middleName));
             } else if (i % 3 == 0) {
                 Address address = new Address("Belarus", "Minsk", "Winners Avenue", i);
                 String lastName = "CustomerLastName " + i;

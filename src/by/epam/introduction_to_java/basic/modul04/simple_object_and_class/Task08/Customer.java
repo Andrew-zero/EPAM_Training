@@ -47,6 +47,13 @@ public class Customer {
         this.firstName = firstName;
     }
 
+    public Customer(String lastName, String firstName, String middleName) {
+        this.id = SecondClass.getId().getAndIncrement();
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+    }
+
     public Customer(int bankAccountNumber, String lastName, Address address) {
         this.id = SecondClass.getId().getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;

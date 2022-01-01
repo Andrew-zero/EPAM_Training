@@ -35,15 +35,16 @@ public class CustomerView {
             case TWO -> {
                 System.out.println("Введите диапазон поиска номера кредитной карты >>");
                 int fromNumber = inputNumber();
+                int toNumber = inputNumber();
+
                 if (!CustomerLogic.checkValueCreditCard(fromNumber)) {
                     while (!CustomerLogic.checkValueCreditCard(fromNumber)) {
                         fromNumber = inputNumber();
                     }
                 }
-                int toNumber = inputNumber();
                 if (!CustomerLogic.checkValueCreditCard(toNumber)) {
                     while (!CustomerLogic.checkValueCreditCard(toNumber)) {
-                        fromNumber = inputNumber();
+                        toNumber = inputNumber();
                     }
                 }
                 customers = customerLogic.findAllRangeCustomerByCreditCard(customerLogic.getAllCustomers(), fromNumber, toNumber);
@@ -64,14 +65,14 @@ public class CustomerView {
     }
 
     public int inputNumber() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int result = 0;
-        System.out.println("->");
-
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             result = Integer.parseInt(br.readLine());
         } catch (IOException e) {
-            e.getCause();
+            e.printStackTrace();
         }
+        System.out.println("->");
 
         return result;
     }
