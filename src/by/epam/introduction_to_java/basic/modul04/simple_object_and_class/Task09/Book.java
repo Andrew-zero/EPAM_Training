@@ -28,8 +28,13 @@ public class Book {
     private String price;
     private Binding typeBinding;
 
-    Book(){
+    public Book(){
         this.id = BookShelf.atomicInteger.getAndIncrement();
+    }
+
+    public Book(String title){
+        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.title = title;
     }
 
 }
