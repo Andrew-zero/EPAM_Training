@@ -37,4 +37,54 @@ public class Book {
         this.title = title;
     }
 
+    public Book(String title, String author) {
+        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.title = title;
+        this.author = author;
+    }
+
+    public Book(String title, String author, String publishedHouse) {
+        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.title = title;
+        this.author = author;
+        this.publishedHouse = publishedHouse;
+    }
+
+    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.publishedHouse = publishedHouse;
+        this.yearOfPublication = yearOfPublication;
+    }
+
+    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.publishedHouse = publishedHouse;
+        this.yearOfPublication = yearOfPublication;
+        this.quantityOfSheets = quantityOfSheets;
+    }
+
+    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.publishedHouse = publishedHouse;
+        this.yearOfPublication = yearOfPublication;
+        this.quantityOfSheets = quantityOfSheets;
+        this.price = price;
+    }
+
+    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price, Binding typeBinding) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.publishedHouse = publishedHouse;
+        this.yearOfPublication = yearOfPublication;
+        this.quantityOfSheets = quantityOfSheets;
+        this.price = price;
+        this.typeBinding = typeBinding;
+    }
 }
