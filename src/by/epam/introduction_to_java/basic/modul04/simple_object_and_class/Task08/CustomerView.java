@@ -72,7 +72,7 @@ public class CustomerView {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("->");
+        print("->");
 
         return result;
     }
