@@ -28,7 +28,7 @@ public class CustomerLogic {
     }
 
     public void initializationCustomer() {
-        ArrayList<Customer> customerArrayList = secondClass.getAllCustomers();
+        ArrayList<Customer> customerArrayList = getAllCustomers();
 
         for (int i = 0; i < 30; i++) {
             if (i % 2 == 0) {
