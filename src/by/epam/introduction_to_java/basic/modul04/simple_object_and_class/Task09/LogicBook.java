@@ -24,10 +24,25 @@ public class LogicBook {
     public void initializationBook() {
         ArrayList<Book> bookArrayList = getAllBook();
 
-        for(int i = 0; i < 20; i++){
-
+        for (int i = 0; i < 20; i++) {
+            String title = "Strange things" + i;
+            String publishedHouse;
+            int year = 2000 + i;
+            int quantityOfSheets = 10 + i;
+            double price = (i + 1) * 200;
+            String author;
+            Binding binding;
+            if (i % 2 == 0) {
+                author = "someAuthor" + 0;
+                binding = Binding.HARD;
+                publishedHouse = "publishedHouse" + 2000;
+            } else {
+                author = "someAuthor" + 1;
+                binding = Binding.SOFT;
+                publishedHouse = "publishedHouse" + 2010;
+            }
+            bookArrayList.add(new Book(title, author, publishedHouse, year, quantityOfSheets, price, binding));
         }
-
 
     }
 

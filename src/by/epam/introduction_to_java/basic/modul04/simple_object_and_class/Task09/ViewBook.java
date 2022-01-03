@@ -4,7 +4,9 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /*
 Задать критерии выбора данных и вывести эти данные на консоль.
@@ -28,10 +30,14 @@ public class ViewBook {
 
         switch(option){
             case ONE -> {
-                print("Введите автора:->");
+                print("Доступны следующие авторы: ");
+                viewAuthor();
+                print("Выберите автора:->");
                 listBook = logicBook.choseAuthor(inputString());
             }
             case TWO -> {
+                print("Доступны следующие издательства: ");
+                viewPublishedHouse();
                 print("Введите издательство:->");
                 listBook = logicBook.chosePublishedHouse(inputString());
             }
@@ -43,6 +49,30 @@ public class ViewBook {
         }
 
         return listBook;
+    }
+
+    public void viewPublishedHouse(){
+        Set<String> publishedHouse = new HashSet<>();
+
+        for(Book b : logicBook.getAllBook()){
+            publishedHouse.add(b.getPublishedHouse());
+        }
+
+        for(String s : publishedHouse){
+            print(s);
+        }
+    }
+
+    public void viewAuthor(){
+        Set<String> author = new HashSet<>();
+
+        for(Book b : logicBook.getAllBook()){
+            author.add(b.getAuthor());
+        }
+
+        for(String s : author){
+            print(s);
+        }
     }
 
     public Option choseOption(int number){
@@ -86,9 +116,9 @@ public class ViewBook {
         }
     }
 
-    public void printBooks(List<Book> list){
+    public void viewBooks(List<Book> list){
         for(Book book : list){
-            print(book);
+            print(book.toString());
         }
     }
 

@@ -21,16 +21,15 @@ c)	список книг, выпущенных после заданного г�
 
  */
 public class Book {
-    private static volatile AtomicInteger count = new AtomicInteger(0);
-    private int id;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private final int id;
     private String title;
     private String author;
     private String publishedHouse;
     private int yearOfPublication;
-    private String quantityOfSheets;
-    private String price;
+    private int quantityOfSheets;
+    private double price;
     private Binding typeBinding;
-    private int abra;
 
     public Book(){
         this.id = count.getAndIncrement();
@@ -62,7 +61,7 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets) {
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, int quantityOfSheets) {
         this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
@@ -71,7 +70,7 @@ public class Book {
         this.quantityOfSheets = quantityOfSheets;
     }
 
-    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price) {
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, int quantityOfSheets, double price) {
         this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
@@ -81,7 +80,7 @@ public class Book {
         this.price = price;
     }
 
-    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price, Binding typeBinding) {
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, int quantityOfSheets, double price, Binding typeBinding) {
         this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
@@ -92,11 +91,11 @@ public class Book {
         this.typeBinding = typeBinding;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -120,7 +119,7 @@ public class Book {
         return yearOfPublication;
     }
 
-    public String getQuantityOfSheets() {
+    public int getQuantityOfSheets() {
         return quantityOfSheets;
     }
 
@@ -141,5 +140,17 @@ public class Book {
         return Objects.hash(id, title, author, publishedHouse, yearOfPublication, quantityOfSheets, price, typeBinding);
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", publishedHouse='" + publishedHouse + '\'' +
+                ", yearOfPublication=" + yearOfPublication +
+                ", quantityOfSheets=" + quantityOfSheets +
+                ", price=" + price +
+                ", typeBinding=" + typeBinding +
+                '}';
+    }
 }

@@ -1,7 +1,6 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task09;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class BookShelf {
     private ArrayList<Book> books = new ArrayList<>();
