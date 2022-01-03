@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class BookShelf {
     private ArrayList<Book> books = new ArrayList<>();
-    private static volatile AtomicInteger id = new AtomicInteger(0);
 
     public BookShelf() {
     }
@@ -28,13 +27,5 @@ public class BookShelf {
 
     public void removeBook(Book book){
             books.remove(book);
-    }
-
-    public static AtomicInteger getId(){
-        return id;
-    }
-
-    public int getTotalAmount(){
-        return id.get();
     }
 }

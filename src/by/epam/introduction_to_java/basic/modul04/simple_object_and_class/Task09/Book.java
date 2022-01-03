@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
 9.	Создать класс Book, спецификация которого приведена ниже.
@@ -20,6 +21,7 @@ c)	список книг, выпущенных после заданного г�
 
  */
 public class Book {
+    private static volatile AtomicInteger count = new AtomicInteger(0);
     private int id;
     private String title;
     private String author;
@@ -28,31 +30,32 @@ public class Book {
     private String quantityOfSheets;
     private String price;
     private Binding typeBinding;
+    private int abra;
 
     public Book(){
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
     }
 
     public Book(String title){
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
     }
 
     public Book(String title, String author) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
     }
 
     public Book(String title, String author, String publishedHouse) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
     }
 
     public Book(String title, String author, String publishedHouse, int yearOfPublication) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -60,7 +63,7 @@ public class Book {
     }
 
     public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -69,7 +72,7 @@ public class Book {
     }
 
     public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -79,7 +82,7 @@ public class Book {
     }
 
     public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price, Binding typeBinding) {
-        this.id = BookShelf.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -138,17 +141,5 @@ public class Book {
         return Objects.hash(id, title, author, publishedHouse, yearOfPublication, quantityOfSheets, price, typeBinding);
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", publishedHouse='" + publishedHouse + '\'' +
-                ", yearOfPublication=" + yearOfPublication +
-                ", quantityOfSheets='" + quantityOfSheets + '\'' +
-                ", price='" + price + '\'' +
-                ", typeBinding=" + typeBinding +
-                '}';
-    }
+
 }
