@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 Создать второй класс,  агрегирующий массив типа Customer, с подходящими конструкторами и методами.
  */
 public class SecondClass {
-    private static volatile AtomicInteger id = new AtomicInteger(0);
     private ArrayList<Customer> customers = new ArrayList<>();
 
     public SecondClass(){}
@@ -31,13 +30,5 @@ public class SecondClass {
 
     public void removeCustomer(Customer customer){
          customers.remove(customer);
-    }
-
-    public static AtomicInteger getId() {
-        return id;
-    }
-
-    public int getTotalCustomers(){
-        return id.get();
     }
 }

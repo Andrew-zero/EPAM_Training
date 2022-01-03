@@ -1,6 +1,8 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08;
 
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /*
 Создать класс Customer, спецификация которого приведена ниже.
 
@@ -17,6 +19,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
  */
 public class Customer {
     private final int id;
+    private static volatile AtomicInteger count = new AtomicInteger(0);
 
     private int bankAccountNumber;
     private String lastName;
@@ -26,43 +29,43 @@ public class Customer {
     private int creditCardNumber;
 
     public Customer() {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
     }
 
     public Customer(int bankAccountNumber) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
     }
 
     public Customer(int bankAccountNumber, String lastName) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
     public Customer(String lastName, String firstName, String middleName) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
     }
 
     public Customer(int bankAccountNumber, String lastName, Address address) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.address = address;
     }
 
     public Customer(int bankAccountNumber, String lastName, Address address, int creditCardNumber) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.address = address;
@@ -70,7 +73,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -78,7 +81,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -87,7 +90,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, int creditCardNumber) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -96,7 +99,7 @@ public class Customer {
     }
 
     public Customer(int bankAccountNumber, String lastName, String firstName, String middleName, Address address, int creditCardNumber) {
-        this.id = SecondClass.getId().getAndIncrement();
+        this.id = count.getAndIncrement();
         this.bankAccountNumber = bankAccountNumber;
         this.lastName = lastName;
         this.firstName = firstName;
