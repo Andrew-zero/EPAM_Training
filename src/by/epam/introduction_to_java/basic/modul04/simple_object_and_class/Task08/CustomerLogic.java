@@ -90,10 +90,6 @@ public class CustomerLogic {
         return result;
     }
 
-    public boolean checkValueOptions(int number) {
-        return number <= Option.values().length;
-    }
-
     public static boolean checkValueCreditCard(int number) {
         return number > 0 && number < COUNT_NUMBERS_IN_CREDIT_CARD;
     }
