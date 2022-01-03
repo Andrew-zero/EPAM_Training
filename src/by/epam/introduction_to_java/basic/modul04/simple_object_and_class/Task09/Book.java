@@ -29,37 +29,37 @@ public class Book {
     private Binding typeBinding;
 
     public Book(){
-        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.id = BookShelf.getId().getAndIncrement();
     }
 
     public Book(String title){
-        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
     }
 
     public Book(String title, String author) {
-        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
     }
 
     public Book(String title, String author, String publishedHouse) {
-        this.id = BookShelf.atomicInteger.getAndIncrement();
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
     }
 
-    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication) {
-        this.id = id;
+    public Book(String title, String author, String publishedHouse, int yearOfPublication) {
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
         this.yearOfPublication = yearOfPublication;
     }
 
-    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets) {
-        this.id = id;
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets) {
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -67,8 +67,8 @@ public class Book {
         this.quantityOfSheets = quantityOfSheets;
     }
 
-    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price) {
-        this.id = id;
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price) {
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
@@ -77,8 +77,8 @@ public class Book {
         this.price = price;
     }
 
-    public Book(int id, String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price, Binding typeBinding) {
-        this.id = id;
+    public Book(String title, String author, String publishedHouse, int yearOfPublication, String quantityOfSheets, String price, Binding typeBinding) {
+        this.id = BookShelf.getId().getAndIncrement();
         this.title = title;
         this.author = author;
         this.publishedHouse = publishedHouse;
