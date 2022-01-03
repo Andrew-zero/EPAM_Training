@@ -4,9 +4,15 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /*
 Задать критерии выбора данных и вывести эти данные на консоль.
+
+Найти и вывести:
+a)	список книг заданного автора;
+b)	список книг, выпущенных заданным издательством;
+c)	список книг, выпущенных после заданного года.
  */
 public class ViewBook {
     private LogicBook logicBook;
@@ -17,7 +23,37 @@ public class ViewBook {
         this.logicBook = logicBook;
     }
 
-    public int inputCriteria(){
+    public List<Book> resultAction(Option option){
+        List<Book> listBook;
+
+        switch(option){
+            case ONE -> {
+                print("Введите автора:->");
+                listBook = logicBook.choseAuthor(inputString());
+            }
+            case TWO -> {
+                print("Введите издательство:->");
+                listBook = logicBook.chosePublishedHouse(inputString());
+            }
+            case THREE -> {
+                print("Введите год предшествующий выпуску книг:->");
+                listBook = logicBook.choseBookAfterInputYear(inputDigit());
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + option);
+        }
+
+        return listBook;
+    }
+
+    public Option choseOption(int number){
+        if(!(number >= 0 && number < Option.values().length)){
+            throw new IllegalArgumentException("Выбрана не верная опция");
+        }
+
+        return Option.values()[number];
+    }
+
+    public int inputDigit(){
         int number = 0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -29,6 +65,18 @@ public class ViewBook {
         return number;
     }
 
+    public String inputString(){
+        String string = "";
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            string = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return string;
+    }
+
     public void choseCriteria(){
         String message = "Выберите критерий выбора данных: ";
         print(message);
@@ -38,7 +86,13 @@ public class ViewBook {
         }
     }
 
-    public void printBook(Book book){
+    public void printBooks(List<Book> list){
+        for(Book book : list){
+            print(book);
+        }
+    }
+
+    public void print(Book book){
         System.out.println(book.toString());
     }
 
