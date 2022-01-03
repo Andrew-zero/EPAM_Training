@@ -27,7 +27,7 @@ public class CustomerView {
         arrayList.forEach((customer) -> System.out.println(customer.toString()));
     }
 
-    public ArrayList<Customer> returnResultAction(Options option) {
+    public ArrayList<Customer> returnResultAction(Option option) {
         ArrayList<Customer> customers;
 
         switch (option) {
@@ -55,13 +55,13 @@ public class CustomerView {
         return customers;
     }
 
-    public Options pickOption(int number) {
+    public Option pickOption(int number) {
 
-        if (!(number >= 0 && number < Options.values().length)) {
+        if (!(number >= 0 && number < Option.values().length)) {
             throw new IllegalArgumentException("Выбор опции не верен.");
         }
 
-        return Options.values()[number];
+        return Option.values()[number];
     }
 
     public int inputNumber() {
@@ -80,7 +80,7 @@ public class CustomerView {
     public void choseOption() {
         System.out.println("Выберите критерий выбора данных: ");
 
-        for (Options o : Options.values()) {
+        for (Option o : Option.values()) {
             System.out.println(o.ordinal() + " - " + o.getDiscribe());
         }
     }

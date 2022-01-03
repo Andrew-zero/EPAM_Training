@@ -1,15 +1,13 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08;
 
-import java.util.Enumeration;
-
-public enum Options {
+public enum Option {
     ONE("Cписок покупателей в алфавитном порядке", 1),
     TWO("Cписок покупателей, у которых номер кредитной карточки находится в заданном интервале", 2);
 
     private int number;
     private String discribe;
 
-    Options(String discribe, int number) {
+    Option(String discribe, int number) {
         this.discribe = discribe;
         this.number = number;
     }

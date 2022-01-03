@@ -91,7 +91,7 @@ public class CustomerLogic {
     }
 
     public boolean checkValueOptions(int number) {
-        return number <= Options.values().length;
+        return number <= Option.values().length;
     }
 
     public static boolean checkValueCreditCard(int number) {
