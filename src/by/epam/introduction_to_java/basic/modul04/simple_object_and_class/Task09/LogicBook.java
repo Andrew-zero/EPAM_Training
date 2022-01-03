@@ -21,6 +21,11 @@ public class LogicBook {
         this.bookShelf = bookShelf;
     }
 
+    public void initializationBook(){
+
+
+    }
+
     public List<Book> choseBookAfterInputYear(int year) {
         ArrayList<Book> listBooks = new ArrayList<>();
 
