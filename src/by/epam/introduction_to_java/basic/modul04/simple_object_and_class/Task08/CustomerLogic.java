@@ -28,7 +28,7 @@ public class CustomerLogic {
     }
 
     public void initializationCustomer() {
-        ArrayList<Customer> customerArrayList = secondClass.getCustomers();
+        ArrayList<Customer> customerArrayList = secondClass.getAllCustomers();
 
         for (int i = 0; i < 30; i++) {
             if (i % 2 == 0) {
@@ -64,7 +64,7 @@ public class CustomerLogic {
     }
 
     public ArrayList<Customer> getAllCustomers() {
-        return secondClass.getCustomers();
+        return secondClass.getAllCustomers();
     }
 
     public ArrayList<Customer> sortByAlphabet(ArrayList<Customer> customerList) {

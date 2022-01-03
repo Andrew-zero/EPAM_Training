@@ -17,7 +17,7 @@ public class SecondClass {
         this.customers = customers;
     }
 
-    public ArrayList<Customer> getCustomers() {
+    public ArrayList<Customer> getAllCustomers() {
         return customers;
     }
 
@@ -25,7 +25,19 @@ public class SecondClass {
         this.customers = customers;
     }
 
+    public void addCustomer(Customer customer){
+        customers.add(customer);
+    }
+
+    public void removeCustomer(Customer customer){
+         customers.remove(customer);
+    }
+
     public static AtomicInteger getId() {
         return id;
+    }
+
+    public int getTotalCustomers(){
+        return id.get();
     }
 }
