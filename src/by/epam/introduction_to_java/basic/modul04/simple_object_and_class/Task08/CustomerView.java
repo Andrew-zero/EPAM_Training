@@ -81,7 +81,7 @@ public class CustomerView {
         System.out.println("Выберите критерий выбора данных: ");
 
         for (Option o : Option.values()) {
-            System.out.println(o.ordinal() + " - " + o.getDiscribe());
+            System.out.println(o.ordinal() + " - " + o.getDescribe());
         }
     }
 
