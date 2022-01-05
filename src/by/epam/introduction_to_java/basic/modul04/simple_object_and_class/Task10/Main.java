@@ -1,6 +1,12 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
 
 
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.Option;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Logic.LogicAirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model.AirLine;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model.AirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.View.ViewAirLine;
+
 import java.util.List;
 
 public class Main {

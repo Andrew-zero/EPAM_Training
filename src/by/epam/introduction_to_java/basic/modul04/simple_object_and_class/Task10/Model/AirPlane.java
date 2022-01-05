@@ -1,8 +1,9 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model;
 
 
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06.Watch;
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model.Plane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.DayOfWeek;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.Destination;
 
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ a)	список рейсов для заданного пункта назнач
 b)	список рейсов для заданного дня недели;
 c)	список рейсов для заданного дня недели, время вылета для которых больше заданного.
  */
-public class AirPlane {
+public class AirPlane extends PassangerPlane {
     private Destination destination;
     private int flightNumber;
     private Plane plane;

@@ -1,6 +1,11 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.View;
 
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06.Watch;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.DayOfWeek;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.Destination;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Enum.Option;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Logic.LogicAirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model.AirPlane;
 
 import java.io.BufferedReader;
 import java.io.IOException;

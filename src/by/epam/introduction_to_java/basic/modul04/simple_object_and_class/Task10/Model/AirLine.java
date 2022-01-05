@@ -1,5 +1,7 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model;
 
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Model.AirPlane;
 
 import java.util.ArrayList;
 import java.util.List;
