@@ -46,8 +46,13 @@ public class ViewAirLine {
                 print("Выберите день недели:->");
                 DayOfWeek dayOfWeek = inputDayOfWeek();
                 print("Введите время предшествующее времени вылета рейсов:->");
-                print("Формат установки времени hh:min:sec");
-                Watch watch = new Watch(inputNumber(), inputNumber(), inputNumber());
+                Watch watch = new Watch();
+                print("Введите часы:->");
+                watch.setHour(inputNumber());
+                print("Введите минуты:->");
+                watch.setMin(inputNumber());
+                print("Введите секунды:->");
+                watch.setSec(inputNumber());
                 airPlane = logicAirPlane.findFlightDayAfterTime(dayOfWeek, watch);
             }
             default -> throw new IllegalStateException("Unexpected value: " + option);
@@ -75,8 +80,8 @@ public class ViewAirLine {
             e.printStackTrace();
         }
 
-        for(DayOfWeek d : DayOfWeek.values()){
-            if(s.equals(d.toString())){
+        for (DayOfWeek d : DayOfWeek.values()) {
+            if (s.equals(d.toString())) {
                 dayOfWeek = d;
             }
         }
@@ -144,8 +149,8 @@ public class ViewAirLine {
         print(airPlane.toString());
     }
 
-    public void viewDayOfWeek(){
-        for(DayOfWeek d : DayOfWeek.values()){
+    public void viewDayOfWeek() {
+        for (DayOfWeek d : DayOfWeek.values()) {
             System.out.println(d);
         }
     }
