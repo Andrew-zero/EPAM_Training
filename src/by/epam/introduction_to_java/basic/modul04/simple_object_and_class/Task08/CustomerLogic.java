@@ -28,9 +28,10 @@ public class CustomerLogic {
     }
 
     public void initializationCustomer() {
+        int numberCustomer = 30;
         ArrayList<Customer> customerArrayList = getAllCustomers();
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < numberCustomer; i++) {
             if (i % 2 == 0) {
                 String lastName = "CustomerLastName " + i;
                 String firstName = "CustomerFirstName " + i;

@@ -23,9 +23,9 @@ public class Watch {
     private int hour;
 
     public Watch() {
-        sec = 0;
-        min = 0;
         hour = 0;
+        min = 0;
+        sec = 0;
     }
 
     public Watch(int hour, int min, int sec) {

@@ -24,6 +24,13 @@ public class LogicAirPlane {
     }
 
     public void initialization(){
+        int numberPlane = 20;
+        List<AirPlane> airPlanes = getAllAirPlanes();
+
+        for(int i = 0; i < numberPlane; i ++){
+
+        }
+
 
     }
 

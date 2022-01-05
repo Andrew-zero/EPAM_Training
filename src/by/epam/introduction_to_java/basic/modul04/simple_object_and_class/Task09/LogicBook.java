@@ -23,9 +23,10 @@ public class LogicBook {
     }
 
     public void initializationBook() {
+        int numberBook = 20;
         ArrayList<Book> bookArrayList = getAllBook();
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < numberBook; i++) {
             String title = "Strange things" + i;
             String publishedHouse;
             int year = 2000 + i;
