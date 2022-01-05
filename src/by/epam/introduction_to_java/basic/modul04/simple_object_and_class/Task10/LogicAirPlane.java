@@ -1,8 +1,11 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
 
 
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06.Watch;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
 Найти и вывести:
@@ -20,22 +23,51 @@ public class LogicAirPlane {
         this.airLine = airLine;
     }
 
+    public void initialization(){
 
+    }
 
+    public List<AirPlane> findFlightDayAfterTime(DayOfWeek dayOfWeek, Watch watch) {
+        List<AirPlane> airPlanes;
 
-    public List<AirPlane> findAllFlightDestination(Destination destination){
+        airPlanes = getAllAirPlanes().stream()
+                .filter(airPlane -> airPlane.getDayOfWeek().equals(dayOfWeek))
+                .filter(airPlane -> airPlane.getDepartureTime().getHour() > watch.getHour()
+                        || (airPlane.getDepartureTime().getHour() == watch.getHour()
+                            && airPlane.getDepartureTime().getMin() > watch.getMin())
+                        || (airPlane.getDepartureTime().getHour() == watch.getHour()
+                            && airPlane.getDepartureTime().getMin() == watch.getMin())
+                            && airPlane.getDepartureTime().getSec() > watch.getSec())
+                .collect(Collectors.toList());
+
+        return airPlanes;
+    }
+
+    public List<AirPlane> findFlightFromDay(DayOfWeek dayOfWeek) {
         List<AirPlane> airPlanes = new ArrayList<>();
 
-        for(AirPlane airPlane : getAllAirPlanes()){
-            if(airPlane.getDestination().equals(destination)){
-                    airPlanes.add(airPlane);
+        for (AirPlane airPlane : getAllAirPlanes()) {
+            if (airPlane.getDayOfWeek().equals(dayOfWeek)) {
+                airPlanes.add(airPlane);
             }
         }
 
         return airPlanes;
     }
 
-    public List<AirPlane> getAllAirPlanes(){
+    public List<AirPlane> findAllFlightDestination(Destination destination) {
+        List<AirPlane> airPlanes = new ArrayList<>();
+
+        for (AirPlane airPlane : getAllAirPlanes()) {
+            if (airPlane.getDestination().equals(destination)) {
+                airPlanes.add(airPlane);
+            }
+        }
+
+        return airPlanes;
+    }
+
+    public List<AirPlane> getAllAirPlanes() {
         return airLine.getAllAirPlanes();
     }
 

@@ -1,5 +1,7 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10;
 
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06.Watch;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,6 +24,37 @@ public class ViewAirLine {
         this.logicAirPlane = logicAirPlane;
     }
 
+    public List<AirPlane> resultAction(Option option) {
+        List<AirPlane> airPlane;
+
+        switch (option) {
+            case ONE -> {
+                print("Доступны следующие пункты назначения: ");
+                viewDestination();
+                print("Выберите пункт назначения:->");
+                airPlane = logicAirPlane.findAllFlightDestination(inputDestination());
+            }
+            case TWO -> {
+                print("Доступны следующие дни недели: ");
+                viewDayOfWeek();
+                print("Выберите день недели:->");
+                airPlane = logicAirPlane.findFlightFromDay(inputDayOfWeek());
+            }
+            case THREE -> {
+                print("Доступны следующие дни недели: ");
+                viewDayOfWeek();
+                print("Выберите день недели:->");
+                DayOfWeek dayOfWeek = inputDayOfWeek();
+                print("Введите время предшествующее времени вылета рейсов:->");
+                print("Формат установки времени hh:min:sec");
+                Watch watch = new Watch(inputNumber(), inputNumber(), inputNumber());
+                airPlane = logicAirPlane.findFlightDayAfterTime(dayOfWeek, watch);
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + option);
+        }
+
+        return airPlane;
+    }
 
     public Option returnOption(int number) {
         if (!(number >= 0 && number < Option.values().length)) {
@@ -31,8 +64,49 @@ public class ViewAirLine {
         return Option.values()[number];
     }
 
+    public DayOfWeek inputDayOfWeek() {
+        DayOfWeek dayOfWeek = null;
+        String s = "";
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            s = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for(DayOfWeek d : DayOfWeek.values()){
+            if(s.equals(d.toString())){
+                dayOfWeek = d;
+            }
+        }
+
+        return dayOfWeek;
+    }
+
+    public Destination inputDestination() {
+        Destination destination = null;
+        String s = "";
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            s = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (Destination d : Destination.values()) {
+            if (s.equals(d.toString())) {
+                destination = d;
+            }
+        }
+
+        return destination;
+    }
+
     public int inputNumber() {
         int number = -1;
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try {
@@ -53,14 +127,33 @@ public class ViewAirLine {
         }
     }
 
-    public void printAirPlanes(List<AirPlane> airPlaneList) {
-        for (AirPlane a : airPlaneList) {
-            print(a.toString());
+    public void viewFlightFromAirLines(List<AirPlane> airPlaneList) {
+        for (AirPlane airPlane : airPlaneList) {
+            String message = "Flight № " + airPlane.getFlightNumber();
+            print(message);
         }
     }
 
-    public void printAirPlane(AirPlane airPlane) {
+    public void viewAirPlanes(List<AirPlane> airPlaneList) {
+        for (AirPlane airPlane : airPlaneList) {
+            print(airPlane.toString());
+        }
+    }
+
+    public void viewAirPlane(AirPlane airPlane) {
         print(airPlane.toString());
+    }
+
+    public void viewDayOfWeek(){
+        for(DayOfWeek d : DayOfWeek.values()){
+            System.out.println(d);
+        }
+    }
+
+    public void viewDestination() {
+        for (Destination d : Destination.values()) {
+            System.out.println(d);
+        }
     }
 
     public void print(String s) {

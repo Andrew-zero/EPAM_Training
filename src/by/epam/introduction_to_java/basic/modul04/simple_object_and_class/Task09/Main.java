@@ -11,13 +11,14 @@ public class Main {
         BookShelf bookShelf = new BookShelf();
         LogicBook logicBook = new LogicBook(bookShelf);
         ViewBook viewBook = new ViewBook(logicBook);
+        logicBook.setViewBook(viewBook);
 
         logicBook.initializationBook();
         viewBook.viewBooks(logicBook.getAllBook());
 
         viewBook.choseCriteria();
         Option option = viewBook.choseOption(viewBook.inputDigit());
-        bookArrayList = viewBook.resultAction(option);
+        bookArrayList = logicBook.resultAction(option);
 
         viewBook.viewBooks(bookArrayList);
     }

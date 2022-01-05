@@ -8,6 +8,6 @@ public class PassangerPlane extends Plane {
 
     @Override
     public void fly() {
-        ViewAirLine.print("Могу летать");
+        System.out.println("Могу летать");
     }
 }

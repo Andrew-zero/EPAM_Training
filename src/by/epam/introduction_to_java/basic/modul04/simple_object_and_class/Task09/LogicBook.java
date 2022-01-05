@@ -13,6 +13,7 @@ c)	список книг, выпущенных после заданного г�
  */
 public class LogicBook {
     private BookShelf bookShelf;
+    private ViewBook viewBook;
 
     public LogicBook() {
     }
@@ -43,7 +44,32 @@ public class LogicBook {
             }
             bookArrayList.add(new Book(title, author, publishedHouse, year, quantityOfSheets, price, binding));
         }
+    }
 
+    public List<Book> resultAction(Option option){
+        List<Book> listBook;
+
+        switch(option){
+            case ONE -> {
+                viewBook.print("Доступны следующие авторы: ");
+                viewBook.viewAuthor();
+                viewBook.print("Выберите автора:->");
+                listBook = choseAuthor(viewBook.inputString());
+            }
+            case TWO -> {
+                viewBook.print("Доступны следующие издательства: ");
+                viewBook.viewPublishedHouse();
+                viewBook.print("Введите издательство:->");
+                listBook = chosePublishedHouse(viewBook.inputString());
+            }
+            case THREE -> {
+                viewBook.print("Введите год предшествующий выпуску книг:->");
+                listBook = choseBookAfterInputYear(viewBook.inputDigit());
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + option);
+        }
+
+        return listBook;
     }
 
     public List<Book> choseBookAfterInputYear(int year) {
@@ -84,4 +110,11 @@ public class LogicBook {
         this.bookShelf = bookShelf;
     }
 
+    public ViewBook getViewBook() {
+        return viewBook;
+    }
+
+    public void setViewBook(ViewBook viewBook) {
+        this.viewBook = viewBook;
+    }
 }

@@ -25,31 +25,7 @@ public class ViewBook {
         this.logicBook = logicBook;
     }
 
-    public List<Book> resultAction(Option option){
-        List<Book> listBook;
 
-        switch(option){
-            case ONE -> {
-                print("Доступны следующие авторы: ");
-                viewAuthor();
-                print("Выберите автора:->");
-                listBook = logicBook.choseAuthor(inputString());
-            }
-            case TWO -> {
-                print("Доступны следующие издательства: ");
-                viewPublishedHouse();
-                print("Введите издательство:->");
-                listBook = logicBook.chosePublishedHouse(inputString());
-            }
-            case THREE -> {
-                print("Введите год предшествующий выпуску книг:->");
-                listBook = logicBook.choseBookAfterInputYear(inputDigit());
-            }
-            default -> throw new IllegalStateException("Unexpected value: " + option);
-        }
-
-        return listBook;
-    }
 
     public void viewPublishedHouse(){
         Set<String> publishedHouse = new HashSet<>();

@@ -11,6 +11,12 @@ import java.util.Objects;
 В случае недопустимых значений полей поле устанавливается в значение 0.
 Создать методы изменения времени на заданное количество часов, минут и секунд.
  */
+
+//Время:
+//сутки - 24 часа от 0 до 23
+//час - 60 минут от 0 до 59
+//минута - 60 секунд от 0 до 59
+
 public class Watch {
     private int sec;
     private int min;
@@ -22,10 +28,10 @@ public class Watch {
         hour = 0;
     }
 
-    public Watch(int sec, int min, int hour) {
+    public Watch(int hour, int min, int sec) {
+        this.hour = hour;
         this.sec = sec;
         this.min = min;
-        this.hour = hour;
     }
 
     public int getSec() {
@@ -75,5 +81,14 @@ public class Watch {
     @Override
     public int hashCode() {
         return Objects.hash(sec, min, hour);
+    }
+
+    @Override
+    public String toString() {
+        return "Watch{" +
+                "sec=" + sec +
+                ", min=" + min +
+                ", hour=" + hour +
+                '}';
     }
 }
