@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul04.agregation_and_composition;
+package by.epam.introduction_to_java.basic.modul04.agregation_and_composition.Task02;
 
 
 /*
