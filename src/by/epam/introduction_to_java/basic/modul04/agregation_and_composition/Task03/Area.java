@@ -65,10 +65,10 @@ public class Area {
         int capacity = cities.length - 1;
         City[] newCities = new City[capacity];
 
-        for (int i = 0, count = 0; i < cities.length; i++) {
+        for (int i = 0, j = 0; i < cities.length; i++) {
             if (!cities[i].equals(city)) {
-                newCities[count] = cities[i];
-                count++;
+                newCities[j] = cities[i];
+                j++;
             }
         }
 
