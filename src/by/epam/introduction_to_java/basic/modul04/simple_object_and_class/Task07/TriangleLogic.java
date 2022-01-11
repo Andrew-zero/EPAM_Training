@@ -10,6 +10,13 @@ public class TriangleLogic {
         return triangle.getSideA() + triangle.getSideB() + triangle.getSideC();
     }
 
+    public static double getSide(Point a, Point b) {
+        double result;
+        result = Math.sqrt(Math.pow((b.getX() - a.getX()), 2) + Math.pow((b.getY() - a.getY()), 2));
+
+        return result;
+    }
+
     public static double squareByTreeSide(Triangle triangle) {
         double p = perimeter(triangle) / 2;
 

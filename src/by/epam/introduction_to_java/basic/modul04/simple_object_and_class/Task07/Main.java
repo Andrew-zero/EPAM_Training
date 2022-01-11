@@ -9,12 +9,9 @@ public class Main {
         triangle.setPointB(new Point(-3, 9));
         triangle.setPointC(new Point(7, -10));
 
-        double sideA = Math.sqrt(Math.pow(triangle.getPointB().getX() - triangle.getPointC().getX(), 2) +
-                Math.pow(triangle.getPointB().getY() - triangle.getPointC().getY(), 2));
-        double sideB = Math.sqrt(Math.pow(triangle.getPointA().getX() - triangle.getPointC().getX(), 2) +
-                Math.pow(triangle.getPointA().getY() - triangle.getPointC().getY(), 2));
-        double sideC = Math.sqrt(Math.pow(triangle.getPointB().getX() - triangle.getPointA().getX(), 2) +
-                Math.pow(triangle.getPointB().getY() - triangle.getPointA().getY(), 2));
+        double sideA = TriangleLogic.getSide(triangle.getPointC(), triangle.getPointB());
+        double sideB = TriangleLogic.getSide(triangle.getPointC(), triangle.getPointA());
+        double sideC = TriangleLogic.getSide(triangle.getPointA(), triangle.getPointB());
 
         triangle.setSideA(sideA);
         triangle.setSideB(sideB);
