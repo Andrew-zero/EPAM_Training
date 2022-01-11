@@ -16,21 +16,21 @@ public class ViewTrain {
     public ViewTrain() {
     }
 
-    public void viewInfo(Train[] depo, int trainNumber) {
-        for (int i = 0; i < depo.length; i++) {
-            if (depo[i].getTrainNumber() == trainNumber) {
+    public void viewInfo(Train[] trains, int trainNumber) {
+        for (int i = 0; i < trains.length; i++) {
+            if (trains[i].getTrainNumber() == trainNumber) {
                 String message = "Destination - %s, train number - %d, departure time - %t";
-                helpView(message, depo[i].getDestination(), depo[i].getTrainNumber(), depo[i].getDepartTime());
+                helpView(message, trains[i].getDestination(), trains[i].getTrainNumber(), trains[i].getDepartTime());
             }
-            if (i == depo.length - 1 && depo[i].getTrainNumber() != trainNumber) {
+            if (i == trains.length - 1 && trains[i].getTrainNumber() != trainNumber) {
                 String message = "Поезда с номером %s не существует.";
                 helpView(message, i);
             }
         }
     }
 
-    public void viewAllInfo(Train[] depo) {
-        for (Train train : depo) {
+    public void viewAllInfo(Train[] trains) {
+        for (Train train : trains) {
             String message = "Destination - %s, train number - %d, departure time - %t";
             helpView(message, train.getDestination(), train.getTrainNumber(), train.getDepartTime());
         }
