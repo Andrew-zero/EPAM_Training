@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.entity;
 
 public class Point {
     private double x;

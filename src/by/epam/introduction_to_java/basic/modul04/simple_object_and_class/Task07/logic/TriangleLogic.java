@@ -1,4 +1,7 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.logic;
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.entity.Point;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.entity.Triangle;
 
 /*
 Описать класс, представляющий треугольник. Предусмотреть методы для создания объектов,

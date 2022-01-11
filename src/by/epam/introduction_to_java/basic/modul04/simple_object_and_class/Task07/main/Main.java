@@ -1,4 +1,9 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.main;
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.entity.Point;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.entity.Triangle;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.logic.TriangleLogic;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task07.view.ViewHelper;
 
 public class Main {
 
