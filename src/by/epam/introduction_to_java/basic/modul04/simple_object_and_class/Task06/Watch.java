@@ -18,9 +18,9 @@ import java.util.Objects;
 //минута - 60 секунд от 0 до 59
 
 public class Watch {
-    private int sec;
-    private int min;
     private int hour;
+    private int min;
+    private int sec;
 
     public Watch() {
         hour = 0;
