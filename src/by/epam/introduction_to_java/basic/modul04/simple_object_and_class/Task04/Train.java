@@ -1,7 +1,6 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
 
 
-
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,9 +21,10 @@ public class Train {
     private int trainNumber;
     private Date departTime;
 
-    public Train(){}
+    public Train() {
+    }
 
-    public Train(int trainNumber){
+    public Train(int trainNumber) {
         this.trainNumber = trainNumber;
     }
 

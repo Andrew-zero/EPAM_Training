@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class TrainLogic {
 
-    private SourceTrainData data = new SourceTrainData();
+    private Depo data = new Depo();
 
     public TrainLogic() {
     }
