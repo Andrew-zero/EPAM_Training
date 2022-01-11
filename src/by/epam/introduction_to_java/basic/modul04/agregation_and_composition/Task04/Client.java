@@ -10,17 +10,19 @@ import java.util.Arrays;
 
 Реализовать поиск и сортировку счетов. Вычисление общей суммы по счетам.
 
-Вычисление суммы по всем счетам, имеющим положительный и отрицательный балансы отдельно.
+Вычисление суммы по всем счетам, имеющим положеитльный и отрицательный балансы отдельно.
  */
 public class Client {
     private Count[] arrayCounts;
     private String name;
 
     public Client() {
+        arrayCounts = new Count[0];
     }
 
     public Client(String name) {
         this.name = name;
+        arrayCounts = new Count[0];
     }
 
     public Client(Count[] arrayCount, String name) {
@@ -46,7 +48,7 @@ public class Client {
 
     public void addCount(Count count) {
         int capacity;
-        if (arrayCounts == null) {
+        if (arrayCounts.length == 0) {
             capacity = 1;
         } else {
             capacity = arrayCounts.length + 1;
@@ -59,12 +61,12 @@ public class Client {
         arrayCounts = newCount;
     }
 
-    public void removeCount(Count count) {
+    public void removeCount(int countNumber) {
         int capacity = arrayCounts.length - 1;
         Count[] newCount = new Count[capacity];
 
         for (int i = 0, j = 0; i < arrayCounts.length; i++) {
-            if (!(arrayCounts[i].equals(count))) {
+            if (!(arrayCounts[i].getNumberCount() == countNumber)) {
                 newCount[j] = arrayCounts[i];
                 j++;
             }
@@ -74,7 +76,7 @@ public class Client {
     }
 
     public double negativeSum() {
-        double result = 0;
+        double result = 0.0;
 
         for (Count c : arrayCounts) {
             if (c.getValue() < 0) {
@@ -86,7 +88,7 @@ public class Client {
     }
 
     public double positiveSum() {
-        double result = 0;
+        double result = 0.0;
 
         for (Count c : arrayCounts) {
             if (c.getValue() > 0) {
@@ -98,7 +100,7 @@ public class Client {
     }
 
     public double totalSum() {
-        double result = 0;
+        double result = 0.0;
 
         for (Count c : arrayCounts) {
             result += c.getValue();

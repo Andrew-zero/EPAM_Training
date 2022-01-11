@@ -3,17 +3,24 @@ package by.epam.introduction_to_java.basic.modul04.agregation_and_composition.Ta
 import java.util.Objects;
 
 public class Count {
+    private static int totalNumberCount = 0;
     private final int numberCount;
     private double value;
     private boolean block;
 
-    public Count(int numberCount){
-        this.numberCount = numberCount;
+    public Count(){
+        this.numberCount = totalNumberCount;
     }
 
-    public Count(int numberCount, boolean block) {
-        this.numberCount = numberCount;
+    public Count(boolean block) {
+        this.numberCount = totalNumberCount;
         this.value = 0;
+        this.block = block;
+    }
+
+    public Count(double value, boolean block) {
+        this.numberCount = totalNumberCount++;
+        this.value = value;
         this.block = block;
     }
 
