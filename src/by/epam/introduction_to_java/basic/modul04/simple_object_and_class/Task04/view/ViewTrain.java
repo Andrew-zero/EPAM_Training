@@ -1,5 +1,7 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.view;
 
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.Entity.Train;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,7 +57,7 @@ public class ViewTrain {
     }
 
     public void helpView(String s) {
-        System.out.printf(s);
+        System.out.print(s);
     }
 
     public void helpView(String s, int number) {

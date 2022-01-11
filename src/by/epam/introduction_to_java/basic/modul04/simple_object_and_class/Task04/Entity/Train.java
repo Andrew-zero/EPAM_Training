@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.Entity;
 
 
 import java.util.Date;
@@ -63,5 +63,14 @@ public class Train {
     @Override
     public int hashCode() {
         return Objects.hash(destination, trainNumber, departTime);
+    }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "destination='" + destination + '\'' +
+                ", trainNumber=" + trainNumber +
+                ", departTime=" + departTime +
+                '}';
     }
 }

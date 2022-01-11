@@ -1,4 +1,8 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.main;
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.Entity.Train;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.logic.TrainLogic;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.view.ViewTrain;
 
 public class Main {
 

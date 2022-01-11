@@ -1,5 +1,8 @@
-package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04;
+package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.logic;
 
+
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.Entity.Depo;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task04.Entity.Train;
 
 import java.util.Date;
 
