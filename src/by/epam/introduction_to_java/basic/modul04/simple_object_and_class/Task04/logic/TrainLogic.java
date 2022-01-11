@@ -42,61 +42,67 @@ public class TrainLogic {
         return null;
     }
 
-    public void sortByDestination(Train[] depo) {
-        int d = depo.length / 2;
+    public Train[] sortByDestination(Train[] trains) {
+        int d = trains.length / 2;
 
         while (d > 0) {
-            for (int i = 0; i < depo.length - d; i++) {
+            for (int i = 0; i < trains.length - d; i++) {
                 int j = i;
-                while ((j >= 0) && (depo[j].getDestination().compareToIgnoreCase(depo[j + d].getDestination())) < 0) {
-                    if (depo[j].getDestination().equalsIgnoreCase(depo[j + d].getDestination())) {
-                        if (depo[j].getDepartTime().getTime() > depo[j + d].getDepartTime().getTime()) {
-                            Train temp = depo[j + d];
-                            depo[j + d] = depo[j];
-                            depo[j] = temp;
+                while ((j >= 0) && (trains[j].getDestination().compareToIgnoreCase(trains[j + d].getDestination())) < 0) {
+                    if (trains[j].getDestination().equalsIgnoreCase(trains[j + d].getDestination())) {
+                        if (trains[j].getDepartTime().getTime() > trains[j + d].getDepartTime().getTime()) {
+                            Train temp = trains[j + d];
+                            trains[j + d] = trains[j];
+                            trains[j] = temp;
                         }
                     } else {
-                        Train temp = depo[j + d];
-                        depo[j + d] = depo[j];
-                        depo[j] = temp;
+                        Train temp = trains[j + d];
+                        trains[j + d] = trains[j];
+                        trains[j] = temp;
                     }
                 }
             }
             d /= 2;
         }
+
+        return trains;
     }
 
-    public void sortByNumber(Train[] depo) {
-        int d = depo.length / 2;
+    public Train[] sortByNumber(Train[] trains) {
+        int d = trains.length / 2;
 
         while (d > 0) {
-            for (int i = 0; i < depo.length - d; i++) {
+            for (int i = 0; i < trains.length - d; i++) {
                 int j = i;
-                while ((j >= 0) && (depo[j].getTrainNumber() > depo[j + d].getTrainNumber())) {
-                    int temp = depo[j].getTrainNumber();
-                    depo[j].setTrainNumber(depo[j + d].getTrainNumber());
-                    depo[j + d].setTrainNumber(temp);
+                while ((j >= 0) && (trains[j].getTrainNumber() > trains[j + d].getTrainNumber())) {
+                    int temp = trains[j].getTrainNumber();
+                    trains[j].setTrainNumber(trains[j + d].getTrainNumber());
+                    trains[j + d].setTrainNumber(temp);
                     j--;
                 }
             }
             d /= 2;
         }
+
+        return trains;
     }
 
-    public void sortByDepartureTime(Train[] depo) {
-        int d = depo.length / 2;
+    public Train[] sortByDepartureTime(Train[] trains) {
+        int d = trains.length / 2;
 
         while (d > 0) {
-            for (int i = 0; i < depo.length - d; i++) {
+            for (int i = 0; i < trains.length - d; i++) {
                 int j = i;
-                while ((j >= 0) && (depo[j].getDepartTime().getTime() > depo[j + d].getDepartTime().getTime())) {
-                    long temp = depo[j].getDepartTime().getTime();
-                    depo[j].setDepartTime(new Date(depo[j + d].getDepartTime().getTime()));
-                    depo[j + d].setDepartTime(new Date(temp));
+                while ((j >= 0) && (trains[j].getDepartTime().getTime() > trains[j + d].getDepartTime().getTime())) {
+                    long temp = trains[j].getDepartTime().getTime();
+                    trains[j].setDepartTime(new Date(trains[j + d].getDepartTime().getTime()));
+                    trains[j + d].setDepartTime(new Date(temp));
                 }
             }
             d /= 2;
         }
+
+        return trains;
     }
 
 }
