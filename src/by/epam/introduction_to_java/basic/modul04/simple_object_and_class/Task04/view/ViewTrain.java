@@ -36,6 +36,11 @@ public class ViewTrain {
         }
     }
 
+    public void viewTrain(Train train) {
+            String message = "Destination - %s, train number - %d, departure time - %t";
+            helpView(message, train.getDestination(), train.getTrainNumber(), train.getDepartTime());
+    }
+
     public int inputTrainNumber() {
         int inputNumber;
 

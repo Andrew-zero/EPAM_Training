@@ -17,15 +17,10 @@ public class Main {
 
         int trainNumber = viewTrain.inputTrainNumber();
 
-        trainLogic.getTrainByNumber(trainNumber);
-
-        trainLogic.sortByDepartureTime(trains);
-        viewTrain.viewAllInfo(trains);
-
-        trainLogic.sortByDestination(trains);
-        viewTrain.viewAllInfo(trains);
-
-        trainLogic.sortByNumber(trains);
-        viewTrain.viewAllInfo(trains);
+        viewTrain.viewTrain(trainLogic.getTrainByNumber(trainNumber));
+        viewTrain.viewAllInfo(trainLogic.sortByDepartureTime(trains));
+        viewTrain.viewAllInfo(trainLogic.sortByDestination(trains));
+        viewTrain.viewAllInfo(trainLogic.getAllTrains());
+        viewTrain.viewAllInfo(trainLogic.sortByNumber(trains));
     }
 }
