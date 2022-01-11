@@ -8,7 +8,7 @@ public class Main {
         int number;
         ArrayList<Customer> list;
 
-        SecondClass secondClass = new SecondClass();
+        CustomerBase secondClass = new CustomerBase();
         CustomerLogic customerLogic = new CustomerLogic(secondClass);
         CustomerView customerView = new CustomerView(customerLogic);
 

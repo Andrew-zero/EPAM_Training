@@ -14,16 +14,16 @@ public class CustomerLogic {
     private static final int COUNT_NUMBERS_IN_CREDIT_CARD = 1_000;
     private static final int COUNT_NUMBERS_IN_BANK_ACCOUNT = 1_000_000_000;
 
-    private SecondClass secondClass;
+    private CustomerBase secondClass;
 
     public CustomerLogic() {
     }
 
-    public CustomerLogic(SecondClass secondClass) {
+    public CustomerLogic(CustomerBase secondClass) {
         this.secondClass = secondClass;
     }
 
-    public void setSecondClass(SecondClass secondClass) {
+    public void setSecondClass(CustomerBase secondClass) {
         this.secondClass = secondClass;
     }
 

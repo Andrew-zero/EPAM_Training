@@ -7,12 +7,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 /*
 Создать второй класс,  агрегирующий массив типа Customer, с подходящими конструкторами и методами.
  */
-public class SecondClass {
+public class CustomerBase {
     private ArrayList<Customer> customers = new ArrayList<>();
 
-    public SecondClass(){}
+    public CustomerBase(){}
 
-    public SecondClass(ArrayList<Customer> customers) {
+    public CustomerBase(ArrayList<Customer> customers) {
         this.customers = customers;
     }
 
