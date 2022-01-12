@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.main;
 
 
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.logic.LogicAirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.logic.LogicAirLine;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.Airport;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirLine;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Option;
@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Airport airLine = new Airport();
-        LogicAirPlane logicAirPlane = new LogicAirPlane(airLine);
+        LogicAirLine logicAirPlane = new LogicAirLine(airLine);
         ViewAirLine viewAirLine = new ViewAirLine(logicAirPlane);
         List<AirLine> airPlanes;
 

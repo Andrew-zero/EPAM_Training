@@ -19,15 +19,16 @@ a)	список рейсов для заданного пункта назнач
 b)	список рейсов для заданного дня недели;
 c)	список рейсов для заданного дня недели, время вылета для которых больше заданного.
  */
-public class LogicAirPlane {
+public class LogicAirLine {
     private Airport airport;
 
-    public LogicAirPlane() {
+    public LogicAirLine() {
     }
 
-    public LogicAirPlane(Airport airLine) {
+    public LogicAirLine(Airport airLine) {
         this.airport = airLine;
     }
+
 
     public List<AirLine> initialization() {
         int numberPlane = 20;
@@ -40,31 +41,11 @@ public class LogicAirPlane {
             Watch departureTime;
             DayOfWeek dayOfWeek;
 
-            if (i % 3 == 0) {
-                destination = Destination.values()[i % (Destination.values().length - 1)];
-                flightNumber = i;
-                plane = new Boeing737();
-                departureTime = new Watch(i, i, i);
-                dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
-            } else if (i % 4 == 0) {
-                destination = Destination.values()[i % (Destination.values().length - 1)];
-                flightNumber = i;
-                plane = new Boeing737();
-                departureTime = new Watch(i, i, i);
-                dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
-            } else if (i % 5 == 0) {
-                destination = Destination.values()[i % (Destination.values().length - 1)];
-                flightNumber = i;
-                plane = new Boeing737();
-                departureTime = new Watch(i, i, i);
-                dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
-            } else {
-                destination = Destination.values()[i % (Destination.values().length - 1)];
-                flightNumber = i;
-                plane = new Boeing737();
-                departureTime = new Watch(i, i, i);
-                dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
-            }
+            destination = Destination.values()[i % (Destination.values().length - 1)];
+            flightNumber = i;
+            plane = new Boeing737();
+            departureTime = new Watch(i, i, i);
+            dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
 
             airPlanes.add(new AirLine(destination, flightNumber, plane, departureTime, dayOfWeek));
         }

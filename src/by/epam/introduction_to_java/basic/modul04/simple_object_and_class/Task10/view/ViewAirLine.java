@@ -4,7 +4,7 @@ import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.DayOfWeek;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Destination;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Option;
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.logic.LogicAirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.logic.LogicAirLine;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirLine;
 
 import java.io.BufferedReader;
@@ -20,12 +20,12 @@ b)	список рейсов для заданного дня недели;
 c)	список рейсов для заданного дня недели, время вылета для которых больше заданного.
  */
 public class ViewAirLine {
-    private LogicAirPlane logicAirPlane;
+    private LogicAirLine logicAirPlane;
 
     public ViewAirLine() {
     }
 
-    public ViewAirLine(LogicAirPlane logicAirPlane) {
+    public ViewAirLine(LogicAirLine logicAirPlane) {
         this.logicAirPlane = logicAirPlane;
     }
 
