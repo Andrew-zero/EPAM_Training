@@ -2,7 +2,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 
 
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.entity.Address;
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.CustomerBase;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.entity.CustomerBase;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.entity.Customer;
 
 import java.util.ArrayList;

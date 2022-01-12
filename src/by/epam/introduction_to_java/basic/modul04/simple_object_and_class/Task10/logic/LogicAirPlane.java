@@ -4,8 +4,8 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task1
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task06.Watch;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.DayOfWeek;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Destination;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.Airport;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirLine;
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirPlane;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.Boeing737;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.Plane;
 
@@ -20,18 +20,18 @@ b)	список рейсов для заданного дня недели;
 c)	список рейсов для заданного дня недели, время вылета для которых больше заданного.
  */
 public class LogicAirPlane {
-    private AirLine airLine;
+    private Airport airport;
 
     public LogicAirPlane() {
     }
 
-    public LogicAirPlane(AirLine airLine) {
-        this.airLine = airLine;
+    public LogicAirPlane(Airport airLine) {
+        this.airport = airLine;
     }
 
-    public List<AirPlane> initialization() {
+    public List<AirLine> initialization() {
         int numberPlane = 20;
-        List<AirPlane> airPlanes = getAllAirPlanes();
+        List<AirLine> airPlanes = getAllAirPlanes();
 
         for (int i = 0; i < numberPlane; i++) {
             Destination destination;
@@ -66,16 +66,16 @@ public class LogicAirPlane {
                 dayOfWeek = DayOfWeek.values()[i % (DayOfWeek.values().length - 1)];
             }
 
-            airPlanes.add(new AirPlane(destination, flightNumber, plane, departureTime, dayOfWeek));
+            airPlanes.add(new AirLine(destination, flightNumber, plane, departureTime, dayOfWeek));
         }
 
         return airPlanes;
     }
 
-    public List<AirPlane> findFlightDayAfterTime(DayOfWeek dayOfWeek, Watch watch) {
-        List<AirPlane> airPlanes;
+    public List<AirLine> findFlightDayAfterTime(DayOfWeek dayOfWeek, Watch watch) {
+        List<AirLine> airLines;
 
-        airPlanes = getAllAirPlanes().stream()
+        airLines = getAllAirPlanes().stream()
                 .filter(airPlane -> airPlane.getDayOfWeek().equals(dayOfWeek))
                 .filter(airPlane -> airPlane.getDepartureTime().getHour() > watch.getHour()
                         || (airPlane.getDepartureTime().getHour() == watch.getHour()
@@ -85,42 +85,42 @@ public class LogicAirPlane {
                         && airPlane.getDepartureTime().getSec() > watch.getSec())
                 .collect(Collectors.toList());
 
-        return airPlanes;
+        return airLines;
     }
 
-    public List<AirPlane> findFlightFromDay(DayOfWeek dayOfWeek) {
-        List<AirPlane> airPlanes = new ArrayList<>();
+    public List<AirLine> findFlightFromDay(DayOfWeek dayOfWeek) {
+        List<AirLine> airLines = new ArrayList<>();
 
-        for (AirPlane airPlane : getAllAirPlanes()) {
+        for (AirLine airPlane : getAllAirPlanes()) {
             if (airPlane.getDayOfWeek().equals(dayOfWeek)) {
-                airPlanes.add(airPlane);
+                airLines.add(airPlane);
             }
         }
 
-        return airPlanes;
+        return airLines;
     }
 
-    public List<AirPlane> findAllFlightDestination(Destination destination) {
-        List<AirPlane> airPlanes = new ArrayList<>();
+    public List<AirLine> findAllFlightDestination(Destination destination) {
+        List<AirLine> airLines = new ArrayList<>();
 
-        for (AirPlane airPlane : getAllAirPlanes()) {
+        for (AirLine airPlane : getAllAirPlanes()) {
             if (airPlane.getDestination().equals(destination)) {
-                airPlanes.add(airPlane);
+                airLines.add(airPlane);
             }
         }
 
-        return airPlanes;
+        return airLines;
     }
 
-    public List<AirPlane> getAllAirPlanes() {
-        return airLine.getAllAirPlanes();
+    public List<AirLine> getAllAirPlanes() {
+        return airport.getAllAirLines();
     }
 
-    public AirLine getAirLine() {
-        return airLine;
+    public Airport getAirport() {
+        return airport;
     }
 
-    public void setAirLine(AirLine airLine) {
-        this.airLine = airLine;
+    public void setAirport(Airport airport) {
+        this.airport = airport;
     }
 }

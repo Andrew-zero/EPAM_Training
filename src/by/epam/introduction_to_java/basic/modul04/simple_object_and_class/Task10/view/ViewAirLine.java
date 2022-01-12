@@ -5,7 +5,7 @@ import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Destination;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.Option;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.logic.LogicAirPlane;
-import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirPlane;
+import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task10.model.AirLine;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +29,8 @@ public class ViewAirLine {
         this.logicAirPlane = logicAirPlane;
     }
 
-    public List<AirPlane> resultAction(Option option) {
-        List<AirPlane> airPlane;
+    public List<AirLine> resultAction(Option option) {
+        List<AirLine> airPlane;
 
         switch (option) {
             case ONE -> {
@@ -137,20 +137,20 @@ public class ViewAirLine {
         }
     }
 
-    public void viewFlightFromAirLines(List<AirPlane> airPlaneList) {
-        for (AirPlane airPlane : airPlaneList) {
+    public void viewFlightFromAirLines(List<AirLine> airPlaneList) {
+        for (AirLine airPlane : airPlaneList) {
             String message = "Flight № " + airPlane.getFlightNumber();
             print(message);
         }
     }
 
-    public void viewAirPlanes(List<AirPlane> airPlaneList) {
-        for (AirPlane airPlane : airPlaneList) {
+    public void viewAirPlanes(List<AirLine> airPlaneList) {
+        for (AirLine airPlane : airPlaneList) {
             print(airPlane.toString());
         }
     }
 
-    public void viewAirPlane(AirPlane airPlane) {
+    public void viewAirPlane(AirLine airPlane) {
         print(airPlane.toString());
     }
 
