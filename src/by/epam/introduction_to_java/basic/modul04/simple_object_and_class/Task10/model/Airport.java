@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task1
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Airport {
     private ArrayList<AirLine> airLines = new ArrayList<>();
@@ -28,5 +29,25 @@ public class Airport {
 
     public void remove(AirLine airPlane) {
         airLines.remove(airPlane);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Airport airport = (Airport) o;
+        return Objects.equals(airLines, airport.airLines);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(airLines);
+    }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "airLines=" + airLines +
+                '}';
     }
 }

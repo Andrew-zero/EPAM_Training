@@ -61,4 +61,11 @@ public class Counter {
     public int hashCode() {
         return Objects.hash(count);
     }
+
+    @Override
+    public String toString() {
+        return "Counter{" +
+                "count=" + count +
+                '}';
+    }
 }

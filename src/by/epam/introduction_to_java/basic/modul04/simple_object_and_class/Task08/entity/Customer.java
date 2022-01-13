@@ -4,6 +4,7 @@ package by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task0
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.logic.CustomerLogic;
 import by.epam.introduction_to_java.basic.modul04.simple_object_and_class.Task08.view.CustomerView;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /*
@@ -170,6 +171,19 @@ public class Customer {
         } else {
             CustomerView.print("Введен не верный банковский счёт");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return id == customer.id && bankAccountNumber == customer.bankAccountNumber && creditCardNumber == customer.creditCardNumber && Objects.equals(lastName, customer.lastName) && Objects.equals(firstName, customer.firstName) && Objects.equals(middleName, customer.middleName) && Objects.equals(address, customer.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, bankAccountNumber, lastName, firstName, middleName, address, creditCardNumber);
     }
 
     @Override
