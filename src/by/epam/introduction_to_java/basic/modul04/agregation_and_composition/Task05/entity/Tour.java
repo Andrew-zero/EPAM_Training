@@ -19,8 +19,8 @@ public class Tour {
     private int countDay;
     private int price;
 
-    private Enum option;
-    private Enum destination;
+    private Option option;
+    private Destination destination;
 
     public Tour() {
     }
@@ -58,7 +58,7 @@ public class Tour {
         this.countDay = countDay;
     }
 
-    public Enum getOption() {
+    public Option getOption() {
         return option;
     }
 
@@ -74,15 +74,11 @@ public class Tour {
         this.price = price;
     }
 
-    public void setOption(Enum option) {
-        this.option = option;
-    }
-
-    public Enum getDestination() {
+    public Destination getDestination() {
         return destination;
     }
 
-    public void setDestination(Enum destination) {
+    public void setDestination(Destination destination) {
         this.destination = destination;
     }
 

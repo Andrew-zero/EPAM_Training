@@ -6,7 +6,7 @@ public enum Destination {
     TOKYO(1500),
     LONDON(1000),
     NEW_YORK(1500),
-    Paris(700),
+    PARIS(700),
     BEIJING(900),
     GERMANY(800);
 

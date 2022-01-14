@@ -7,14 +7,15 @@ import by.epam.introduction_to_java.basic.modul04.agregation_and_composition.Tas
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class ViewHelper {
 
     public ViewHelper() {
     }
 
-    public Destination choiceDestination(int number){
-        if(number <0 || number >= Destination.values().length){
+    public Destination choiceDestination(int number) {
+        if (number < 0 || number >= Destination.values().length) {
             throw new IllegalArgumentException();
         }
 
@@ -22,7 +23,7 @@ public class ViewHelper {
     }
 
     public Option choiceOption(int number) {
-        if(number <0 || number >= Option.values().length){
+        if (number < 0 || number >= Option.values().length) {
             throw new IllegalArgumentException();
         }
 
@@ -30,7 +31,7 @@ public class ViewHelper {
     }
 
     public boolean choiceBoolean(String s) {
-        return s.equals("Y") ? true : false;
+        return s.equals("Y");
     }
 
     public String inputChoice() {
@@ -59,17 +60,33 @@ public class ViewHelper {
         return result;
     }
 
-    public void print(Option options) {
-        for (Option o : options.values()) {
+    public void printOption() {
+        for (Option o : Option.values()) {
             print(o.ordinal() + " " + o.getDescribe());
         }
     }
 
-    public void print(Tour tour){
+    public void printDestination() {
+        for (Destination d : Destination.values()) {
+            print(d.ordinal() + " " + d.name());
+        }
+    }
+
+    public void print(Tour tour) {
         System.out.println(tour.toString());
     }
 
-    public static void print(String s) {
+    public void print(ArrayList<Tour> tours) {
+        for (Tour t : tours) {
+            System.out.println(t.toString());
+        }
+    }
+
+    public void print() {
+        System.out.println();
+    }
+
+    public void print(String s) {
         System.out.println(s);
     }
 }

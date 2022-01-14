@@ -1,11 +1,10 @@
 package by.epam.introduction_to_java.basic.modul04.agregation_and_composition.Task05.entity;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class TourBase {
-    private List<Tour> tourList = new ArrayList<>();
+    private ArrayList<Tour> tourList = new ArrayList<>();
 
     public TourBase() {
     }
@@ -14,12 +13,16 @@ public class TourBase {
         this.tourList = tourList;
     }
 
-    public List<Tour> getTourList() {
+    public ArrayList<Tour> getTourList() {
         return tourList;
     }
 
-    public void setTourList(List<Tour> tourList) {
+    public void setTourList(ArrayList<Tour> tourList) {
         this.tourList = tourList;
+    }
+
+    public void addTour(Tour tour){
+        tourList.add(tour);
     }
 
     @Override
