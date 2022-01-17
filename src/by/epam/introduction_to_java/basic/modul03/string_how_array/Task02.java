@@ -13,7 +13,7 @@ public class Task02 {
 
     }
 
-    public String replace(String str, String replaceble, String newSnippet){
+    public String replace(String str, String replaceable, String newSnippet){
 
 
         return null;
