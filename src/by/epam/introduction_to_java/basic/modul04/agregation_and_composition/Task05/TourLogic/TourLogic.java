@@ -107,6 +107,3 @@ public class TourLogic {
         return tours;
     }
 }
-/*
-Выполнить сортировку путевок
- */
