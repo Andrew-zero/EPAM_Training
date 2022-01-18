@@ -19,7 +19,6 @@ public class Task04 {
         boolean lock = true;
 
         for (int i = 0; i < chars.length; i++) {
-
             if (Character.isDigit(chars[i])) {
                 if (lock) {
                     result++;
