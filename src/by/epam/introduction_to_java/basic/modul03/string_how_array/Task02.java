@@ -9,15 +9,15 @@ import java.util.Arrays;
 
  */
 public class Task02 {
-    public static String string = "fjwoenmf word mwpermwordm;l oermword wordjwljo, 1word word2 43word342j ()@$word(&";
+    public static String testString = "fjwoenmf word mwpermwordm;l oermword wordjwljo, 1word word2 43word342j ()@$word(&";
 
     public static void main(String[] args) {
-        System.out.println(new Task02().replace(string, "word", "letter"));
+        System.out.println(new Task02().replace(testString, "word", "letter"));
     }
 
     public char[] replace(String str, String replaceable, String newSnippet) {
         char[] result = new char[0];
-        char[] chars = string.toCharArray();
+        char[] chars = str.toCharArray();
         char[] replaceableChars = replaceable.toCharArray();
         char[] newSnippetChars = newSnippet.toCharArray();
         int count = 0;
