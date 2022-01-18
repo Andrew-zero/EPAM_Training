@@ -11,15 +11,17 @@ import java.util.Arrays;
 public class Task05 {
 
     public static String testString = "  fjwoenmf word mwpermwordm;l oermword  wordjwljo,    1word word2 43word342j ()@$word(& ";
+    public static String testString2 = "  fjwoenmf  ";
 
     public static void main(String[] args) {
-        System.out.println(new Task05().removeRedundantSpace(testString));
+        System.out.println(new Task05().removeRedundantSpace(testString2));
     }
 
     public char[] removeRedundantSpace(String s) {
         char[] chars = s.toCharArray();
         int firstIndex = 0;
         int lastIndex = chars.length - 1;
+        int totalIndex = 0;
 
         while (true) {
             if (chars[firstIndex] == ' ') {
@@ -31,13 +33,15 @@ public class Task05 {
         while (true) {
             if (chars[lastIndex] == ' ') {
                 lastIndex--;
+                totalIndex++;
             } else {
                 break;
             }
         }
 
-        char[] newArray = new char[chars.length - firstIndex + lastIndex];
-        System.arraycopy(chars, firstIndex, newArray, 0, chars.length - firstIndex + lastIndex);
+        totalIndex += firstIndex;
+        char[] newArray = new char[chars.length - totalIndex];
+        System.arraycopy(chars, firstIndex, newArray, 0, chars.length - totalIndex);
 
         return newArray;
     }
