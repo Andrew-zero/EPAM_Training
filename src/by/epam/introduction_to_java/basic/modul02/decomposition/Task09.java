@@ -21,8 +21,8 @@ public class Task09 {
         p = halfP(x, y, z, t);
         resultS = Math.sqrt((p - x) * (p - y) * (p - z) * (p - t));
 
-        ViewHelper.helpViewResult(p);
-        ViewHelper.helpViewResult(resultS);
+        ViewHelper.helpView(p);
+        ViewHelper.helpView(resultS);
 
         return resultS;
     }

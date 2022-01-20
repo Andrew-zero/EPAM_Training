@@ -16,7 +16,7 @@ public class Task15 {
 
         for (int i = fromNumber; i < toNumber; i++) {
             if (isGrowingDigit(i)) {
-                ViewHelper.helpViewResult(i);
+                ViewHelper.helpView(i);
             }
         }
     }

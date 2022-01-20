@@ -2,19 +2,19 @@ package by.epam.introduction_to_java.basic.modul02.ViewHelper;
 
 public class ViewHelper {
 
-    public static void helpViewResult(int n) {
+    public static void helpView(int n) {
         System.out.println(n);
     }
 
-    public static void helpViewResult(double d) {
+    public static void helpView(double d) {
         System.out.println(d);
     }
 
-    public static void helpViewResult(boolean b) {
+    public static void helpView(boolean b) {
         System.out.println(b);
     }
 
-    public static void helpViewResult(String s) {
+    public static void helpView(String s) {
         System.out.println(s);
     }
 

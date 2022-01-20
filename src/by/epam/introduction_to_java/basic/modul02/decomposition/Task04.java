@@ -31,7 +31,7 @@ public class Task04 {
         }
 
         for(Point p : pointResult){
-            ViewHelper.helpViewResult(p.toString());
+            ViewHelper.helpView(p.toString());
         }
 
         return pointResult;

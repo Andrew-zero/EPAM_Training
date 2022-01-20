@@ -26,7 +26,7 @@ public class Task08 {
             result += array[i];
         }
 
-        ViewHelper.helpViewResult(result);
+        ViewHelper.helpView(result);
 
         return result;
     }

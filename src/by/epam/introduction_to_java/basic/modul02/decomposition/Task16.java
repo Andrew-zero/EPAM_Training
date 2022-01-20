@@ -20,13 +20,13 @@ public class Task16 {
         for (int i = fromNumber; i < toNumber; i++) {
             if (isEven(i)) {
                 sum += i;
-                ViewHelper.helpViewResult(i);
+                ViewHelper.helpView(i);
             }
         }
 
         long numberEvenDigit = countEvenDigit(sum);
-        ViewHelper.helpViewResult(String.format("Сумма нечётных цифр = %d ", sum));
-        ViewHelper.helpViewResult(String.format("Чётных цифр в сумме %d - %d", sum, numberEvenDigit));
+        ViewHelper.helpView(String.format("Сумма нечётных цифр = %d ", sum));
+        ViewHelper.helpView(String.format("Чётных цифр в сумме %d - %d", sum, numberEvenDigit));
 
         return sum;
     }

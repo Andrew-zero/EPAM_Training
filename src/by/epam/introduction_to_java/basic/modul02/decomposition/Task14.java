@@ -14,7 +14,7 @@ public class Task14 {
     public static void armstrongNumber(int k){
         for(int i = 1; i < k; i++){
             if(isArmstrongNumber(i)){
-                ViewHelper.helpViewResult(String.format("Является числом Армстронга %d", i));
+                ViewHelper.helpView(String.format("Является числом Армстронга %d", i));
             }
         }
     }

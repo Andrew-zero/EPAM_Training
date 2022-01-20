@@ -21,7 +21,7 @@ public class Task05 {
             }
         }
 
-        ViewHelper.helpViewResult(result);
+        ViewHelper.helpView(result);
 
         return result;
     }

@@ -19,11 +19,11 @@ public class Task11 {
         countTwo = countNumber(b);
 
         if (countOne > countTwo) {
-            ViewHelper.helpViewResult("Количество цифр больше в числе " + a);
+            ViewHelper.helpView("Количество цифр больше в числе " + a);
         } else if (countOne < countTwo) {
-            ViewHelper.helpViewResult("Количество цифр больше в числе " + b);
+            ViewHelper.helpView("Количество цифр больше в числе " + b);
         } else {
-            ViewHelper.helpViewResult("Одинаковое количество цифр");
+            ViewHelper.helpView("Одинаковое количество цифр");
         }
     }
 

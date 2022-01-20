@@ -3,6 +3,10 @@ package by.epam.introduction_to_java.basic.modul02.multidimensional_array;
 
 import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /*
 Магическим квадратом порядка n называется квадратная матрица размера nxn,
 составленная из чисел 1,2,3,..., n^2 так, что суммы по каждому столбцу,
@@ -14,52 +18,110 @@ import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
  */
 public class Task16 {
 
+    public int insertSideNumber() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int result = 0;
+        String message = "Введите сторону квадрата больше 2: \n->...";
 
-    public static void createMagicSquare(int sideNumber) {
+        ViewHelper.helpView(message);
+
+        try {
+            result = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    public int[][] createMagicSquare() {
+        int sideNumber = insertSideNumber();
+        int[][] resultSquare = null;
+
         if (sideNumber <= 2)
             throw new NumberFormatException();
 
         if (sideNumber % 2 != 0) {
-            createOddMagicSquare(sideNumber);
+            resultSquare = createOddMagicSquare(sideNumber);
         }
         if (sideNumber % 4 == 0) {
-            createEvenOddMagicSquare(sideNumber);
+            resultSquare = createEvenOddMagicSquare(sideNumber);
         }
         if (sideNumber % 2 == 0) {
-            createEvenEvenMagicSquare(sideNumber);
+            resultSquare = createEvenEvenMagicSquare(sideNumber);
         }
+
+        return resultSquare;
     }
 
-    private static int[][] createOddMagicSquare(int sideNumber) {
-        int[][] magicSquare;
-        int[][] initialMatrix;
-
-        magicSquare = new int[sideNumber][sideNumber];
-        initialMatrix = new int[sideNumber][sideNumber];
-
+    private int[][] createOddMagicSquare(int sideNumber) {
+        int[][] magicSquare = new int[sideNumber][sideNumber];
         int number = 1;
+        int i = 0;
+        int j = sideNumber / 2;
+        int next = sideNumber;
+        int last = (int) Math.pow(sideNumber, 2);
 
-        for(int i = 0; i < initialMatrix.length; i++){
-            for(int j = 0; j < initialMatrix[i].length; j++){
-                initialMatrix[i][j] = number;
-                number++;
+        while (number <= last) {
+            magicSquare[i][j] = number++;
+            if (number > next) {
+                next += sideNumber;
+                i++;
+            } else {
+                if (--i < 0) {
+                    i += sideNumber;
+                }
+                if (++j >= sideNumber) {
+                    j -= sideNumber;
+                }
             }
         }
 
-        ViewHelper.helpViewArray(initialMatrix);
-
-        return null;
+        return magicSquare;
     }
 
-    private static int[][] createEvenOddMagicSquare(int sideNumber) {
+    private int[][] createEvenEvenMagicSquare(int sideNumber) {
         int[][] magicSquare = new int[sideNumber][sideNumber];
 
+        magicSquare = line(magicSquare, sideNumber);
 
-        return null;
+        for (int i = 0; i < sideNumber / 2; i++) {
+            for (int j = (i + 1) & 1; j < sideNumber / 2; j += 2) {
+                reflect(magicSquare, i, j, sideNumber);
+                reflect(magicSquare, i, sideNumber - j - 1, sideNumber);
+            }
+        }
+
+        return magicSquare;
     }
 
-    private static int[][] createEvenEvenMagicSquare(int sideNumber) {
+    public int[][] line(int[][] magicSquare, int sideNumber) {
+        int number = 1;
+
+        for (int i = 0; i < sideNumber; i++) {
+            for (int j = 0; j < sideNumber; j++) {
+                magicSquare[i][j] = number++;
+            }
+        }
+
+        return magicSquare;
+    }
+
+    public int[][] reflect(int[][] magicSquare, int i, int j, int sideNumber) {
+
+        int temp = magicSquare[i][j];
+        magicSquare[i][j] = magicSquare[sideNumber - i - 1][sideNumber - j - 1];
+        magicSquare[sideNumber - i - 1][sideNumber - j - 1] = temp;
+
+        return magicSquare;
+    }
+
+    private int[][] createEvenOddMagicSquare(int sideNumber) {
         int[][] magicSquare = new int[sideNumber][sideNumber];
+        int[][] pieceMagicSquare = new int[sideNumber - 2][sideNumber - 2];
+
+        pieceMagicSquare = createEvenEvenMagicSquare(sideNumber - 2);
+
 
 
         return null;

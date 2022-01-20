@@ -16,7 +16,7 @@ public class Task06 {
     public static boolean relativePrime(int a, int b, int c) {
         boolean result = gcd(gcd(a, b), c) == 1;
 
-        ViewHelper.helpViewResult(result);
+        ViewHelper.helpView(result);
 
         return result;
     }

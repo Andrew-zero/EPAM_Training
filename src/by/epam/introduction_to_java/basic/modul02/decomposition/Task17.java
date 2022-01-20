@@ -3,8 +3,6 @@ package by.epam.introduction_to_java.basic.modul02.decomposition;
 
 import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
 
-import javax.swing.text.View;
-
 /*
 17.	Из заданного числа вычли сумму его цифр.
 Из результата вновь вычли сумму его цифр и т.д. 
@@ -21,7 +19,7 @@ public class Task17 {
             count++;
         }
 
-        ViewHelper.helpViewResult(count);
+        ViewHelper.helpView(count);
 
         return count;
     }

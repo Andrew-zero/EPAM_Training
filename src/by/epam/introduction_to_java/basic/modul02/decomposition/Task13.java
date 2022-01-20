@@ -3,8 +3,6 @@ package by.epam.introduction_to_java.basic.modul02.decomposition;
 
 import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
 
-import java.util.Arrays;
-
 /*
 13.	Два простых числа называются «близнецами», если они отличаются друг от друга на 2 (например, 41 и 43).
 Найти и напечатать все пары «близнецов» из отрезка [n,2n], где n - заданное натуральное число больше 2.
@@ -33,7 +31,7 @@ public class Task13 {
 
             if (isWrite1 && isWrite2) {
                 if (simpleNumber2 - simpleNumber1 == 2) {
-                    ViewHelper.helpViewResult("Two simple twins: " + simpleNumber1 + " " + simpleNumber2);
+                    ViewHelper.helpView("Two simple twins: " + simpleNumber1 + " " + simpleNumber2);
                 }
                 simpleNumber1 = simpleNumber2;
                 isWrite2 = false;

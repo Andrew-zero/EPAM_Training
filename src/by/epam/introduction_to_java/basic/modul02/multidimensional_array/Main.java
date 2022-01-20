@@ -1,5 +1,8 @@
 package by.epam.introduction_to_java.basic.modul02.multidimensional_array;
 
+
+import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -18,7 +21,7 @@ public class Main {
 //        Task13.sortColumnMatrix(Task13.testArray);
 //        Task14.createRandomMatrix(10,20);
 //        Task15.changeOddElementMatrix(Task15.testArray);
-        Task16.createMagicSquare(7);
+        ViewHelper.helpViewArray(new Task16().createMagicSquare());
 
     }
 }
