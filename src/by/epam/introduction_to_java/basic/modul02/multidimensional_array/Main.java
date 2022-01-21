@@ -21,7 +21,7 @@ public class Main {
 //        Task13.sortColumnMatrix(Task13.testArray);
 //        Task14.createRandomMatrix(10,20);
 //        Task15.changeOddElementMatrix(Task15.testArray);
-        ViewHelper.helpViewArray(new Task16().createMagicSquare());
+//        ViewHelper.helpViewArray(new Task16().createMagicSquare());
 
     }
 }
