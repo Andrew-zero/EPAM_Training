@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul02.multidimensional_array;
 
 import by.epam.introduction_to_java.basic.modul02.ViewHelper.ViewHelper;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -118,13 +119,70 @@ public class Task16 {
 
     private int[][] createEvenOddMagicSquare(int sideNumber) {
         int[][] magicSquare = new int[sideNumber][sideNumber];
-        int[][] pieceMagicSquare = new int[sideNumber - 2][sideNumber - 2];
+        int[][] firstPartMagicSquare;
 
-        pieceMagicSquare = createEvenEvenMagicSquare(sideNumber - 2);
+        firstPartMagicSquare = createEvenEvenMagicSquare(sideNumber - 2);
+        //copy first part
+        for (int i = 1; i < sideNumber - 1; i++) {
+            for (int j = 1; j < sideNumber - 1; j++) {
+                magicSquare[i][j] = firstPartMagicSquare[i - 1][j - 1];
+            }
+        }
 
+        int delta = (sideNumber + 1) << 1;
+        for (int i = sideNumber; i > 0; i--) {
+            for (int j = sideNumber; j > 0; j--) {
+                magicSquare[i][j] = magicSquare[i - 1][j - 1] + delta;
+            }
+        }
 
+        int last = sideNumber - 1;
+        int n = sideNumber << 1 + 1;
+        int m = sideNumber >> 1;
 
-        return null;
+        // filling in the corners
+        magicSquare[0][0] = 3 * m - 1;
+        magicSquare[0][last] = 1;
+        magicSquare[last][0] = n - 1;
+        magicSquare[last][last] = n - 3 * m + 1;
+
+        // filling up and down
+        int c = 1;
+        for (int i = 1; i < (m - 1); i++) {
+            int temp = (i << 1) + 1;
+            magicSquare[0][c] = temp;
+            magicSquare[last][c++] = n - temp;
+        }
+        for (int i = 1; i <= m; i++) {
+            int temp = i << 1;
+            magicSquare[last][c] = temp;
+            magicSquare[0][c++] = n - temp;
+        }
+
+        // filling left and right side
+        c = 2;
+        magicSquare[1][0] = (m << 1) + 1;
+        magicSquare[1][last] = n - (m << 1) + 1;
+        for (int i = 1; i <= (m >> 1); i++) {
+            int temp = 3 * m - i - 1;
+            magicSquare[c][0] = temp;
+            magicSquare[c++][last] = n - temp;
+        }
+        for (int i = 1; i <= (m >> 1) + 1; i++) {
+            int temp = 4 * m - i - 1;
+            magicSquare[c][last] = temp;
+            magicSquare[c++][0] = n - temp;
+        }
+        for (int i = 1; i < (m >> 1); i++) {
+            int temp = 3 * m + i - 1;
+            magicSquare[c][0] = temp;
+            magicSquare[c++][last] = n - temp;
+            temp = (m << 1) + i;
+            magicSquare[c][last] = temp;
+            magicSquare[c++][0] = n - temp;
+        }
+
+        return magicSquare;
     }
 
 }
