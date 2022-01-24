@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul03.work_with_regex;
+package by.epam.introduction_to_java.basic.modul03.work_with_regex.Task01;
 
 
 
@@ -14,5 +14,12 @@ package by.epam.introduction_to_java.basic.modul03.work_with_regex;
 
  */
 public class Task01 {
+
+    public static void main(String[] args) {
+
+
+    }
+
+
 
 }
