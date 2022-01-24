@@ -11,22 +11,23 @@ import java.util.regex.Pattern;
 - отсортировать лексемы в предложении по убыванию количества вхождений заданного символа, а в случае равенства – по алфавиту.
  */
 public class Parser {
-    private static Pattern pattern;
+
+
 
     public static String[] parseParagraph(String s){
-        pattern = Pattern.compile("\n");
+        Pattern pattern = Pattern.compile("\n");
 
         return pattern.split(s);
     }
 
     public static String[] parseSentence(String s){
-        pattern = Pattern.compile("[!?.]");
+        Pattern pattern = Pattern.compile("[!?.]");
 
         return pattern.split(s);
     }
 
     public static String[] parseWord(String s){
-        pattern = Pattern.compile("\\b");
+        Pattern pattern = Pattern.compile("\\b");
 
         return pattern.split(s);
     }
