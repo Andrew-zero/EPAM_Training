@@ -3,14 +3,13 @@ package by.epam.introduction_to_java.basic.modul03.work_with_regex.Task01;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /*
 Работа с регулярными выражениями (Pattern, Matcher)
 1.	Cоздать приложение, разбирающее текст (текст хранится в строке) и
 позволяющее выполнять с текстом три различных операции:
-
-
-
 
  */
 public class Logic {
@@ -51,14 +50,25 @@ public class Logic {
     public String sortByInsertionSign(String s, char c) {
         StringBuilder sb = new StringBuilder();
         String[] wordArray = Parser.parseWord(s);
+        int[] countSymbol = new int[wordArray.length];
 
-        Comparator comparator = new Comparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
+        Pattern p = Pattern.compile(String.valueOf(c));
+        Matcher matcher;
 
-                return 0;
+        for (int i = 0; i < wordArray.length; i++) {
+            int count = 0;
+            matcher = p.matcher(wordArray[i]);
+
+            while(matcher.find()){
+                count++;
             }
-        };
+
+            countSymbol[i] = count;
+        }
+
+
+
+
 
         return null;
     }
