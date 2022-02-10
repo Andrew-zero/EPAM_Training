@@ -1,8 +1,8 @@
 package by.epam.introduction_to_java.basic.modul03.work_with_regex.Task01;
 
 
-
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /*
 Работа с регулярными выражениями (Pattern, Matcher)
@@ -25,7 +25,27 @@ public class Task01 {
             "за что тот так поступил с ним.";
 
     public static void main(String[] args) {
+        String[] wordArray = Parser.parseWord(text);
+        int[] countSymbol = new int[wordArray.length];
+        char c = 'о';
 
+        Pattern p = Pattern.compile(String.valueOf(c));
+        Matcher matcher;
+
+        for (int i = 0; i < wordArray.length; i++) {
+            matcher = p.matcher(wordArray[i]);
+            int count = 0;
+            while(matcher.find()){
+                count++;
+            }
+            countSymbol[i] = count;
+        }
+
+        System.out.println(text);
+
+        for(int i = 0; i < wordArray.length; i++){
+            System.out.print(wordArray[i] + " : " + countSymbol[i] + "\n");
+        }
 
     }
 

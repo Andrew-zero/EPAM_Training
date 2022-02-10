@@ -27,7 +27,7 @@ public class Parser {
     }
 
     public static String[] parseWord(String s){
-        Pattern pattern = Pattern.compile("[\\s\\p{Punct}]");
+        Pattern pattern = Pattern.compile("[\\s\\p{Punct}]+");
 
         return pattern.split(s);
     }
