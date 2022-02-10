@@ -14,6 +14,8 @@ import java.util.regex.Pattern;
  */
 public class Logic {
 
+    int[] countSymbol;
+
     //    - отсортировать абзацы по количеству предложений;
     public String sortByCountSentence(String s) {
         StringBuilder sb = new StringBuilder();
@@ -50,7 +52,7 @@ public class Logic {
     public String sortByInsertionSign(String s, char c) {
         StringBuilder sb = new StringBuilder();
         String[] wordArray = Parser.parseWord(s);
-        int[] countSymbol = new int[wordArray.length];
+        countSymbol = new int[wordArray.length];
 
         Pattern p = Pattern.compile(String.valueOf(c));
         Matcher matcher;
@@ -68,27 +70,16 @@ public class Logic {
 
         wordArray = sortByShell(wordArray, countSymbol);
 
-        int index = 0;
-        for (int i = 0; i < countSymbol.length; i++) {
-            if (countSymbol[i] > index) {
-                index = countSymbol[i];
-
-                for (int j = 0; j < i - 1; j++) {
-                    for (int k = j + 1; k < i - 2; k++) {
-
-                        int n = wordArray[j].compareTo(wordArray[k]);
-                        if (n > 0) {
-                            String temp = wordArray[j];
-                            wordArray[j] = wordArray[k];
-                            wordArray[k] = temp;
-                        }
-                    }
-                }
-            }
-
+        for(int i = 0; i < wordArray.length; i++){
+            System.out.println(wordArray[i] + " : " + countSymbol[i]);
         }
 
-        return null;
+        for (String word : wordArray) {
+            sb.append(word);
+            sb.append(" ");
+        }
+
+        return sb.toString().trim();
     }
 
     public String[] sortByShell(String[] wordArray, int[] countSymbol) {
@@ -98,7 +89,7 @@ public class Logic {
             for (int i = 0; i < (wordArray.length - d); i++) {
                 int j = i;
 
-                while ((j >= 0) && countSymbol[i] < countSymbol[j + d]) {
+                while ((j >= 0) && countSymbol[j] < countSymbol[j + d]) {
                     String temp = wordArray[j];
                     wordArray[j] = wordArray[j + d];
                     wordArray[j + d] = temp;
@@ -112,6 +103,7 @@ public class Logic {
             }
             d = d >> 1;
         }
+        this.countSymbol = countSymbol;
 
         return wordArray;
     }

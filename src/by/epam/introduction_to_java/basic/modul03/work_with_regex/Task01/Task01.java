@@ -25,27 +25,10 @@ public class Task01 {
             "за что тот так поступил с ним.";
 
     public static void main(String[] args) {
-        String[] wordArray = Parser.parseWord(text);
-        int[] countSymbol = new int[wordArray.length];
-        char c = 'о';
+        Logic logic = new Logic();
 
-        Pattern p = Pattern.compile(String.valueOf(c));
-        Matcher matcher;
-
-        for (int i = 0; i < wordArray.length; i++) {
-            matcher = p.matcher(wordArray[i]);
-            int count = 0;
-            while(matcher.find()){
-                count++;
-            }
-            countSymbol[i] = count;
-        }
-
-        System.out.println(text);
-
-        for(int i = 0; i < wordArray.length; i++){
-            System.out.print(wordArray[i] + " : " + countSymbol[i] + "\n");
-        }
+        String result = logic.sortByInsertionSign(text, 'о');
+        System.out.println(result);
 
     }
 
