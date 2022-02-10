@@ -66,11 +66,36 @@ public class Logic {
             countSymbol[i] = count;
         }
 
-
+        wordArray = sortByShell(wordArray, countSymbol);
 
 
 
         return null;
+    }
+
+    public String[] sortByShell(String[] wordArray, int[] countSymbol){
+        int d = wordArray.length >> 1;
+
+        while(d > 0){
+            for(int i = 0; i < (wordArray.length - d); i++){
+                int j = i;
+
+                while((j >= 0) && countSymbol[i] > countSymbol[j + d]){
+                    String temp = wordArray[j];
+                    wordArray[j] = wordArray[j + d];
+                    wordArray[j + d] = temp;
+
+                    int temp2 = countSymbol[j];
+                    countSymbol[j] = countSymbol[j + d];
+                    countSymbol[j + d] = temp2;
+
+                    j--;
+                }
+            }
+            d = d >> 1;
+        }
+
+        return wordArray;
     }
 
 
