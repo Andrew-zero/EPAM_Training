@@ -59,7 +59,7 @@ public class Logic {
             int count = 0;
             matcher = p.matcher(wordArray[i]);
 
-            while(matcher.find()){
+            while (matcher.find()) {
                 count++;
             }
 
@@ -68,19 +68,37 @@ public class Logic {
 
         wordArray = sortByShell(wordArray, countSymbol);
 
+        int index = 0;
+        for (int i = 0; i < countSymbol.length; i++) {
+            if (countSymbol[i] > index) {
+                index = countSymbol[i];
 
+                for (int j = 0; j < i - 1; j++) {
+                    for (int k = j + 1; k < i - 2; k++) {
+
+                        int n = wordArray[j].compareTo(wordArray[k]);
+                        if (n > 0) {
+                            String temp = wordArray[j];
+                            wordArray[j] = wordArray[k];
+                            wordArray[k] = temp;
+                        }
+                    }
+                }
+            }
+
+        }
 
         return null;
     }
 
-    public String[] sortByShell(String[] wordArray, int[] countSymbol){
+    public String[] sortByShell(String[] wordArray, int[] countSymbol) {
         int d = wordArray.length >> 1;
 
-        while(d > 0){
-            for(int i = 0; i < (wordArray.length - d); i++){
+        while (d > 0) {
+            for (int i = 0; i < (wordArray.length - d); i++) {
                 int j = i;
 
-                while((j >= 0) && countSymbol[i] > countSymbol[j + d]){
+                while ((j >= 0) && countSymbol[i] < countSymbol[j + d]) {
                     String temp = wordArray[j];
                     wordArray[j] = wordArray[j + d];
                     wordArray[j + d] = temp;
