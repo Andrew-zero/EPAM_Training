@@ -14,8 +14,6 @@ import java.util.regex.Pattern;
  */
 public class Logic {
 
-    int[] countSymbol;
-
     //    - отсортировать абзацы по количеству предложений;
     public String sortByCountSentence(String s) {
         StringBuilder sb = new StringBuilder();
@@ -52,7 +50,7 @@ public class Logic {
     public String sortByInsertionSign(String s, char c) {
         StringBuilder sb = new StringBuilder();
         String[] wordArray = Parser.parseWord(s);
-        countSymbol = new int[wordArray.length];
+        int[] countSymbol = new int[wordArray.length];
 
         Pattern p = Pattern.compile(String.valueOf(c));
         Matcher matcher;
@@ -103,7 +101,6 @@ public class Logic {
             }
             d = d >> 1;
         }
-        this.countSymbol = countSymbol;
 
         return wordArray;
     }
