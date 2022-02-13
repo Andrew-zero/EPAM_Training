@@ -1,6 +1,8 @@
 package by.epam.introduction_to_java.basic.modul01;
 
 
+import by.epam.introduction_to_java.basic.modul01.loop.Loop;
+
 public class Main {
     public static void main(String[] args) {
 //        LinearProgramm.firstFunctions();
@@ -18,6 +20,7 @@ public class Main {
 
 //        System.out.println(Loop.thirdLoop(1));
 //        System.out.println(Loop.fourthLoop(1));
+//        System.out.println(Loop.fourthLoop2());
 //        System.out.println(Loop.fifthLoop());
 //        Loop.sixthLoop();
 //        Loop.seventhLoop();

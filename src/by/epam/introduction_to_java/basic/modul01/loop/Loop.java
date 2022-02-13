@@ -90,6 +90,24 @@ public class Loop {
         return res;
     }
 
+    public static long fourthLoop2() {
+        long result = 1;
+        int count = 0;
+
+        for(int i = 1; i <= 200; i ++){
+            if(result > 0) {
+                result *= (long) Math.pow(i, 2);
+                count++;
+            }else{
+                System.out.println("Произошло переполнение");
+                System.out.println("На " + count + " итерации произошел выход за пределы хранимых данных типа long.");
+                return -1;
+            }
+        }
+
+        return result;
+    }
+
     //с прерыванием в цикле
 
     /*
