@@ -46,7 +46,8 @@ public class Task02 {
 
 
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("(?<openTeg><\\w*.*?>)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)|(?<content>[>.*<\\/])");
+        Pattern p = Pattern.compile("(>.*?<)|(?<openTeg><\\w*.*?>)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)"); //(?<=\[)(.*?)(?=\]) content between [***]
+
     }
 
 }
