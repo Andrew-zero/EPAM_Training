@@ -68,7 +68,25 @@ public class Logic {
 
         wordArray = sortByShell(wordArray, countSymbol);
 
-        for(int i = 0; i < wordArray.length; i++){
+        int fromIndex = 0;
+        int toIndex = 0;
+        int number = countSymbol[0];
+        for (int i = 0; i < wordArray.length; i++) {
+            if (countSymbol[i] < number) {
+                number = countSymbol[i];
+                toIndex = i;
+
+                Arrays.sort(wordArray, fromIndex, toIndex, Comparator.naturalOrder());
+                fromIndex = i;
+            }
+
+            if (countSymbol[i] == 0) {
+                Arrays.sort(wordArray, fromIndex, wordArray.length, String::compareTo);
+                break;
+            }
+        }
+
+        for (int i = 0; i < wordArray.length; i++) {
             System.out.println(wordArray[i] + " : " + countSymbol[i]);
         }
 
