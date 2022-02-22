@@ -9,7 +9,14 @@ public class Parser {
         Pattern p = Pattern.compile("(>.*?<)|(?<openTeg><\\w*.*?>)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)"); //(?<=\[)(.*?)(?=\]) content between [***]
         Matcher matcher = p.matcher(s);
 
-        NodeXml[] nodeXml = new NodeXml[0];
+        NodeXml[] nodeXml = new NodeXml[matcher.groupCount()];
+        int i = 0;
+
+        while(matcher.find()){
+            if()
+
+            i++;
+        }
 
 
         return nodeXml;
