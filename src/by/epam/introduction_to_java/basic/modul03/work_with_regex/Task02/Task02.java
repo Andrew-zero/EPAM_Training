@@ -31,19 +31,19 @@ public class Task02 {
 
     public static String xmlText =
             "<notes>\n" +
-                "<note id = \"1\">\n" +
+                    "<note id = \"1\">\n" +
                     "<to>Вася</to>\n" +
                     "<from>Света</from>\n" +
                     "<heading>Напоминание</heading>\n" +
                     "<body>Позвони мне завтра!</body>\n" +
-                "</note>\n" +
-                "<note id = \"2\">\n" +
+                    "</note>\n" +
+                    "<note id = \"2\">\n" +
                     "<to>Петя</to>\n" +
                     "<from>Маша</from>\n" +
                     "<heading>Важное напоминание</heading>\n" +
                     "<body/>\n" +
-                "</note>\n" +
-            "</notes>";
+                    "</note>\n" +
+                    "</notes>";
 
 
     public static void main(String[] args) {
@@ -54,19 +54,18 @@ public class Task02 {
         System.out.println(m.groupCount());
 
         while (m.find()) {
-            if (m.group(1) == null && m.group(2) == null && m.group(3) == null) {
+            if (m.group(4) != null) {
                 System.out.println("open teg : " + m.group(4));
             }
-            if (m.group(2) == null && m.group(3) == null && m.group(4) == null) {
+            if (m.group(1) != null) {
                 System.out.println("context teg : " + m.group(1));
             }
-            if (m.group(1) == null && m.group(2) == null && m.group(4) == null) {
+            if (m.group(3) != null) {
                 System.out.println("without body teg : " + m.group(3));
             }
-            if (m.group(1) == null && m.group(3) == null && m.group(4) == null) {
+            if (m.group(2) != null) {
                 System.out.println("close teg : " + m.group(2));
             }
-
         }
     }
 }
