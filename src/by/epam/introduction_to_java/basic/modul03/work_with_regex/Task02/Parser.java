@@ -13,7 +13,7 @@ public class Parser {
         int i = 0;
 
         while(matcher.find()){
-            if()
+            if(true)
 
             i++;
         }
