@@ -47,25 +47,6 @@ public class Task02 {
 
 
     public static void main(String[] args) {
-        String regEx = "(?<=>)(.*?)(?=\\<)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)|(?<openTeg><\\w*.*?>)";
-        Pattern p = Pattern.compile(regEx);
-        Matcher m = p.matcher(xmlText);
 
-        System.out.println(m.groupCount());
-
-        while (m.find()) {
-            if (m.group(4) != null) {
-                System.out.println("open teg : " + m.group(4));
-            }
-            if (m.group(1) != null) {
-                System.out.println("context teg : " + m.group(1));
-            }
-            if (m.group(3) != null) {
-                System.out.println("without body teg : " + m.group(3));
-            }
-            if (m.group(2) != null) {
-                System.out.println("close teg : " + m.group(2));
-            }
-        }
     }
 }

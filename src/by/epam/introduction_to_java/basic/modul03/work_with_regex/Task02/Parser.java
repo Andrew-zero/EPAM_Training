@@ -5,20 +5,32 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
-    public NodeXml[] parseXml(String s){
-        Pattern p = Pattern.compile("(>.*?<)|(?<openTeg><\\w*.*?>)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)"); //(?<=\[)(.*?)(?=\]) content between [***]
-        Matcher matcher = p.matcher(s);
+    public void parseXml(String xmlText){
+        String regEx = "(?<=>)(.*?)(?=\\<)|(?<closeTeg><\\/.*>)|(?<withoutBodyTeg><.*\\/>)|(?<openTeg><\\w*.*?>)";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(xmlText);
 
-        NodeXml[] nodeXml = new NodeXml[matcher.groupCount()];
-        int i = 0;
-
-        while(matcher.find()){
-            if(true)
-
-            i++;
+        while (m.find()) {
+            if (m.group(4) != null) {
+                System.out.println("open teg : " + m.group(4));
+            }
+            if (m.group(1) != null) {
+                System.out.println("content teg : " + m.group(1));
+            }
+            if (m.group(3) != null) {
+                System.out.println("without body teg : " + m.group(3));
+            }
+            if (m.group(2) != null) {
+                System.out.println("close teg : " + m.group(2));
+            }
         }
 
 
-        return nodeXml;
+
+
+
+
+
+        return;
     }
 }
