@@ -47,6 +47,15 @@ public class Task02 {
 
 
     public static void main(String[] args) {
+        NodeXml[] nodeXmls = new Parser().parseXml(xmlText);
 
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        for(int i = 0; i < nodeXmls.length; i++){
+            System.out.println(nodeXmls[i]);
+        }
     }
 }

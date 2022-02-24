@@ -5,7 +5,7 @@ package by.epam.introduction_to_java.basic.modul03.work_with_regex.Task02;
 public enum TegType {
 
     OPEN_TEG("Открывающий тег"),
-    CLOSE_TET("Закрывающий тег"),
+    CLOSE_TEG("Закрывающий тег"),
     CONTENT_TEG("Содержимое тега"),
     WITHOUT_BODY_TEG("Тег без тела");
 
