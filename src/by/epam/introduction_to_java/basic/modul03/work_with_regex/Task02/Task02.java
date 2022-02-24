@@ -47,15 +47,11 @@ public class Task02 {
 
 
     public static void main(String[] args) {
-        NodeXml[] nodeXmls = new Parser().parseXml(xmlText);
+        Logic logic = new Logic();
+        View view = new View();
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        NodeXml[] nodeXmls = logic.parseXml(xmlText);
 
-        for(int i = 0; i < nodeXmls.length; i++){
-            System.out.println(nodeXmls[i]);
-        }
+        view.viewNodeXml(nodeXmls);
     }
 }
