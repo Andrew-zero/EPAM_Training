@@ -1,6 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task01;
 
 
+import javax.naming.InvalidNameException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -41,16 +42,18 @@ public class Directory {
         this.directoryArrayList = directoryArrayList;
     }
 
-    public boolean createNewTextFile(String fileName) {
+    public TextFile createNewTextFile(String fileName) throws InvalidNameException {
         for (File file : getFileArrayList()) {
             if (file.getFileName().equals(fileName)) {
-                return false;
+                throw new InvalidNameException();
             }
         }
 
-        fileArrayList.add(new TextFile(this, fileName));
+        TextFile textFile = new TextFile(this, fileName);
 
-        return true;
+        fileArrayList.add(textFile);
+
+        return textFile;
     }
 
     public boolean deleteTextFile(TextFile textFile) {
