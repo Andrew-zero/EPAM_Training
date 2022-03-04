@@ -7,4 +7,8 @@ package by.epam.introduction_to_java.basic.modul05.Task01;
 вывести на консоль содержимое, дополнить, удалить
  */
 public class Main {
+
+    public static void main(String[] args) {
+
+    }
 }
