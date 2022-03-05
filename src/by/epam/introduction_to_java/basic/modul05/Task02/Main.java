@@ -8,4 +8,11 @@ package by.epam.introduction_to_java.basic.modul05.Task02;
 нескольких товаров.
  */
 public class Main {
+
+
+    public static void main(String[] args) {
+
+    }
+
+
 }

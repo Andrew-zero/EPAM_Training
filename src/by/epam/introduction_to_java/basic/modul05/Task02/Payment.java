@@ -9,15 +9,9 @@ import java.util.Objects;
 //        нескольких товаров.
 public class Payment {
 
-    private int id;
     private List<Product> productsList = new ArrayList<>();
 
     public Payment(){
-        id++;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public List<Product> getProductsList() {
@@ -27,6 +21,7 @@ public class Payment {
     public void setProductsList(List<Product> productsList) {
         this.productsList = productsList;
     }
+
 
     public static class Product {
 
@@ -81,18 +76,17 @@ public class Payment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Payment payment = (Payment) o;
-        return id == payment.id && Objects.equals(productsList, payment.productsList);
+        return Objects.equals(productsList, payment.productsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productsList);
+        return Objects.hash(productsList);
     }
 
     @Override
     public String toString() {
         return "Payment{" +
-                "id=" + id +
                 ", productsList=" + productsList +
                 '}';
     }
