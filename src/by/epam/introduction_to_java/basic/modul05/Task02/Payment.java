@@ -87,7 +87,7 @@ public class Payment {
     @Override
     public String toString() {
         return "Payment{" +
-                ", productsList=" + productsList +
+                "productsList=" + productsList +
                 '}';
     }
 }
