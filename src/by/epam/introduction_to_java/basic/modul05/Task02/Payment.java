@@ -28,6 +28,8 @@ public class Payment {
         private String title;
         private double price;
 
+        public Product(){}
+
         public Product(String title, double price) {
             this.title = title;
             this.price = price;
