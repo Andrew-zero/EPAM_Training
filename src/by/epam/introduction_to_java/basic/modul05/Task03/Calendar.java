@@ -61,18 +61,19 @@ public class Calendar extends GregorianCalendar implements Serializable {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             DayOff dayOff = (DayOff) o;
-            return Objects.equals(date, dayOff.date);
+            return Objects.equals(name, dayOff.name) && Objects.equals(date, dayOff.date);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(date);
+            return Objects.hash(name, date);
         }
 
         @Override
         public String toString() {
             return "DayOff{" +
-                    "date=" + date +
+                    "name='" + name + '\'' +
+                    ", date=" + date +
                     '}';
         }
     }
