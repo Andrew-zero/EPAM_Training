@@ -16,7 +16,9 @@ public class LogicDayOff {
     }
 
     public void addDayOff(Calendar.DayOff dayOff) {
-        calendar.getDayOffList().add(dayOff);
+        if (!calendar.getDayOffList().contains(dayOff)) {
+            calendar.getDayOffList().add(dayOff);
+        }
     }
 
     public void removeDayOff(Calendar.DayOff dayOff) {
