@@ -20,29 +20,35 @@ public class Calendar extends GregorianCalendar implements Serializable {
     public Calendar() {
     }
 
+    public List<DayOff> getDayOffList() {
+        return dayOffList;
+    }
 
     public static class DayOff {
+        private String name;
         private LocalDate date;
 
         public DayOff(){}
 
-        public DayOff(int year, int month, int day) {
+        public DayOff(String name, LocalDate localDate) {
+            this.name = name;
+            date = localDate;
         }
 
-        public LocalDate createDate(int year, int month, int day) {
-            return LocalDate.of(year, month, day);
+        public String getName() {
+            return name;
         }
 
-        public LocalDate createDate(int year, Month month, int day) {
-            return LocalDate.of(year, month, day);
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public LocalDate getDate(){
+        public LocalDate getDate() {
             return date;
         }
 
-        public void setDate(LocalDate localDate){
-            date = localDate;
+        public void setDate(LocalDate date) {
+            this.date = date;
         }
 
         @Override
