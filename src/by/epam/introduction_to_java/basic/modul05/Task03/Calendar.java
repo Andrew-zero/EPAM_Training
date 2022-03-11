@@ -24,11 +24,16 @@ public class Calendar extends GregorianCalendar implements Serializable {
         return dayOffList;
     }
 
+    public void setDayOffList(List<DayOff> dayOffList) {
+        this.dayOffList = dayOffList;
+    }
+
     public static class DayOff {
         private String name;
         private LocalDate date;
 
-        public DayOff(){}
+        public DayOff() {
+        }
 
         public DayOff(String name, LocalDate localDate) {
             this.name = name;
@@ -70,5 +75,27 @@ public class Calendar extends GregorianCalendar implements Serializable {
                     "date=" + date +
                     '}';
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Calendar calendar = (Calendar) o;
+        return Objects.equals(dayOffList, calendar.dayOffList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), dayOffList);
+    }
+
+    @Override
+    public String toString() {
+        return "Calendar{" +
+                "today is=" + getTime() +
+                ", dayOffList=" + dayOffList +
+                '}';
     }
 }
