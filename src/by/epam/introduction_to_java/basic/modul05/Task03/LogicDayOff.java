@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogicDayOff {
-    private Calendar calendar = new Calendar();
-    private Calendar.DayOff dayOff = new Calendar.DayOff();
+    private Calendar calendar;
+
+    public LogicDayOff() {
+    }
+
+    public LogicDayOff(Calendar calendar) {
+        this.calendar = calendar;
+    }
 
     public void addDayOff(Calendar.DayOff dayOff) {
         calendar.getDayOffList().add(dayOff);
@@ -33,19 +39,19 @@ public class LogicDayOff {
         return LocalDate.of(year, month, day);
     }
 
-    public String getName() {
+    public String getName(Calendar.DayOff dayOff) {
         return dayOff.getName();
     }
 
-    public void setName(String name) {
+    public void setName(Calendar.DayOff dayOff, String name) {
         dayOff.setName(name);
     }
 
-    public LocalDate getDate() {
+    public LocalDate getDate(Calendar.DayOff dayOff) {
         return dayOff.getDate();
     }
 
-    public void setDate(LocalDate localDate) {
+    public void setDate(Calendar.DayOff dayOff, LocalDate localDate) {
         dayOff.setDate(localDate);
     }
 }
