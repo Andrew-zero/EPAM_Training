@@ -17,8 +17,8 @@ public class Main {
         LogicDayOff logicDayOff = new LogicDayOff(calendar);
         View view = new View(calendar);
 
-        LocalDate christmas = LocalDate.of(2022, Month.DECEMBER, 25);
-        LocalDate christmas2 = LocalDate.of(2022, Month.JANUARY, 7);
+        LocalDate christmas = logicDayOff.getLocalDate("2022, 12, 25");
+        LocalDate christmas2 = logicDayOff.getLocalDate("2022, 1, 7");
 
         Calendar.DayOff christmasDay = new Calendar.DayOff("Christmas", christmas);
         Calendar.DayOff christmasDay2 = new Calendar.DayOff("Christmas_2", christmas2);

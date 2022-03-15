@@ -21,6 +21,15 @@ public class LogicDayOff {
         }
     }
 
+    public LocalDate getLocalDate(String date) {
+        LocalDate result;
+        String[] s = date.split("\\p{Punct}\\p{Space}");
+
+        result = LocalDate.of(Integer.parseInt(s[0]), Integer.parseInt(s[1]), Integer.parseInt(s[2]));
+
+        return result;
+    }
+
     public void removeDayOff(Calendar.DayOff dayOff) {
         calendar.getDayOffList().remove(dayOff);
     }

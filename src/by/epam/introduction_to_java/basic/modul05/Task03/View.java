@@ -23,4 +23,8 @@ public class View {
     public void printDate() {
         System.out.println(calendar.getTime());
     }
+
+    public void printString(String s){
+        System.out.println(s);
+    }
 }
