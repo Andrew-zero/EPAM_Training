@@ -8,7 +8,6 @@ package by.epam.introduction_to_java.basic.modul05.Task04.service;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LogicTreasure {
