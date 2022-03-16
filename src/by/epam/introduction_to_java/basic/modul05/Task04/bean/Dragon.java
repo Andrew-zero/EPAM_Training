@@ -1,8 +1,12 @@
-package by.epam.introduction_to_java.basic.modul05.Task04.dao;
+package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Dragon {
+public class Dragon implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String name;
     private DragonProperty dragonProperty;
 

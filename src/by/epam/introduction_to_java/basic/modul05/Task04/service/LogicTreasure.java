@@ -6,14 +6,30 @@ package by.epam.introduction_to_java.basic.modul05.Task04.service;
 //        выбора сокровищ на заданную сумму.
 
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LogicTreasure {
     private List<Treasure> treasureList = new ArrayList<>();
+    private DataBaseReader dataBaseReader;
+    private DataBaseWriter dataBaseWriter;
 
     public LogicTreasure() {
+    }
+
+    public List<Treasure> readTreasureFromFile(){
+        List<Treasure> treasureList = new ArrayList<>();
+
+//        dataBaseReader
+
+        return treasureList;
+    }
+
+    public void writeTreasureInFile(){
+//        dataBaseWriter;
     }
 
     public List<Treasure> getAllTreasure() {

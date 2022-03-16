@@ -1,8 +1,8 @@
-package by.epam.introduction_to_java.basic.modul05.Task04.dao;
+package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
 import java.io.Serializable;
 
-public enum Type implements Serializable {
+public enum Type{
 
     JEWEL("Драгоценный камень"),
     ORE("Драгоценный металл"),

@@ -1,23 +1,19 @@
 package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task04.dao.Type;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Treasure implements Serializable {
+
+    private static final long serialVersionUID = 100L;
+
     private String name;
     private Type type;
     private int price;
 
-    public Treasure(){
+    public Treasure() {
 
-    }
-
-    public Treasure(String name, Type type) {
-        this.name = name;
-        this.type = type;
     }
 
     public Treasure(String name, Type type, int price) {
