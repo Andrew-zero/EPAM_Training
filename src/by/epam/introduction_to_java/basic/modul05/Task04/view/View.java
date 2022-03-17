@@ -11,17 +11,26 @@ import java.util.List;
 
 public class View {
 
-    public View(){
+    public View() {
 
     }
 
+    public int inputNumber(){
+        int result = 0;
 
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            result = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return result;
+    }
 
-    public String inputFileName(){
+    public String inputFileName() {
         String result = null;
 
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             result = br.readLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,23 +39,35 @@ public class View {
         return result;
     }
 
-    public void printTreasure(List<Treasure> treasureList){
+    public void printTreasureList(List<Treasure> treasureList) {
         String structureTreasure = "\t\t Name " + "Type\t\t" + "Price";
         System.out.println(structureTreasure);
 
-        for(Treasure t : treasureList){
+        for (Treasure t : treasureList) {
             System.out.println(t);
         }
     }
 
-    public void printDragon(Dragon dragon){
+    public void printTreasure(Treasure treasure) {
+        String structureTreasure = "\t\t Name " + "Type\t\t" + "Price";
+
+        System.out.println(structureTreasure);
+        System.out.println(treasure);
+
+    }
+
+    public void printDragon(Dragon dragon) {
         System.out.println(dragon);
     }
 
-    public void printCave(Cave cave){
+    public void printCave(Cave cave) {
         String structureTreasure = "\t\t Name " + "Type\t\t" + "Price";
 
         System.out.println(structureTreasure);
         System.out.println(cave);
+    }
+
+    public void printMessage(String s) {
+        System.out.println(s);
     }
 }

@@ -11,6 +11,7 @@ import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReaderImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriterImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.comparator.TreasurePriceComparator;
+import by.epam.introduction_to_java.basic.modul05.Task04.view.Menu;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
 import java.util.ArrayList;
@@ -21,8 +22,16 @@ public class LogicTreasure {
     private DataBaseWriterImpl dataBaseWriter = new DataBaseWriterImpl();
     private View view = new View();
 
-    private final String treasureFileName = view.inputFileName();
-    private final String dragonFileName = view.inputFileName();
+    private final String treasureFileName;
+    private final String dragonFileName;
+
+    {
+        view.printMessage("Введите имя файла с сокровищами");
+        treasureFileName = view.inputFileName();
+
+        view.printMessage("Введите имя файла с драконом");
+        dragonFileName = view.inputFileName();
+    }
 
     public LogicTreasure() {
     }
@@ -32,7 +41,7 @@ public class LogicTreasure {
         return readTreasureFromFile(treasureFileName);
     }
 
-    public Dragon getDragon(){
+    public Dragon getDragon() {
 
         return readDragonFromFile(dragonFileName);
     }
@@ -98,21 +107,21 @@ public class LogicTreasure {
         return treasureList1.removeAll(treasureList);
     }
 
-    public List<Treasure> readTreasureFromFile(String fileName){
+    public List<Treasure> readTreasureFromFile(String fileName) {
 
         return dataBaseReader.readAllTreasure(fileName);
     }
 
-    public void writeTreasureInFile(String fileName, List<Treasure> treasureList){
+    public void writeTreasureInFile(String fileName, List<Treasure> treasureList) {
         dataBaseWriter.writeTreasure(fileName, treasureList);
     }
 
-    public Dragon readDragonFromFile(String fileName){
+    public Dragon readDragonFromFile(String fileName) {
 
         return dataBaseReader.readDragon(fileName);
     }
 
-    public void writeDragonInFile(String fileName, Dragon dragon){
+    public void writeDragonInFile(String fileName, Dragon dragon) {
         dataBaseWriter.writeDragon(fileName, dragon);
     }
 
