@@ -1,24 +1,37 @@
 package by.epam.introduction_to_java.basic.modul05.Task04.view;
 
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
-import by.epam.introduction_to_java.basic.modul05.Task04.service.LogicTreasure;
+import by.epam.introduction_to_java.basic.modul05.Task04.service.Logic;
 
 import java.util.List;
 
 public class Menu {
-    private LogicTreasure logicTreasure;
+    private Logic logicTreasure;
     private View view;
 
     public Menu() {
     }
 
-    public Menu(LogicTreasure logicTreasure, View view) {
+    public Menu(Logic logicTreasure, View view) {
         this.logicTreasure = logicTreasure;
         this.view = view;
     }
 
-    public void choiceMenu(int menuNumber) {
+    public int inputChoiceMenu() {
+        String message = "Выберите номер меню: -> ";
+        String menuMessage =
+                """
+                        0 - Просмотр всех сокровищ;
+                        1 - Выбор самого дорогого по стоимости сокровища;
+                        2 - Выбор сокровищ на заданную сумму.""";
 
+        view.printMessage(message);
+        view.printMessage(menuMessage);
+
+        return view.inputNumber();
+    }
+
+    public void choiceMenu(int menuNumber) {
         switch (menuNumber) {
             case 0 -> viewTreasure();
             case 1 -> choiceMostExpensiveTreasure();

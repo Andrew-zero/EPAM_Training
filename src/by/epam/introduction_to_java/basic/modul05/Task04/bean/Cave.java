@@ -17,7 +17,8 @@ public class Cave implements Serializable {
     private boolean isDragon;
     private boolean isTreasure;
 
-    public Cave(){}
+    public Cave() {
+    }
 
     public Cave(Dragon dragon) {
         this.dragon = dragon;
@@ -52,16 +53,16 @@ public class Cave implements Serializable {
         return isDragon;
     }
 
-    public void setDragon(boolean dragon) {
-        isDragon = dragon;
+    public void setIsDragon(boolean isDragon) {
+        this.isDragon = isDragon;
     }
 
     public boolean isTreasure() {
         return isTreasure;
     }
 
-    public void setTreasure(boolean treasure) {
-        isTreasure = treasure;
+    public void setIsTreasure(boolean isTreasure) {
+        this.isTreasure = isTreasure;
     }
 
     @Override

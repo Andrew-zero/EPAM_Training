@@ -1,6 +1,11 @@
 package by.epam.introduction_to_java.basic.modul05.Task04;
 
 
+import by.epam.introduction_to_java.basic.modul05.Task04.bean.Cave;
+import by.epam.introduction_to_java.basic.modul05.Task04.service.FillCave;
+import by.epam.introduction_to_java.basic.modul05.Task04.service.Logic;
+import by.epam.introduction_to_java.basic.modul05.Task04.view.Menu;
+import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
 /*
 Задача 4.
@@ -17,4 +22,15 @@ package by.epam.introduction_to_java.basic.modul05.Task04;
 выбора сокровищ на заданную сумму.
  */
 public class Main {
+
+    public static void main(String[] args) {
+        Logic logic = new Logic();
+        View view = new View();
+        Menu menu = new Menu(logic, view);
+
+        FillCave fillCave = new FillCave();
+        Cave cave = fillCave.getCave();
+
+        menu.choiceMenu(menu.inputChoiceMenu());
+    }
 }

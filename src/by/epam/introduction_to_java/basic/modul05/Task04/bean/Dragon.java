@@ -16,6 +16,10 @@ public class Dragon implements Serializable {
     public Dragon() {
     }
 
+    public Dragon(String name){
+        this.name = name;
+    }
+
     public Dragon(String name, DragonProperty dragonProperty) {
         this.name = name;
         this.dragonProperty = dragonProperty;

@@ -5,35 +5,35 @@ package by.epam.introduction_to_java.basic.modul05.Task04.service;
 //        дракона. Реализовать возможность просмотра сокровищ, выбора самого дорогого по стоимости сокровища и
 //        выбора сокровищ на заданную сумму.
 
+import by.epam.introduction_to_java.basic.modul05.Task04.bean.Cave;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Dragon;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReaderImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriterImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.comparator.TreasurePriceComparator;
-import by.epam.introduction_to_java.basic.modul05.Task04.view.Menu;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogicTreasure {
+public class Logic {
     private DataBaseReader dataBaseReader = new DataBaseReaderImpl();
     private DataBaseWriterImpl dataBaseWriter = new DataBaseWriterImpl();
     private View view = new View();
 
-    private final String treasureFileName;
-    private final String dragonFileName;
+    private final String treasureFileName = "/by/epam/introduction_to_java/basic.modul05/Task04/dao/Treasure.txt";
+    private final String dragonFileName = "/by/epam/introduction_to_java/basic.modul05/Task04/dao/Dragon.txt";
 
-    {
-        view.printMessage("Введите имя файла с сокровищами");
-        treasureFileName = view.inputFileName();
-
-        view.printMessage("Введите имя файла с драконом");
-        dragonFileName = view.inputFileName();
+    public Logic() {
     }
 
-    public LogicTreasure() {
+    public String getTreasureFileName() {
+        return treasureFileName;
+    }
+
+    public String getDragonFileName() {
+        return dragonFileName;
     }
 
     public List<Treasure> getAllTreasure() {
@@ -44,6 +44,13 @@ public class LogicTreasure {
     public Dragon getDragon() {
 
         return readDragonFromFile(dragonFileName);
+    }
+
+    public Cave getCave() {
+        List<Treasure> treasureList = getAllTreasure();
+        Dragon dragon = getDragon();
+
+        return new Cave(dragon, treasureList);
     }
 
     public Treasure getMostExpensive() {
