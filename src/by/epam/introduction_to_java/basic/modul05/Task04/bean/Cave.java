@@ -1,14 +1,21 @@
 package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Cave implements Serializable {
-    private Dragon dragon;
+
+    @Serial
+    private static final long serialVersionUID = 100000000L;
+
     private List<Treasure> treasureList = new ArrayList<>();
+    private Dragon dragon;
+    private boolean isDragon;
+    private boolean isTreasure;
 
     public Cave(){}
 
@@ -41,24 +48,42 @@ public class Cave implements Serializable {
         this.treasureList = treasureList;
     }
 
+    public boolean isDragon() {
+        return isDragon;
+    }
+
+    public void setDragon(boolean dragon) {
+        isDragon = dragon;
+    }
+
+    public boolean isTreasure() {
+        return isTreasure;
+    }
+
+    public void setTreasure(boolean treasure) {
+        isTreasure = treasure;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cave cave = (Cave) o;
-        return Objects.equals(dragon, cave.dragon) && Objects.equals(treasureList, cave.treasureList);
+        return isDragon == cave.isDragon && isTreasure == cave.isTreasure && Objects.equals(dragon, cave.dragon) && Objects.equals(treasureList, cave.treasureList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dragon, treasureList);
+        return Objects.hash(dragon, treasureList, isDragon, isTreasure);
     }
 
     @Override
     public String toString() {
         return "Cave{" +
-                "dragon=" + dragon +
-                ", treasureList=" + treasureList +
+                "treasureList=" + treasureList +
+                ", dragon=" + dragon +
+                ", isDragon=" + isDragon +
+                ", isTreasure=" + isTreasure +
                 '}';
     }
 }

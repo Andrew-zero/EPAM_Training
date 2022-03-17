@@ -5,36 +5,36 @@ package by.epam.introduction_to_java.basic.modul05.Task04.service;
 //        дракона. Реализовать возможность просмотра сокровищ, выбора самого дорогого по стоимости сокровища и
 //        выбора сокровищ на заданную сумму.
 
+import by.epam.introduction_to_java.basic.modul05.Task04.bean.Dragon;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
-import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriter;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReaderImpl;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriterImpl;
+import by.epam.introduction_to_java.basic.modul05.Task04.service.comparator.TreasurePriceComparator;
+import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LogicTreasure {
-    private List<Treasure> treasureList = new ArrayList<>();
-    private DataBaseReader dataBaseReader;
-    private DataBaseWriter dataBaseWriter;
+    private DataBaseReader dataBaseReader = new DataBaseReaderImpl();
+    private DataBaseWriterImpl dataBaseWriter = new DataBaseWriterImpl();
+    private View view = new View();
+
+    private final String treasureFileName = view.inputFileName();
+    private final String dragonFileName = view.inputFileName();
 
     public LogicTreasure() {
     }
 
-    public List<Treasure> readTreasureFromFile(){
-        List<Treasure> treasureList = new ArrayList<>();
-
-//        dataBaseReader
-
-        return treasureList;
-    }
-
-    public void writeTreasureInFile(){
-//        dataBaseWriter;
-    }
-
     public List<Treasure> getAllTreasure() {
 
-        return treasureList;
+        return readTreasureFromFile(treasureFileName);
+    }
+
+    public Dragon getDragon(){
+
+        return readDragonFromFile(dragonFileName);
     }
 
     public Treasure getMostExpensive() {
@@ -78,17 +78,42 @@ public class LogicTreasure {
     }
 
     public void addTreasure(Treasure treasure) {
+        List<Treasure> treasureList = getAllTreasure();
         treasureList.add(treasure);
+
+        writeTreasureInFile(treasureFileName, treasureList);
     }
 
     public boolean removeTreasure(Treasure treasure) {
+        List<Treasure> treasureList = getAllTreasure();
+        boolean result = treasureList.remove(treasure);
 
-        return treasureList.remove(treasure);
+        writeTreasureInFile(treasureFileName, treasureList);
+        return result;
     }
 
     public boolean removeListTreasure(List<Treasure> treasureList) {
+        List<Treasure> treasureList1 = getAllTreasure();
 
-        return this.treasureList.removeAll(treasureList);
+        return treasureList1.removeAll(treasureList);
+    }
+
+    public List<Treasure> readTreasureFromFile(String fileName){
+
+        return dataBaseReader.readAllTreasure(fileName);
+    }
+
+    public void writeTreasureInFile(String fileName, List<Treasure> treasureList){
+        dataBaseWriter.writeTreasure(fileName, treasureList);
+    }
+
+    public Dragon readDragonFromFile(String fileName){
+
+        return dataBaseReader.readDragon(fileName);
+    }
+
+    public void writeDragonInFile(String fileName, Dragon dragon){
+        dataBaseWriter.writeDragon(fileName, dragon);
     }
 
 }

@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task04.service;
+package by.epam.introduction_to_java.basic.modul05.Task04.service.comparator;
 
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 
