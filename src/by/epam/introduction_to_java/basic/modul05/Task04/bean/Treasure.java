@@ -1,11 +1,13 @@
 package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Treasure implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 100L;
 
     private String name;

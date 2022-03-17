@@ -1,11 +1,13 @@
 package by.epam.introduction_to_java.basic.modul05.Task04.bean;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class DragonProperty implements Serializable {
 
-    private static final long serialVersionUID = 110L;
+    @Serial
+    private static final long serialVersionUID = 10000L;
 
     private int age;
     private int power;
