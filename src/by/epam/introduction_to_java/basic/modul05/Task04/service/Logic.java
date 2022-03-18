@@ -22,8 +22,8 @@ public class Logic {
     private DataBaseWriterImpl dataBaseWriter = new DataBaseWriterImpl();
     private View view;
 
-    private final String treasureFileName = "src/by/epam/introduction_to_java/basic/modul05/Task04/dao/Treasure.txt";
-    private final String dragonFileName = "src/by/epam/introduction_to_java/basic/modul05/Task04/dao/Dragon.txt";
+    private final String treasureFileName = dataBaseReader.getClass().getPackageName() + "/Treasure.txt";
+    private final String dragonFileName = dataBaseReader.getClass().getPackageName() + "/Dragon.txt";
 
     public Logic() {
     }

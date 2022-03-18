@@ -19,4 +19,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05;
 подарок). Составляющими целого подарка являются сладости и упаковка.
  */
 public class Main {
+    public static void main(String[] args) {
+
+    }
 }
