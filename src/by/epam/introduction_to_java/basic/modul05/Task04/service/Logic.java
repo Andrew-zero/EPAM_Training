@@ -111,6 +111,7 @@ public class Logic {
         writeTreasureInFile(treasureFileName, treasureList);
         return result;
     }
+
     public void removeDragon(Dragon dragon) {
         dragon.setDead(true);
 

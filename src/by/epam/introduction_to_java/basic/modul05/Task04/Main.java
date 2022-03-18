@@ -34,16 +34,11 @@ public class Main {
         Menu menu = new Menu(logic, view);
         view.setMenu(menu);
 
-        FillCave fillCave = null;
-        Cave cave = null;
+        FillCave fillCave;
 
         if (!Files.isReadable(Path.of(logic.getTreasureFileName()))) {
             fillCave = new FillCave(logic);
             fillCave.fill();
-        }
-
-        if (fillCave != null) {
-            cave = fillCave.getCave();
         }
 
         menu.choiceMenu(menu.inputChoiceMenu());
