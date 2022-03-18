@@ -3,11 +3,14 @@ package by.epam.introduction_to_java.basic.modul05.Task04.view;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.Logic;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class Menu {
     private Logic logicTreasure;
     private View view;
+    private BufferedReader br;
 
     public Menu() {
     }
@@ -15,6 +18,10 @@ public class Menu {
     public Menu(Logic logicTreasure, View view) {
         this.logicTreasure = logicTreasure;
         this.view = view;
+    }
+
+    public BufferedReader getBufferedReader(){
+        return br  = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public int inputChoiceMenu() {

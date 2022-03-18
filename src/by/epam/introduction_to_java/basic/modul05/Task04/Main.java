@@ -7,6 +7,10 @@ import by.epam.introduction_to_java.basic.modul05.Task04.service.Logic;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.Menu;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 /*
 Задача 4.
 Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -24,13 +28,25 @@ import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 public class Main {
 
     public static void main(String[] args) {
-        Logic logic = new Logic();
         View view = new View();
-        Menu menu = new Menu(logic, view);
+        Logic logic = new Logic(view);
 
-        FillCave fillCave = new FillCave();
-        Cave cave = fillCave.getCave();
+        Menu menu = new Menu(logic, view);
+        view.setMenu(menu);
+
+        FillCave fillCave = null;
+        Cave cave = null;
+
+        if (!Files.isReadable(Path.of(logic.getTreasureFileName()))) {
+            fillCave = new FillCave(logic);
+            fillCave.fill();
+        }
+
+        if (fillCave != null) {
+            cave = fillCave.getCave();
+        }
 
         menu.choiceMenu(menu.inputChoiceMenu());
+
     }
 }

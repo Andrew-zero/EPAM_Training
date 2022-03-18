@@ -20,12 +20,16 @@ import java.util.List;
 public class Logic {
     private DataBaseReader dataBaseReader = new DataBaseReaderImpl();
     private DataBaseWriterImpl dataBaseWriter = new DataBaseWriterImpl();
-    private View view = new View();
+    private View view;
 
     private final String treasureFileName = "src/by/epam/introduction_to_java/basic/modul05/Task04/dao/Treasure.txt";
     private final String dragonFileName = "src/by/epam/introduction_to_java/basic/modul05/Task04/dao/Dragon.txt";
 
     public Logic() {
+    }
+
+    public Logic(View view){
+        this.view = view;
     }
 
     public String getTreasureFileName() {
@@ -106,6 +110,11 @@ public class Logic {
 
         writeTreasureInFile(treasureFileName, treasureList);
         return result;
+    }
+    public void removeDragon(Dragon dragon) {
+        dragon.setDead(true);
+
+        writeDragonInFile(dragonFileName, dragon);
     }
 
     public boolean removeListTreasure(List<Treasure> treasureList) {

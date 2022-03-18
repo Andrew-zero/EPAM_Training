@@ -10,16 +10,21 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class View {
+    private Menu menu;
 
     public View() {
 
     }
 
-    public int inputNumber(){
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public int inputNumber() {
         int result = 0;
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            result = Integer.parseInt(br.readLine());
+        try {
+            result = Integer.parseInt(menu.getBufferedReader().readLine());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,7 +45,7 @@ public class View {
     }
 
     public void printTreasureList(List<Treasure> treasureList) {
-        String structureTreasure = "\t\t Name " + "Type\t\t" + "Price";
+        String structureTreasure = "\t\t Name" + "\t\t\t\tType\t\t" + "\t\t\t\t\t\t  Price";
         System.out.println(structureTreasure);
 
         for (Treasure t : treasureList) {

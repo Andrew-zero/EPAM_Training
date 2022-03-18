@@ -2,17 +2,24 @@ package by.epam.introduction_to_java.basic.modul05.Task04.service;
 
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.*;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FillCave {
-    private Logic logicTreasure = new Logic();
+    private Logic logicTreasure;
     private Cave cave = new Cave();
 
     public FillCave() {
     }
 
+    public FillCave(Logic logicTreasure){
+        this.logicTreasure = logicTreasure;
+    }
+
     public void fill() {
+
         List<Treasure> treasureList = new ArrayList<>();
         Dragon dragon;
 

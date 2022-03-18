@@ -11,7 +11,7 @@ public class Dragon implements Serializable {
 
     private String name;
     private DragonProperty dragonProperty;
-    private boolean isDragonInCave;
+    private boolean isDead;
 
     public Dragon() {
     }
@@ -41,12 +41,12 @@ public class Dragon implements Serializable {
         this.dragonProperty = dragonProperty;
     }
 
-    public boolean isDragonInCave() {
-        return isDragonInCave;
+    public boolean isDead() {
+        return isDead;
     }
 
-    public void setDragonInCave(boolean dragonInCave) {
-        this.isDragonInCave = dragonInCave;
+    public void setDead(boolean dead) {
+        this.isDead = dead;
     }
 
     @Override
@@ -54,12 +54,12 @@ public class Dragon implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dragon dragon = (Dragon) o;
-        return isDragonInCave == dragon.isDragonInCave && Objects.equals(name, dragon.name) && Objects.equals(dragonProperty, dragon.dragonProperty);
+        return isDead == dragon.isDead && Objects.equals(name, dragon.name) && Objects.equals(dragonProperty, dragon.dragonProperty);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, dragonProperty, isDragonInCave);
+        return Objects.hash(name, dragonProperty, isDead);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Dragon implements Serializable {
         return "Dragon{" +
                 "name='" + name + '\'' +
                 ", dragonProperty=" + dragonProperty +
-                ", dragonInCave=" + isDragonInCave +
+                ", dragonInCave=" + isDead +
                 '}';
     }
 }
