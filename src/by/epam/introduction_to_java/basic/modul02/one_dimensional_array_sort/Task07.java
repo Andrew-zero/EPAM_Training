@@ -29,7 +29,6 @@ public class Task07 {
                 System.out.printf("array2[%.2f] insert position: %d \n", array2[j], k);
                 j++;
             } else {
-//                System.out.printf("array[%.2f] insert position: %d \n", array[i], k);
                 i++;
             }
         }
