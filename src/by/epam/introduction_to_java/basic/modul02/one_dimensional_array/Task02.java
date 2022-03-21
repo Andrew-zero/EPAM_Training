@@ -10,17 +10,26 @@ import java.util.Arrays;
  */
 public class Task02 {
 
-    static double[] d1 = {1,2,3,15,5,67,8,9,12};
+    static double[] d1 = {1, 2, 3, 15, 5, 67, 8, 9, 12};
     static double z = 5;
     static int count = 0;
 
-    public static double[] processing(double[] d, double z){
-        double[] result = Arrays.stream(d)
-                .map(s -> s > z ? s = z : s)
-                .toArray();
-        count = (int) Arrays.stream(d)
-                .filter(s -> s>z)
-                .count();
+    public static double[] processing(double[] d, double z) {
+//        double[] result = Arrays.stream(d)
+//                .map(s -> s > z ? s = z : s)
+//                .toArray();
+//        count = (int) Arrays.stream(d)
+//                .filter(s -> s>z)
+//                .count();
+
+        double[] result = d;
+
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] > z) {
+                result[i] = z;
+                count++;
+            }
+        }
 
         System.out.printf("Количество замен = %d\n", count);
 
