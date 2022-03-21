@@ -1,8 +1,9 @@
-package by.epam.introduction_to_java.basic.modul05.Task04.dao;
+package by.epam.introduction_to_java.basic.modul05.Task04.dao.impl;
 
 
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Dragon;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,14 +1,11 @@
 package by.epam.introduction_to_java.basic.modul05.Task04;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task04.bean.Cave;
-import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReaderImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.FillCave;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.Logic;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.Menu;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 

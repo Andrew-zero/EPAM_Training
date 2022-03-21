@@ -9,8 +9,8 @@ import by.epam.introduction_to_java.basic.modul05.Task04.bean.Cave;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Dragon;
 import by.epam.introduction_to_java.basic.modul05.Task04.bean.Treasure;
 import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReader;
-import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseReaderImpl;
-import by.epam.introduction_to_java.basic.modul05.Task04.dao.DataBaseWriterImpl;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.impl.DataBaseReaderImpl;
+import by.epam.introduction_to_java.basic.modul05.Task04.dao.impl.DataBaseWriterImpl;
 import by.epam.introduction_to_java.basic.modul05.Task04.service.comparator.TreasurePriceComparator;
 import by.epam.introduction_to_java.basic.modul05.Task04.view.View;
 
