@@ -25,7 +25,7 @@ public class Task01 {
         for (int i = 0; i < strings.length; i++) {
             char[] chars = strings[i].toCharArray();
             for (int j = 0; j < chars.length; j++) {
-                if (chars[j] >= 65 && chars[j] <= 90) {   //используя нумерацию таблицы ASCII и
+                if (chars[j] >= 65 && chars[j] <= 90) {   //используем нумерацию таблицы ASCII и
                     chars[j] = (char) (chars[j] + 32);    //то что char можно представлять в виде int
                 }
             }
