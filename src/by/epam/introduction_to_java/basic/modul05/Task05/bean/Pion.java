@@ -1,5 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.bean;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.bean.abstract1.AbstractFlower;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,18 +10,22 @@ public class Pion extends AbstractFlower implements Serializable {
     @Serial
     private static final long serialVersionUID = 2431L;
 
-    private BigDecimal price;
-
-    public Pion(String name, Color color) {
-        super(name, color);
+    public Pion() {
     }
 
-    public Pion(String name, Color color, BigDecimal price) {
-        super(name, color);
-        if (price.doubleValue() < 0) {
-            throw new IllegalArgumentException("The price cannot be low then '0'");
-        }
-        this.price = price;
+    public Pion(String name) {
+        super(name);
     }
 
+    public Pion(String name, BigDecimal price) {
+        super(name, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Pion{" +
+                "name='" + super.getName() + '\'' +
+                "price=" + super.getPrice() +
+                '}';
+    }
 }

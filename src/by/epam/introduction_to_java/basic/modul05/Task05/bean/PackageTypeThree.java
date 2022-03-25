@@ -5,31 +5,31 @@ import by.epam.introduction_to_java.basic.modul05.Task05.bean.abstract1.Abstract
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Objects;
 
-public class PackageTypeTwo extends AbstractPackage implements Serializable {
+public class PackageTypeThree extends AbstractPackage implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 42L;
+    private static final long serialVersionUID = 4300000L;
 
-    public PackageTypeTwo(){}
+    public PackageTypeThree() {
+    }
 
-    public PackageTypeTwo(String name) {
+    public PackageTypeThree(String name) {
         super(name);
     }
 
-    public PackageTypeTwo(String name, BigDecimal price){
+    public PackageTypeThree(String name, BigDecimal price) {
         super(name, price);
     }
 
     @Override
     public void packagingFlower() {
-        System.out.println("Упаковываю вторым методом");
+            System.out.println("Упаковываю третим методом");
     }
 
     @Override
     public String toString() {
-        return "PackageTypeTwo{" +
+        return "PackageTypeOne{" +
                 "name=" + super.getName() +
                 "price=" + super.getPrice() +
                 '}';

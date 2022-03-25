@@ -1,6 +1,10 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
+import by.epam.introduction_to_java.basic.modul05.Task05.bean.FlowerCompositionOne;
+import by.epam.introduction_to_java.basic.modul05.Task05.bean.interface1.FlowerComposition;
+
+import java.util.ArrayList;
 
 /*
 Задача 5.
@@ -19,5 +23,10 @@ package by.epam.introduction_to_java.basic.modul05.Task05;
 public class Main {
     public static void main(String[] args) {
 
+        FlowerComposition flowerComposition = new FlowerCompositionOne("FirstFlowerComposition");
+        flowerComposition.makeComposition();
+
+
+        System.out.println(flowerComposition);
     }
 }
