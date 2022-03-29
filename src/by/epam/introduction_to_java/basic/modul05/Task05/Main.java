@@ -1,10 +1,9 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.bean.FlowerCompositionOne;
-import by.epam.introduction_to_java.basic.modul05.Task05.bean.interface1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.FlowerCompositionOne;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.interface1.FlowerComposition;
 
-import java.util.ArrayList;
 
 /*
 Задача 5.
