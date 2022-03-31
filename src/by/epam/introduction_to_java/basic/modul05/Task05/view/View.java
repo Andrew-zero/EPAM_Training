@@ -1,9 +1,10 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.view;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.abstract1.AbstractFlowerComposition;
-import by.epam.introduction_to_java.basic.modul05.Task05.entity.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.service.interface1.FlowerComposition;
-import by.epam.introduction_to_java.basic.modul05.Task05.entity.interface1.Package;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
+
 
 public class View {
 

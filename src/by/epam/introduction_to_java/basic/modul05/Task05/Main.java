@@ -1,8 +1,8 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.FlowerCompositionOne;
-import by.epam.introduction_to_java.basic.modul05.Task05.service.interface1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.FlowerCompositionOne;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerComposition;
 
 
 /*
@@ -19,6 +19,8 @@ import by.epam.introduction_to_java.basic.modul05.Task05.service.interface1.Flow
 (объект, представляющий собой цветочную композицию). Составляющими цветочной композиции являются цветы
 и упаковка.
  */
+
+
 public class Main {
     public static void main(String[] args) {
 
