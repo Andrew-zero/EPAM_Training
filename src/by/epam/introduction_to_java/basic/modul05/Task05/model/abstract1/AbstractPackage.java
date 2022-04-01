@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
 
 import java.io.Serial;
@@ -18,20 +19,35 @@ public abstract class AbstractPackage implements Serializable, Package {
     }
 
     public AbstractPackage(String name) {
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("The name cannot be empty");
+        try {
+            if (name.isEmpty()) {
+                throw new ModelException("The name Package cannot be empty");
+            }
+        }catch (ModelException e){
+            e.printStackTrace();
+            return;
         }
         this.name = name;
     }
 
     public AbstractPackage(String name, BigDecimal price) {
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("The name cannot be empty");
+        try {
+            if (name.isEmpty()) {
+                throw new ModelException("The name Package cannot be empty");
+            }
+        }catch (ModelException e){
+            e.printStackTrace();
+            return;
         }
         this.name = name;
 
-        if (price.doubleValue() < 0) {
-            throw new IllegalArgumentException("The price cannot be low then '0'");
+        try {
+            if (price.doubleValue() < 0) {
+                throw new ModelException("The price Package cannot be low then '0'");
+            }
+        }catch (ModelException e){
+            e.printStackTrace();
+            return;
         }
         this.price = price;
     }

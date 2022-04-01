@@ -22,7 +22,7 @@ public abstract class AbstractFlower implements Serializable, Flower {
     public AbstractFlower(String name) {
         try {
             if (name.isEmpty()) {
-                throw new ModelException("The name cannot be empty");
+                throw new ModelException("The name Flower cannot be empty");
             }
         } catch (ModelException e) {
             e.printStackTrace();
@@ -35,7 +35,7 @@ public abstract class AbstractFlower implements Serializable, Flower {
     public AbstractFlower(String name, BigDecimal price){
         try {
             if (name.isEmpty()) {
-                throw new ModelException("The name cannot be empty");
+                throw new ModelException("The name Flower cannot be empty");
             }
         }catch (ModelException e){
             e.printStackTrace();
@@ -45,7 +45,7 @@ public abstract class AbstractFlower implements Serializable, Flower {
 
         try {
             if (price.doubleValue() < 0) {
-                throw new ModelException("The price cannot be low then '0'");
+                throw new ModelException("The price Flower cannot be low then '0'");
             }
         }catch (ModelException e){
             e.printStackTrace();

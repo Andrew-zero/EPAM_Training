@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerComposition;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
@@ -24,6 +25,14 @@ public abstract class AbstractFlowerComposition implements Serializable, FlowerC
     }
 
     public AbstractFlowerComposition(String name) {
+        try {
+            if (name.isEmpty()) {
+                throw new ModelException("The name Composition cannot be empty");
+            }
+        } catch (ModelException e) {
+            e.printStackTrace();
+            return;
+        }
         this.name = name;
     }
 
