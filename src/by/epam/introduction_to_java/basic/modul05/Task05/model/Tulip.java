@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
 
 import java.io.Serial;
@@ -10,11 +11,11 @@ public class Tulip extends AbstractFlower implements Serializable {
     @Serial
     private static final long serialVersionUID = 2432L;
 
-    public Tulip(String name) {
+    public Tulip(String name){
         super(name);
     }
 
-    public Tulip(String name, BigDecimal price) {
+    public Tulip(String name, BigDecimal price){
         super(name, price);
     }
 

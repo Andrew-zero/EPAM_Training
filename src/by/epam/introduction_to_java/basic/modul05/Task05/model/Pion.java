@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
 
 import java.io.Serial;
@@ -13,11 +14,11 @@ public class Pion extends AbstractFlower implements Serializable {
     public Pion() {
     }
 
-    public Pion(String name) {
+    public Pion(String name){
         super(name);
     }
 
-    public Pion(String name, BigDecimal price) {
+    public Pion(String name, BigDecimal price){
         super(name, price);
     }
 

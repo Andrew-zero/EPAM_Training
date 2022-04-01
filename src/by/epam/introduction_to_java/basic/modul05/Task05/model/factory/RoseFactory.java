@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.factory;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Rose;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;

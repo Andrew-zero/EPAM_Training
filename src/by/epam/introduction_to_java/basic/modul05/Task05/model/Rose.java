@@ -1,5 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
 
 import java.io.Serial;
@@ -13,11 +14,11 @@ public class Rose extends AbstractFlower implements Serializable {
     public Rose() {
     }
 
-    public Rose(String name) {
+    public Rose(String name){
         super(name);
     }
 
-    public Rose(String name, BigDecimal price) {
+    public Rose(String name, BigDecimal price){
         super(name, price);
     }
 }

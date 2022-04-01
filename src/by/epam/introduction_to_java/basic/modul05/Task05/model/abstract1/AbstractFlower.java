@@ -1,6 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
 
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 
 import java.io.Serial;
@@ -15,22 +16,40 @@ public abstract class AbstractFlower implements Serializable, Flower {
     private String name;
     private BigDecimal price;
 
-    public AbstractFlower(){}
+    public AbstractFlower() {
+    }
 
     public AbstractFlower(String name) {
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("The name cannot be empty");
+        try {
+            if (name.isEmpty()) {
+                throw new ModelException("The name cannot be empty");
+            }
+        } catch (ModelException e) {
+            e.printStackTrace();
+            return;
         }
+
         this.name = name;
     }
 
-    public AbstractFlower(String name, BigDecimal price) {
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("The name cannot be empty");
+    public AbstractFlower(String name, BigDecimal price){
+        try {
+            if (name.isEmpty()) {
+                throw new ModelException("The name cannot be empty");
+            }
+        }catch (ModelException e){
+            e.printStackTrace();
+            return;
         }
         this.name = name;
-        if (price.doubleValue() < 0) {
-            throw new IllegalArgumentException("The price cannot be low then '0'");
+
+        try {
+            if (price.doubleValue() < 0) {
+                throw new ModelException("The price cannot be low then '0'");
+            }
+        }catch (ModelException e){
+            e.printStackTrace();
+            return;
         }
         this.price = price;
     }
