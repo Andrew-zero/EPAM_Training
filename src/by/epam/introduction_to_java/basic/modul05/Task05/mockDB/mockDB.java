@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 public class mockDB {
-    public static Map<Integer, List<Flower>> mockMapFlower;
-    public static Map<Integer, List<Package>> mockMapPackage;
+    private static Map<Integer, List<Flower>> mockMapFlower;
+    private static Map<Integer, List<Package>> mockMapPackage;
 
     static {
         for(int i = 0; i < 100; i++){
@@ -35,5 +35,13 @@ public class mockDB {
             mockMapFlower.put(i, flowerList);
             mockMapPackage.put(i, packageList);
         }
+    }
+
+    public static Map<Integer, List<Flower>> getMockMapFlower() {
+        return mockMapFlower;
+    }
+
+    public static Map<Integer, List<Package>> getMockMapPackage() {
+        return mockMapPackage;
     }
 }
