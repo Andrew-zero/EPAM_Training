@@ -22,8 +22,8 @@ public class PackageFactoryImpl implements PackageFactory {
         Package aPackage;
 
         switch (type) {
-            case ONE -> aPackage = PackageTypeOneFactory.getInstance().createPackage(type);
-            case TWO -> aPackage = PackageTypeTwoFactory.getInstance().createPackage(type);
+            case ONE -> aPackage = PackageTypeOneFactory.getInstance().createPackage(PackageType.ONE);
+            case TWO -> aPackage = PackageTypeTwoFactory.getInstance().createPackage(PackageType.TWO);
             default -> throw new IllegalArgumentException("нет таких типов упаковки");
         }
 
