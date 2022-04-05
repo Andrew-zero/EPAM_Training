@@ -1,17 +1,16 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.FlowerCompositionOne;
 import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.Command;
 
 public class FlowerCompositionOneCommand implements Command {
-    private FlowerCompositionOne flowerCompositionOne;
+    private FlowerComposition flowerComposition;
 
-    public FlowerCompositionOneCommand(FlowerCompositionOne flowerCompositionOne) {
-        this.flowerCompositionOne = flowerCompositionOne;
+    public FlowerCompositionOneCommand(FlowerComposition flowerComposition) {
+        this.flowerComposition = flowerComposition;
     }
 
     @Override
     public void execute() {
-        flowerCompositionOne.makeComposition();
+        flowerComposition.makeCompositionOne();
     }
 }

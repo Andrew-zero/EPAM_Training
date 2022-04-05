@@ -1,5 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.AbstractFlowerComposition;
+
 import java.io.Serial;
 import java.io.Serializable;
 

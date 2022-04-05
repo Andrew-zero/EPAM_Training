@@ -1,8 +1,8 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
+package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.FlowerComposition;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
 
 import java.io.Serial;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class AbstractFlowerComposition implements Serializable, FlowerComposition {
+public abstract class AbstractFlowerComposition implements Serializable{
     @Serial
     private static final long serialVersionUID = 343L;
 
@@ -67,8 +67,6 @@ public abstract class AbstractFlowerComposition implements Serializable, FlowerC
     public void setFlowerList(List<Flower> flowerList) {
         this.flowerList = flowerList;
     }
-
-    public abstract FlowerComposition makeComposition();
 
     @Override
     public boolean equals(Object o) {

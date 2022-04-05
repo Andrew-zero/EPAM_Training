@@ -8,7 +8,6 @@ public interface CrudRepository<T, ID> {
     long count();
     void delete(T entity);
     void deleteAll();
-    void deleteById(ID id);
     boolean existById(ID id);
     Iterable<T> findAll();
     Iterable<T> findAllById(Iterable<ID> ids);

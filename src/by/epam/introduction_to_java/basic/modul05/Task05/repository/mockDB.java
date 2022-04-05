@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.mockDB;
+package by.epam.introduction_to_java.basic.modul05.Task05.repository;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.PackageType;
