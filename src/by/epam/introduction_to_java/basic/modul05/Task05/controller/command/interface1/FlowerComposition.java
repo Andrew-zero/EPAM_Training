@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1;
+package by.epam.introduction_to_java.basic.modul05.Task05.controller.command.interface1;
 
 public interface FlowerComposition {
 

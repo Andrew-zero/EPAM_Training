@@ -1,7 +1,7 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.Command;
+import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.interface1.Command;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,7 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.FlowerComposition;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
 
 import java.io.Serial;

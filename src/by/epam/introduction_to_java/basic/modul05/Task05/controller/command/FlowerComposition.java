@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.PackageType;
