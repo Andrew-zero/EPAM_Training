@@ -1,8 +1,8 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Wrap;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class AbstractFlowerComposition implements Serializable{
+public abstract class AbstractBouquet implements Serializable{
     @Serial
     private static final long serialVersionUID = 343L;
 
     private String name;
     private BigDecimal totalPrice = BigDecimal.ZERO;
-    private Package aPackage;
+    private Wrap wrap;
     private List<Flower> flowerList = new ArrayList<>();
 
-    public AbstractFlowerComposition() {
+    public AbstractBouquet() {
     }
 
-    public AbstractFlowerComposition(String name) {
+    public AbstractBouquet(String name) {
         try {
             if (name.isEmpty()) {
                 throw new ModelException("The name Composition cannot be empty");
@@ -51,12 +51,12 @@ public abstract class AbstractFlowerComposition implements Serializable{
         this.totalPrice = totalPrice;
     }
 
-    public Package getaPackage() {
-        return aPackage;
+    public Wrap getWrap() {
+        return wrap;
     }
 
-    public void setaPackage(Package aPackage) {
-        this.aPackage = aPackage;
+    public void setWrap(Wrap wrap) {
+        this.wrap = wrap;
     }
 
     public List<Flower> getFlowerList() {
@@ -71,13 +71,13 @@ public abstract class AbstractFlowerComposition implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractFlowerComposition that = (AbstractFlowerComposition) o;
-        return Objects.equals(name, that.name) && Objects.equals(totalPrice, that.totalPrice) && Objects.equals(aPackage, that.aPackage) && Objects.equals(flowerList, that.flowerList);
+        AbstractBouquet that = (AbstractBouquet) o;
+        return Objects.equals(name, that.name) && Objects.equals(totalPrice, that.totalPrice) && Objects.equals(wrap, that.wrap) && Objects.equals(flowerList, that.flowerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, totalPrice, aPackage, flowerList);
+        return Objects.hash(name, totalPrice, wrap, flowerList);
     }
 
     @Override
@@ -85,7 +85,7 @@ public abstract class AbstractFlowerComposition implements Serializable{
         return "AbstractFlowerComposition{" +
                 "name='" + name + '\'' +
                 ", totalPrice=" + totalPrice +
-                ", aPackage=" + aPackage +
+                ", aPackage=" + wrap +
                 ", flowerList=" + flowerList +
                 '}';
     }

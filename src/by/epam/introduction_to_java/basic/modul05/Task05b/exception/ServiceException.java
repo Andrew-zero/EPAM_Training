@@ -1,6 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05b.exception;
 
-public class ServiceException extends Exception{
+public class ServiceException extends RuntimeException{
 
     public ServiceException() {
         super();

@@ -1,9 +1,9 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.view;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.AbstractFlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.AbstractBouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.interface1.FlowerComposition;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Wrap;
 
 
 public class View {
@@ -15,12 +15,12 @@ public class View {
         System.out.println(flower.toString());
     }
 
-    public void viewPackage(Package aPackage){
+    public void viewPackage(Wrap aPackage){
         System.out.println(aPackage.toString());
     }
 
     public void viewComposition(FlowerComposition flowerComposition){
-        AbstractFlowerComposition abstractFlowerComposition = (AbstractFlowerComposition) flowerComposition;
+        AbstractBouquet abstractFlowerComposition = (AbstractBouquet) flowerComposition;
 
         System.out.println(abstractFlowerComposition.getName());
 

@@ -1,6 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.AbstractFlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.AbstractBouquet;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,7 +12,7 @@ public abstract class AbstractFlowerShop implements Serializable {
     public AbstractFlowerShop() {
     }
 
-    public abstract AbstractFlowerComposition createFlowerComposition();
+    public abstract AbstractBouquet createFlowerComposition();
 
     public int choiceFlowerComposition() {
 

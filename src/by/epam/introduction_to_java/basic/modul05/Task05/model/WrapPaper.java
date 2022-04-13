@@ -1,23 +1,23 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractPackage;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractWrap;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class PackageTypeOne extends AbstractPackage implements Serializable {
+public class WrapPaper extends AbstractWrap implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 43L;
 
-    public PackageTypeOne(){}
+    public WrapPaper(){}
 
-    public PackageTypeOne(String name) {
+    public WrapPaper(String name) {
         super(name);
     }
 
-    public PackageTypeOne(String name, BigDecimal price){
+    public WrapPaper(String name, BigDecimal price){
         super(name, price);
     }
 

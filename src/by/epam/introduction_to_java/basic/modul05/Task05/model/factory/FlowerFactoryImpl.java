@@ -22,7 +22,7 @@ public class FlowerFactoryImpl implements FlowerFactory {
         Flower flower;
 
         switch (type) {
-            case PION -> flower = PionFactory.getInstance().createFlower(type);
+            case PEONY -> flower = PeonyFactory.getInstance().createFlower(type);
             case ROSE -> flower = RoseFactory.getInstance().createFlower(type);
             case TULIP -> flower = TulipFactory.getInstance().createFlower(type);
             default -> throw new IllegalArgumentException("нет таких цветов");

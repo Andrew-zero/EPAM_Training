@@ -1,18 +1,18 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.PackageType;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.WrapType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.FlowerFactoryImpl;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.PackageFactoryImpl;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerFactory;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.PackageFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFActory;
 
 import java.io.Serial;
 import java.io.Serializable;
 
-public class FlowerComposition extends AbstractFlowerComposition implements Serializable {
+public class FlowerComposition extends AbstractBouquet implements Serializable {
     @Serial
     private static final long serialVersionUID = 3403L;
 
@@ -25,7 +25,7 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
 
     public FlowerComposition makeCompositionOne() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
-        PackageFactory packageFactory = PackageFactoryImpl.getInstance();
+        WrapFActory packageFactory = PackageFactoryImpl.getInstance();
 
         for (int i = 0; i < 30; i++) {
             Flower flower = flowerFactory.createFlower(FlowerType.ROSE);
@@ -33,9 +33,9 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
             setTotalPrice(getTotalPrice().add(flower.getPrice()));
         }
 
-        Package aPackage = packageFactory.createPackage(PackageType.ONE);
+        Wrap aPackage = packageFactory.createPackage(WrapType.PAPER);
         System.out.println(aPackage);
-        this.setaPackage(aPackage);
+        this.setWrap(aPackage);
         this.setTotalPrice(getTotalPrice().add(aPackage.getPrice()));
 
         return this;
@@ -43,7 +43,7 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
 
     public FlowerComposition makeCompositionTwo() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
-        PackageFactory packageFactory = PackageFactoryImpl.getInstance();
+        WrapFActory packageFactory = PackageFactoryImpl.getInstance();
 
         for (int i = 0; i < 100; i++) {
             Flower flower = flowerFactory.createFlower(FlowerType.TULIP);
@@ -51,8 +51,8 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
             setTotalPrice(getTotalPrice().add(flower.getPrice()));
         }
 
-        Package aPackage = packageFactory.createPackage(PackageType.TWO);
-        setaPackage(aPackage);
+        Wrap aPackage = packageFactory.createPackage(WrapType.CELLOPHANE);
+        setWrap(aPackage);
         setTotalPrice(getTotalPrice().add(aPackage.getPrice()));
 
         return this;
@@ -60,10 +60,10 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
 
     public FlowerComposition makeCompositionThree() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
-        PackageFactory packageFactory = PackageFactoryImpl.getInstance();
+        WrapFActory packageFactory = PackageFactoryImpl.getInstance();
 
         for (int i = 0; i < 18; i++) {
-            Flower flower = flowerFactory.createFlower(FlowerType.PION);
+            Flower flower = flowerFactory.createFlower(FlowerType.PEONY);
             getFlowerList().add(flower);
             setTotalPrice(getTotalPrice().add(flower.getPrice()));
         }
@@ -74,8 +74,8 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
             setTotalPrice(getTotalPrice().add(flower.getPrice()));
         }
 
-        Package aPackage = packageFactory.createPackage(PackageType.THREE);
-        setaPackage(aPackage);
+        Wrap aPackage = packageFactory.createPackage(WrapType.NYLON);
+        setWrap(aPackage);
         setTotalPrice(getTotalPrice().add(aPackage.getPrice()));
 
         return this;
@@ -86,7 +86,7 @@ public class FlowerComposition extends AbstractFlowerComposition implements Seri
         return "FlowerComposition{" +
                 "name='" + super.getName() + '\'' +
                 ", totalPrice=" + super.getTotalPrice() +
-                ", aPackage=" + super.getaPackage() +
+                ", aPackage=" + super.getWrap() +
                 ", flowerList=" + super.getFlowerList() +
                 '}';
     }

@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.FlowerComposition;
 
 
 /*

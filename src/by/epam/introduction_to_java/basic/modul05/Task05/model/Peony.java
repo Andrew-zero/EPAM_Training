@@ -7,18 +7,18 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Pion extends AbstractFlower implements Serializable {
+public class Peony extends AbstractFlower implements Serializable {
     @Serial
     private static final long serialVersionUID = 2431L;
 
-    public Pion() {
+    public Peony() {
     }
 
-    public Pion(String name){
+    public Peony(String name){
         super(name);
     }
 
-    public Pion(String name, BigDecimal price){
+    public Peony(String name, BigDecimal price){
         super(name, price);
     }
 

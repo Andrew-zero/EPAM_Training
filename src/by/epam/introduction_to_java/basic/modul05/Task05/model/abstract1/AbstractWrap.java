@@ -1,24 +1,24 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Package;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Wrap;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class AbstractPackage implements Serializable, Package {
+public abstract class AbstractWrap implements Serializable, Wrap {
     @Serial
     private static final long serialVersionUID = 143L;
 
     private String name;
     private BigDecimal price;
 
-    public AbstractPackage() {
+    public AbstractWrap() {
     }
 
-    public AbstractPackage(String name) {
+    public AbstractWrap(String name) {
         try {
             if (name.isEmpty()) {
                 throw new ModelException("The name Package cannot be empty");
@@ -30,7 +30,7 @@ public abstract class AbstractPackage implements Serializable, Package {
         this.name = name;
     }
 
-    public AbstractPackage(String name, BigDecimal price) {
+    public AbstractWrap(String name, BigDecimal price) {
         try {
             if (name.isEmpty()) {
                 throw new ModelException("The name Package cannot be empty");
@@ -76,7 +76,7 @@ public abstract class AbstractPackage implements Serializable, Package {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractPackage that = (AbstractPackage) o;
+        AbstractWrap that = (AbstractWrap) o;
         return Objects.equals(name, that.name) && Objects.equals(price, that.price);
     }
 

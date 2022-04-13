@@ -1,6 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05b.exception;
 
-public class RepositoryException extends Exception{
+public class RepositoryException extends RuntimeException{
 
     public RepositoryException(){
         super();
