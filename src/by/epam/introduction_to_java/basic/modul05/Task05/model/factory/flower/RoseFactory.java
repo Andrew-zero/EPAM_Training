@@ -1,8 +1,7 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.model.factory;
+package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Rose;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerFactory;
 
@@ -24,6 +23,6 @@ public class RoseFactory implements FlowerFactory {
 
     @Override
     public Flower createFlower(FlowerType type) {
-        return new Rose(type.name(), new BigDecimal("7.12"));
+        return new Rose(type, new BigDecimal("7.12"));
     }
 }

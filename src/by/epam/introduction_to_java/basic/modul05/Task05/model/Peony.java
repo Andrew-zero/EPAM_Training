@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -14,18 +14,18 @@ public class Peony extends AbstractFlower implements Serializable {
     public Peony() {
     }
 
-    public Peony(String name){
-        super(name);
+    public Peony(FlowerType type) {
+        super(type);
     }
 
-    public Peony(String name, BigDecimal price){
-        super(name, price);
+    public Peony(FlowerType type, BigDecimal price) {
+        super(type, price);
     }
 
     @Override
     public String toString() {
         return "Pion{" +
-                "name='" + super.getName() + '\'' +
+                "type='" + super.getType() + '\'' +
                 "price=" + super.getPrice() +
                 '}';
     }

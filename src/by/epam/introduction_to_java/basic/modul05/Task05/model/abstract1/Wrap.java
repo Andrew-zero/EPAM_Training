@@ -1,38 +1,35 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
-
-import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class AbstractFlower implements Serializable, Flower {
+public abstract class Wrap implements Serializable {
     @Serial
-    private static final long serialVersionUID = 243L;
+    private static final long serialVersionUID = 143L;
 
-    private FlowerType type;
+    private WrapType type;
     private BigDecimal price;
 
-    public AbstractFlower() {
+    public Wrap() {
     }
 
-    public AbstractFlower(FlowerType type) {
+    public Wrap(WrapType type) {
         this.type = type;
     }
 
-    public AbstractFlower(FlowerType type, BigDecimal price) {
+    public Wrap(WrapType type, BigDecimal price) {
         this.type = type;
         this.price = price;
     }
 
-    public FlowerType getType() {
+    public WrapType getType() {
         return type;
     }
 
-    @Override
     public BigDecimal getPrice() {
         return price;
     }
@@ -41,11 +38,19 @@ public abstract class AbstractFlower implements Serializable, Flower {
         this.price = price;
     }
 
+    public void packagingFlower() {
+        if (type.equals(WrapType.PAPER)) {
+            System.out.println("Упаковываю в " + getType().getName().replaceFirst("а$", "у"));
+        } else {
+            System.out.println("Упаковываю в " + getType().getName());
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractFlower that = (AbstractFlower) o;
+        Wrap that = (Wrap) o;
         return type == that.type && Objects.equals(price, that.price);
     }
 
@@ -56,7 +61,7 @@ public abstract class AbstractFlower implements Serializable, Flower {
 
     @Override
     public String toString() {
-        return "AbstractFlower{" +
+        return "AbstractWrap{" +
                 "type=" + type +
                 ", price=" + price +
                 '}';

@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -14,11 +14,19 @@ public class Rose extends AbstractFlower implements Serializable {
     public Rose() {
     }
 
-    public Rose(String name){
-        super(name);
+    public Rose(FlowerType type) {
+        super(type);
     }
 
-    public Rose(String name, BigDecimal price){
-        super(name, price);
+    public Rose(FlowerType type, BigDecimal price) {
+        super(type, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Rose{" +
+                "type='" + super.getType() + '\'' +
+                "price=" + super.getPrice() +
+                '}';
     }
 }

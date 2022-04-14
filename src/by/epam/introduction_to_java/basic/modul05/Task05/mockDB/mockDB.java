@@ -1,10 +1,13 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.mockDB;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.FlowerType;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.enam.WrapType;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.*;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.PeonyFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.RoseFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.TulipFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.CellophaneFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.PaperFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Wrap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +25,13 @@ public class mockDB {
             for(int j = 0; j < 100; j++){
                 if(i%3 == 0){
                     flowerList.add(RoseFactory.getInstance().createFlower(FlowerType.ROSE));
-                    packageList.add(WrapPaperFactory.getInstance().createPackage(WrapType.PAPER));
+                    packageList.add(PaperFactory.getInstance().createWrap(WrapType.PAPER));
                 }else if (i%2 == 0){
                     flowerList.add(TulipFactory.getInstance().createFlower(FlowerType.TULIP));
-                    packageList.add(WrapCellophaneFactory.getInstance().createPackage(WrapType.CELLOPHANE));
+                    packageList.add(CellophaneFactory.getInstance().createWrap(WrapType.CELLOPHANE));
                 }else{
                     flowerList.add(PeonyFactory.getInstance().createFlower(FlowerType.PEONY));
-                    packageList.add(WrapCellophaneFactory.getInstance().createPackage(WrapType.CELLOPHANE));
+                    packageList.add(CellophaneFactory.getInstance().createWrap(WrapType.CELLOPHANE));
                 }
             }
 
