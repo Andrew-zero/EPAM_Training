@@ -5,7 +5,6 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.FlowerFactoryImpl;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.WrapFactoryImpl;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFactory;
 

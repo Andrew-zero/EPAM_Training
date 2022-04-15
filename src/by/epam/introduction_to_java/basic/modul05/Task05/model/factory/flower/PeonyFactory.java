@@ -2,7 +2,6 @@ package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Peony;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerFactory;
 
 import java.math.BigDecimal;

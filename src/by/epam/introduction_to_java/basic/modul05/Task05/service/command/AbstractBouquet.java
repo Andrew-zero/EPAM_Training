@@ -2,7 +2,6 @@ package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.Flower;
 
 import java.io.Serial;
 import java.io.Serializable;
