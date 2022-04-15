@@ -8,21 +8,21 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class AbstractFlower implements Serializable, Flower {
+public abstract class Flower implements Serializable{
     @Serial
     private static final long serialVersionUID = 243L;
 
     private FlowerType type;
     private BigDecimal price;
 
-    public AbstractFlower() {
+    public Flower() {
     }
 
-    public AbstractFlower(FlowerType type) {
+    public Flower(FlowerType type) {
         this.type = type;
     }
 
-    public AbstractFlower(FlowerType type, BigDecimal price) {
+    public Flower(FlowerType type, BigDecimal price) {
         this.type = type;
         this.price = price;
     }
@@ -31,7 +31,6 @@ public abstract class AbstractFlower implements Serializable, Flower {
         return type;
     }
 
-    @Override
     public BigDecimal getPrice() {
         return price;
     }
@@ -44,7 +43,7 @@ public abstract class AbstractFlower implements Serializable, Flower {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractFlower that = (AbstractFlower) o;
+        Flower that = (Flower) o;
         return type == that.type && Objects.equals(price, that.price);
     }
 

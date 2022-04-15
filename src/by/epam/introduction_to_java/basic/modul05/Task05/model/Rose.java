@@ -1,13 +1,13 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.AbstractFlower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Rose extends AbstractFlower implements Serializable {
+public class Rose extends Flower implements Serializable {
     @Serial
     private static final long serialVersionUID = 2430L;
 
