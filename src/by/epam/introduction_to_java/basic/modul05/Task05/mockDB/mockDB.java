@@ -6,6 +6,7 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.Pe
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.RoseFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.TulipFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.CellophaneFactory;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.NylonFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.PaperFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
@@ -28,7 +29,7 @@ public class mockDB {
                 mockMapPackage.put(i, CellophaneFactory.getInstance().createWrap(WrapType.CELLOPHANE));
             } else {
                 mockMapFlower.put(i, PeonyFactory.getInstance().createFlower(FlowerType.PEONY));
-                mockMapPackage.put(i, CellophaneFactory.getInstance().createWrap(WrapType.CELLOPHANE));
+                mockMapPackage.put(i, NylonFactory.getInstance().createWrap(WrapType.NYLON));
             }
         }
     }
