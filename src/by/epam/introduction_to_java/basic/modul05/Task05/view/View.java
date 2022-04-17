@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.view;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.FlowerComposition;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerShop;
 
 
 public class View {
@@ -18,7 +19,7 @@ public class View {
         System.out.println(aPackage.toString());
     }
 
-    public void viewComposition(by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.FlowerComposition flowerComposition){
+    public void viewComposition(FlowerShop flowerComposition){
         FlowerComposition abstractFlowerComposition = (FlowerComposition) flowerComposition;
 
         System.out.println(abstractFlowerComposition.getName());

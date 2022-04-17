@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.model;
+package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.FlowerComposition;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;

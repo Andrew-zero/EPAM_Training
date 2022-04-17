@@ -1,6 +1,5 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.Command;
 
 public class BouquetThreeCommand implements Command {

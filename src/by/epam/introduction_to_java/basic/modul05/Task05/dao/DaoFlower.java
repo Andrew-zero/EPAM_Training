@@ -7,9 +7,10 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
 import java.util.List;
 
 public class DaoFlower implements CrudRepository<Flower> {
-    @Override
-    public void create(Enum type) {
 
+    @Override
+    public Flower save(Flower f) {
+        return null;
     }
 
     @Override
@@ -24,6 +25,11 @@ public class DaoFlower implements CrudRepository<Flower> {
 
     @Override
     public List<Flower> findAll() {
+        return null;
+    }
+
+    @Override
+    public Flower find(Flower flower, Enum e) {
         return null;
     }
 

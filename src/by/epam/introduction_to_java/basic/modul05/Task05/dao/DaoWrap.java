@@ -6,9 +6,10 @@ import by.epam.introduction_to_java.basic.modul05.Task05b.model.Wrap;
 import java.util.List;
 
 public class DaoWrap implements CrudRepository<Wrap> {
-    @Override
-    public void create(Enum type) {
 
+    @Override
+    public Wrap save(Wrap w) {
+        return null;
     }
 
     @Override
@@ -23,6 +24,11 @@ public class DaoWrap implements CrudRepository<Wrap> {
 
     @Override
     public List<Wrap> findAll() {
+        return null;
+    }
+
+    @Override
+    public Wrap find(Wrap wrap, Enum e) {
         return null;
     }
 

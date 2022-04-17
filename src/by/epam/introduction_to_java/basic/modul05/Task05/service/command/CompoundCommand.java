@@ -1,10 +1,8 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.service.command.interface1.Command;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class CompoundCommand {
