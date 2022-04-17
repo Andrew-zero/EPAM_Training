@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.command.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 
 
 /*
@@ -23,7 +23,7 @@ import by.epam.introduction_to_java.basic.modul05.Task05.service.command.FlowerC
 public class Main {
     public static void main(String[] args) {
 
-        FlowerComposition flowerComposition = new FlowerComposition("FirstFlowerComposition");
+        Bouquet flowerComposition = new Bouquet("FirstFlowerComposition");
         flowerComposition.makeCompositionOne();
 
 

@@ -10,6 +10,7 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.Nylo
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.PaperFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
+import by.epam.introduction_to_java.basic.modul05.Task05b.model.Bouquet;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,7 @@ import java.util.Map;
 public class mockDB {
     private static Map<Integer, Flower> mockMapFlower = new HashMap<>();
     private static Map<Integer, Wrap> mockMapPackage = new HashMap<>();
+    private static Map<Integer, Bouquet> mockMapBouquet = new HashMap<>();
 
     static {
         for (int i = 0; i < 100; i++) {

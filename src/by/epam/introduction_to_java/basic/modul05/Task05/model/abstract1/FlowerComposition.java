@@ -1,7 +1,6 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.exception.ModelException;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class AbstractBouquet implements Serializable{
+public abstract class FlowerComposition implements Serializable{
     @Serial
     private static final long serialVersionUID = 343L;
 
@@ -19,10 +18,10 @@ public abstract class AbstractBouquet implements Serializable{
     private Wrap wrap;
     private List<Flower> flowerList = new ArrayList<>();
 
-    public AbstractBouquet() {
+    public FlowerComposition() {
     }
 
-    public AbstractBouquet(String name) {
+    public FlowerComposition(String name) {
         try {
             if (name.isEmpty()) {
                 throw new ModelException("The name Composition cannot be empty");
@@ -70,7 +69,7 @@ public abstract class AbstractBouquet implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractBouquet that = (AbstractBouquet) o;
+        FlowerComposition that = (FlowerComposition) o;
         return Objects.equals(name, that.name) && Objects.equals(totalPrice, that.totalPrice) && Objects.equals(wrap, that.wrap) && Objects.equals(flowerList, that.flowerList);
     }
 

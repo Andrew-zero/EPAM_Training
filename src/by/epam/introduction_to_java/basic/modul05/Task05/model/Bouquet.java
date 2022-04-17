@@ -1,5 +1,7 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
+import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
@@ -11,18 +13,18 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFa
 import java.io.Serial;
 import java.io.Serializable;
 
-public class FlowerComposition extends AbstractBouquet implements Serializable {
+public class Bouquet extends FlowerComposition implements Serializable {
     @Serial
     private static final long serialVersionUID = 3403L;
 
-    public FlowerComposition() {
+    public Bouquet() {
     }
 
-    public FlowerComposition(String name) {
+    public Bouquet(String name) {
         super(name);
     }
 
-    public FlowerComposition makeCompositionOne() {
+    public Bouquet makeCompositionOne() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -40,10 +42,9 @@ public class FlowerComposition extends AbstractBouquet implements Serializable {
         return this;
     }
 
-    public FlowerComposition makeCompositionTwo() {
+    public Bouquet makeCompositionTwo() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
-        WrapFactory wrapFactory1 = WrapFactoryImpl.getInstance();
 
         for (int i = 0; i < 100; i++) {
             Flower flower = flowerFactory.createFlower(FlowerType.TULIP);
@@ -58,7 +59,7 @@ public class FlowerComposition extends AbstractBouquet implements Serializable {
         return this;
     }
 
-    public FlowerComposition makeCompositionThree() {
+    public Bouquet makeCompositionThree() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
