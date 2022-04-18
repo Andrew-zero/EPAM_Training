@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05b.model.Wrap;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class DaoWrap implements CrudRepository<Wrap> {
@@ -13,7 +14,7 @@ public class DaoWrap implements CrudRepository<Wrap> {
     }
 
     @Override
-    public void update(Wrap wrap, int price) {
+    public void update(Wrap wrap, BigDecimal price) {
 
     }
 
@@ -34,6 +35,11 @@ public class DaoWrap implements CrudRepository<Wrap> {
 
     @Override
     public void deleteAll() {
+
+    }
+
+    @Override
+    public void deleteAllType(Wrap wrap, Enum e) {
 
     }
 }

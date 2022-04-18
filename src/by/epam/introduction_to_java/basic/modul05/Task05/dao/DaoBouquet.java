@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05b.model.Bouquet;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class DaoBouquet implements CrudRepository<Bouquet> {
@@ -13,7 +14,7 @@ public class DaoBouquet implements CrudRepository<Bouquet> {
     }
 
     @Override
-    public void update(Bouquet bouquet, int price) {
+    public void update(Bouquet bouquet, BigDecimal price) {
 
     }
 
@@ -34,6 +35,11 @@ public class DaoBouquet implements CrudRepository<Bouquet> {
 
     @Override
     public void deleteAll() {
+
+    }
+
+    @Override
+    public void deleteAllType(Bouquet bouquet, Enum e) {
 
     }
 }

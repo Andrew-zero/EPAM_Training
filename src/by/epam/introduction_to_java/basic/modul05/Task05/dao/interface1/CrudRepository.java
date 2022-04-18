@@ -1,12 +1,13 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface CrudRepository<T> {
 
     <S extends T> S save(S entity);
 
-    void update(T t, int price);
+    void update(T t, BigDecimal price);
 
     List<T> findAll();
 
@@ -15,4 +16,6 @@ public interface CrudRepository<T> {
     void deleteAll();
 
     void delete(T t);
+
+    void deleteAllType(T t, Enum e);
 }

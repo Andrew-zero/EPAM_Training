@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.command.Bouquet;
+import by.epam.introduction_to_java.basic.modul05.Task05.service.command.BouquetMANY;
 
 
 /*
@@ -23,10 +23,10 @@ import by.epam.introduction_to_java.basic.modul05.Task05.service.command.Bouquet
 public class Main {
     public static void main(String[] args) {
 
-        Bouquet flowerComposition = new Bouquet("FirstFlowerComposition");
-        flowerComposition.makeCompositionOne();
+//        BouquetMANY flowerComposition = new BouquetMANY("FirstFlowerComposition");
+//        flowerComposition.makeCompositionOne();
 
 
-        System.out.println(flowerComposition);
+//        System.out.println(flowerComposition);
     }
 }

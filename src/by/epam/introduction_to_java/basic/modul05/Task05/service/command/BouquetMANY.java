@@ -1,6 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.FlowerComposition;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
@@ -13,18 +13,18 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFa
 import java.io.Serial;
 import java.io.Serializable;
 
-public class Bouquet extends FlowerComposition implements Serializable {
+public class BouquetMANY extends Bouquet implements Serializable {
     @Serial
     private static final long serialVersionUID = 3403L;
 
-    public Bouquet() {
+    public BouquetMANY() {
     }
 
-    public Bouquet(String name) {
-        super(name);
-    }
+//    public BouquetMANY(String name) {
+//        super(name);
+//    }
 
-    public Bouquet makeCompositionOne() {
+    public BouquetMANY makeCompositionOne() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -42,7 +42,7 @@ public class Bouquet extends FlowerComposition implements Serializable {
         return this;
     }
 
-    public Bouquet makeCompositionTwo() {
+    public BouquetMANY makeCompositionTwo() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -59,7 +59,7 @@ public class Bouquet extends FlowerComposition implements Serializable {
         return this;
     }
 
-    public Bouquet makeCompositionThree() {
+    public BouquetMANY makeCompositionThree() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -85,7 +85,7 @@ public class Bouquet extends FlowerComposition implements Serializable {
     @Override
     public String toString() {
         return "FlowerComposition{" +
-                "name='" + super.getName() + '\'' +
+//                "name='" + super.getName() + '\'' +
                 ", totalPrice=" + super.getTotalPrice() +
                 ", aPackage=" + super.getWrap() +
                 ", flowerList=" + super.getFlowerList() +

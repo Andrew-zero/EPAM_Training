@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CompoundCommand {
     private Map<Integer, Command> commandMap;
-    private Bouquet bouquet;
+    private BouquetMANY bouquet;
 
     public CompoundCommand(Map<Integer, Command> commandMap) {
         this.commandMap = commandMap;
