@@ -1,8 +1,8 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.FlowerFactoryImpl;

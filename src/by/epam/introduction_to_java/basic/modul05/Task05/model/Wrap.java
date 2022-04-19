@@ -1,33 +1,32 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1;
+package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-
-import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class Flower implements Serializable{
+public class Wrap implements Serializable {
     @Serial
-    private static final long serialVersionUID = 243L;
+    private static final long serialVersionUID = 143L;
 
-    private FlowerType type;
+    private WrapType type;
     private BigDecimal price;
 
-    public Flower() {
+    public Wrap() {
     }
 
-    public Flower(FlowerType type) {
+    public Wrap(WrapType type) {
         this.type = type;
     }
 
-    public Flower(FlowerType type, BigDecimal price) {
+    public Wrap(WrapType type, BigDecimal price) {
         this.type = type;
         this.price = price;
     }
 
-    public FlowerType getType() {
+    public WrapType getType() {
         return type;
     }
 
@@ -39,11 +38,19 @@ public abstract class Flower implements Serializable{
         this.price = price;
     }
 
+    public void packagingFlower() {
+        if (type.equals(WrapType.PAPER)) {
+            System.out.println("Упаковываю в " + getType().getName().replaceFirst("а$", "у"));
+        } else {
+            System.out.println("Упаковываю в " + getType().getName());
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Flower that = (Flower) o;
+        Wrap that = (Wrap) o;
         return type == that.type && Objects.equals(price, that.price);
     }
 
@@ -54,7 +61,7 @@ public abstract class Flower implements Serializable{
 
     @Override
     public String toString() {
-        return "AbstractFlower{" +
+        return "Wrap{" +
                 "type=" + type +
                 ", price=" + price +
                 '}';

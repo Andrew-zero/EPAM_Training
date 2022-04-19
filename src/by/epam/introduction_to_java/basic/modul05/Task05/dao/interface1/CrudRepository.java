@@ -5,17 +5,17 @@ import java.util.List;
 
 public interface CrudRepository<T> {
 
-    <S extends T> S save(S entity);
+    T save(T entity);
 
     void update(T t, BigDecimal price);
 
+    T find(T t);
+
     List<T> findAll();
-
-    T find(T t, Enum e);
-
-    void deleteAll();
 
     void delete(T t);
 
-    void deleteAllType(T t, Enum e);
+    void deleteAll();
+
+    void deleteAllType(T t);
 }

@@ -1,7 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.mockDB;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.PeonyFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.RoseFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower.TulipFactory;
@@ -10,7 +10,7 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.Nylo
 import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap.PaperFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
-import by.epam.introduction_to_java.basic.modul05.Task05b.model.Bouquet;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +51,30 @@ public class MockDB {
 
     public static Map<Long, Bouquet> getMockMapBouquet() {
         return mockMapBouquet;
+    }
+
+    public static void setMockMapFlower(Map<Long, Flower> mockMapFlower) {
+        MockDB.mockMapFlower = mockMapFlower;
+    }
+
+    public static void setMockMapWrap(Map<Long, Wrap> mockMapWrap) {
+        MockDB.mockMapWrap = mockMapWrap;
+    }
+
+    public static void setMockMapBouquet(Map<Long, Bouquet> mockMapBouquet) {
+        MockDB.mockMapBouquet = mockMapBouquet;
+    }
+
+    public static void setFlowerId(AtomicLong flowerId) {
+        MockDB.flowerId = flowerId;
+    }
+
+    public static void setWrapId(AtomicLong wrapId) {
+        MockDB.wrapId = wrapId;
+    }
+
+    public static void setBouquetId(AtomicLong bouquetId) {
+        MockDB.bouquetId = bouquetId;
     }
 
     public static AtomicLong getFlowerId() {

@@ -1,8 +1,7 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.flower;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.Tulip;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.FlowerFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 
@@ -24,6 +23,6 @@ public class TulipFactory implements FlowerFactory {
 
     @Override
     public Flower createFlower(FlowerType type) {
-        return new Tulip(type, new BigDecimal("3.50"));
+        return new Flower(type, new BigDecimal("3.50"));
     }
 }

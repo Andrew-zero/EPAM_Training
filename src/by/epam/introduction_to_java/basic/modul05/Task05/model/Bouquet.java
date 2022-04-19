@@ -1,7 +1,5 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.BouquetInterface;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.BouquetType;
 
@@ -11,7 +9,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.StringJoiner;
 
 public class Bouquet implements BouquetInterface, Serializable {
     @Serial

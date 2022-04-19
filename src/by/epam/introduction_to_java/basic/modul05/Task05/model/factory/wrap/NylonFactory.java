@@ -1,7 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.wrap;
 
-import by.epam.introduction_to_java.basic.modul05.Task05.model.Nylon;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.abstract1.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFactory;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 
@@ -23,6 +22,6 @@ public class NylonFactory implements WrapFactory {
 
     @Override
     public Wrap createWrap(WrapType type) {
-        return new Nylon(type, new BigDecimal("9.22"));
+        return new Wrap(type, new BigDecimal("9.22"));
     }
 }
