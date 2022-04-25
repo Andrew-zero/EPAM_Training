@@ -1,4 +1,4 @@
-package by.epam.introduction_to_java.basic.modul05.Task05.service.command;
+package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
@@ -13,18 +13,14 @@ import by.epam.introduction_to_java.basic.modul05.Task05.model.interface1.WrapFa
 import java.io.Serial;
 import java.io.Serializable;
 
-public class BouquetMANY extends Bouquet implements Serializable {
+public class BouquetCreator extends Bouquet implements Serializable {
     @Serial
     private static final long serialVersionUID = 3403L;
 
-    public BouquetMANY() {
+    public BouquetCreator() {
     }
 
-//    public BouquetMANY(String name) {
-//        super(name);
-//    }
-
-    public BouquetMANY makeCompositionOne() {
+    public BouquetCreator makeCompositionOne() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -42,7 +38,7 @@ public class BouquetMANY extends Bouquet implements Serializable {
         return this;
     }
 
-    public BouquetMANY makeCompositionTwo() {
+    public BouquetCreator makeCompositionTwo() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 
@@ -59,7 +55,7 @@ public class BouquetMANY extends Bouquet implements Serializable {
         return this;
     }
 
-    public BouquetMANY makeCompositionThree() {
+    public BouquetCreator makeCompositionThree() {
         FlowerFactory flowerFactory = FlowerFactoryImpl.getInstance();
         WrapFactory wrapFactory = WrapFactoryImpl.getInstance();
 

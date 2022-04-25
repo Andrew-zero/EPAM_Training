@@ -1,9 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05;
 
 
-import by.epam.introduction_to_java.basic.modul05.Task05.service.command.BouquetMANY;
-
-
 /*
 Задача 5.
 Создать консольное приложение, удовлетворяющее следующим требованиям:
