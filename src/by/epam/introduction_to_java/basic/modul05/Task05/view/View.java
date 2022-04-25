@@ -34,10 +34,6 @@ public class View {
         System.out.println(bouquet.toString());
     }
 
-    public Bouquet createBouquet(BouquetType type){
-
-    }
-
     public void choseBouquet() {
         String s = "Выберите тип букета: ";
         print(s);
