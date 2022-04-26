@@ -1,6 +1,6 @@
 package by.epam.introduction_to_java.basic.modul05.Task05.exception;
 
-public class ControllerException extends Exception{
+public class ControllerException extends RuntimeException{
 
     public ControllerException() {
         super();

@@ -2,17 +2,17 @@ package by.epam.introduction_to_java.basic.modul05.Task05.controller.command;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.interface1.Command;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.factory.bouquet.Shop;
+import by.epam.introduction_to_java.basic.modul05.Task05.controller.Shop;
 
 public class BouquetOneCommand implements Command {
-    private Shop bouquet;
+    private Shop shop;
 
-    public BouquetOneCommand(Shop bouquet) {
-        this.bouquet = bouquet;
+    public BouquetOneCommand(Shop shop) {
+        this.shop = shop;
     }
 
     @Override
     public Bouquet execute() {
-        return bouquet.makeCompositionOne();
+        return shop.makeCompositionOne();
     }
 }

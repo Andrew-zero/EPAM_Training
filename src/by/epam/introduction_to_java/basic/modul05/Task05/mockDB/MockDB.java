@@ -27,7 +27,7 @@ public class MockDB {
     private static AtomicLong bouquetId = new AtomicLong(0);
 
     static {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             if (i % 3 == 0) {
                 mockMapFlower.put(flowerId.incrementAndGet(), RoseFactory.getInstance().createFlower(FlowerType.ROSE));
                 mockMapWrap.put(wrapId.incrementAndGet(), PaperFactory.getInstance().createWrap(WrapType.PAPER));
@@ -36,6 +36,7 @@ public class MockDB {
                 mockMapWrap.put(wrapId.incrementAndGet(), CellophaneFactory.getInstance().createWrap(WrapType.CELLOPHANE));
             } else {
                 mockMapFlower.put(flowerId.incrementAndGet(), PeonyFactory.getInstance().createFlower(FlowerType.PEONY));
+                mockMapFlower.put(flowerId.incrementAndGet(), TulipFactory.getInstance().createFlower(FlowerType.TULIP));
                 mockMapWrap.put(wrapId.incrementAndGet(), NylonFactory.getInstance().createWrap(WrapType.NYLON));
             }
         }

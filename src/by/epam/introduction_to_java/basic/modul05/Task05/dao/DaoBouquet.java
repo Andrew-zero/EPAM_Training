@@ -9,8 +9,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 public class DaoBouquet implements CrudRepository<Bouquet> {
+
+    public DaoBouquet() {
+    }
+
+    @Override
+    public long count(Bouquet entity) {
+        return MockDB.getMockMapBouquet()
+                .values()
+                .stream()
+                .filter(e -> e.getType().equals(entity.getType()))
+                .count();
+    }
 
     @Override
     public Bouquet save(Bouquet b) {
@@ -43,6 +56,14 @@ public class DaoBouquet implements CrudRepository<Bouquet> {
     @Override
     public List<Bouquet> findAll() {
         return MockDB.getMockMapBouquet().values().stream().toList();
+    }
+
+    @Override
+    public List<Bouquet> findAllType(Bouquet bouquet) {
+        return MockDB.getMockMapBouquet().values()
+                .stream()
+                .filter(e -> e.getType().equals(bouquet.getType()))
+                .collect(Collectors.toList());
     }
 
     @Override

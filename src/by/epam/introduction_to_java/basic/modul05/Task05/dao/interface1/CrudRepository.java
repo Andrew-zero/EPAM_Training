@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface CrudRepository<T> {
 
+    long count(T entity);
+
     T save(T entity);
 
     void update(T t, BigDecimal price);
@@ -12,6 +14,8 @@ public interface CrudRepository<T> {
     T find(T t);
 
     List<T> findAll();
+
+    List<T> findAllType(T t);
 
     void delete(T t);
 

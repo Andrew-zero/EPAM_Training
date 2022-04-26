@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.mockDB.MockDB;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
 
 import java.math.BigDecimal;
@@ -9,10 +10,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 public class DaoWrap implements CrudRepository<Wrap> {
 
     public DaoWrap() {
+    }
+
+    @Override
+    public long count(Wrap entity) {
+        return MockDB.getMockMapWrap()
+                .values()
+                .stream()
+                .filter(e -> e.getType().equals(entity.getType()))
+                .count();
     }
 
     @Override
@@ -34,8 +45,8 @@ public class DaoWrap implements CrudRepository<Wrap> {
     public Wrap find(Wrap wrap) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
-        for(Map.Entry<Long, Wrap> entry : wrapMap.entrySet()){
-            if(entry.getValue().equals(wrap)){
+        for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
+            if (entry.getValue().equals(wrap)) {
                 return entry.getValue();
             }
         }
@@ -49,11 +60,19 @@ public class DaoWrap implements CrudRepository<Wrap> {
     }
 
     @Override
+    public List<Wrap> findAllType(Wrap wrap) {
+        return MockDB.getMockMapWrap().values()
+                .stream()
+                .filter(e -> e.getType().equals(wrap.getType()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public void delete(Wrap wrap) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
-        for(Map.Entry<Long, Wrap> entry : wrapMap.entrySet()){
-            if(entry.getValue().equals(wrap)){
+        for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
+            if (entry.getValue().equals(wrap)) {
                 wrapMap.remove(entry.getKey());
                 return;
             }
@@ -70,8 +89,8 @@ public class DaoWrap implements CrudRepository<Wrap> {
     public void deleteAllType(Wrap wrap) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
-        for(Map.Entry<Long, Wrap> entry : wrapMap.entrySet()){
-            if(entry.getValue().getType().equals(wrap.getType())){
+        for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
+            if (entry.getValue().getType().equals(wrap.getType())) {
                 wrapMap.remove(entry.getKey());
             }
         }

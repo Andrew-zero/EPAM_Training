@@ -5,8 +5,12 @@ import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepo
 import java.util.HashMap;
 import java.util.Map;
 
+//0 - DaoFlower
+//1 - DaoWrap
+//2 - DaoBouquet
+
 public class DaoCommander {
-    Map<Integer, CrudRepository> hashMap = new HashMap<>();
+    private Map<Integer, CrudRepository> hashMap = new HashMap<>();
 
     public DaoCommander() {
         hashMap.put(0, new DaoFlower());
@@ -14,7 +18,7 @@ public class DaoCommander {
         hashMap.put(2, new DaoBouquet());
     }
 
-    public Map<Integer, CrudRepository> getDao() {
-        return hashMap;
+    public CrudRepository getDao(int i) {
+        return hashMap.get(i);
     }
 }

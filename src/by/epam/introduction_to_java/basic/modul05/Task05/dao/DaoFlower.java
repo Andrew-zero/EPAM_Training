@@ -10,10 +10,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 public class DaoFlower implements CrudRepository<Flower> {
 
     public DaoFlower() {
+    }
+
+    @Override
+    public long count(Flower entity) {
+        return MockDB.getMockMapFlower()
+                .values()
+                .stream()
+                .filter(f -> f.getType().equals(entity.getType()))
+                .count();
     }
 
     @Override
@@ -47,6 +57,14 @@ public class DaoFlower implements CrudRepository<Flower> {
     @Override
     public List<Flower> findAll() {
         return MockDB.getMockMapFlower().values().stream().toList();
+    }
+
+    @Override
+    public List<Flower> findAllType(Flower flower) {
+        return MockDB.getMockMapFlower().values()
+                .stream()
+                .filter(e -> e.getType().equals(flower.getType()))
+                .collect(Collectors.toList());
     }
 
     @Override
