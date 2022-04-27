@@ -30,7 +30,7 @@ public class BouquetTwoFactory implements BouquetFactory {
     @Override
     public Bouquet createBouquet(BouquetType type, BouquetController bouquetController) {
         Bouquet bouquet = new Bouquet(type);
-        CrudRepository<Flower> flowerRepository = bouquetController.getDaoCommander().getDao(0);
+        CrudRepository<Flower> flowerRepository = (CrudRepository<Flower>) bouquetController.getDaoCommander().getDao(0);
         List<Flower> tulipFlower = flowerRepository.findAll()
                 .stream()
                 .filter(e -> e.getType().equals(FlowerType.TULIP))
@@ -44,7 +44,7 @@ public class BouquetTwoFactory implements BouquetFactory {
             flowerRepository.delete(flower);
         }
 
-        CrudRepository<Wrap> wrapRepository = bouquetController.getDaoCommander().getDao(1);
+        CrudRepository<Wrap> wrapRepository = (CrudRepository<Wrap>) bouquetController.getDaoCommander().getDao(1);
         List<Wrap> paperWrap = wrapRepository.findAll()
                 .stream()
                 .filter(e -> e.getType().equals(WrapType.CELLOPHANE))
