@@ -17,13 +17,26 @@ package by.epam.introduction_to_java.basic.modul05.Task05;
  */
 
 
+import by.epam.introduction_to_java.basic.modul05.Task05.controller.BouquetController;
+import by.epam.introduction_to_java.basic.modul05.Task05.controller.Shop;
+import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.CompoundCommand;
+import by.epam.introduction_to_java.basic.modul05.Task05.dao.DaoCommander;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
+import by.epam.introduction_to_java.basic.modul05.Task05.view.View;
+
 public class Main {
     public static void main(String[] args) {
+        Shop shop = new Shop();
+        View view = new View();
+        DaoCommander daoCommander = new DaoCommander();
+        CompoundCommand compoundCommand = new CompoundCommand(shop);
+        BouquetController bouquetController = new BouquetController(view, daoCommander);
 
-//        BouquetMANY flowerComposition = new BouquetMANY("FirstFlowerComposition");
-//        flowerComposition.makeCompositionOne();
+        shop.setBouquetController(bouquetController);
 
+        var bouquetType = view.getBouquetType();
+        Bouquet bouquet = bouquetController.createBouquet(bouquetType);
 
-//        System.out.println(flowerComposition);
+        view.viewBouquet(bouquet);
     }
 }

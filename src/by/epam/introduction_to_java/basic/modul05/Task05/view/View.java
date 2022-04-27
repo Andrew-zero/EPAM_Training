@@ -29,8 +29,7 @@ public class View {
         System.out.println(wrap.toString());
     }
 
-    public void viewComposition(FlowerShop flowerComposition) {
-        Bouquet bouquet = (Bouquet) flowerComposition;
+    public void viewBouquet(Bouquet bouquet) {
         System.out.println(bouquet.toString());
     }
 

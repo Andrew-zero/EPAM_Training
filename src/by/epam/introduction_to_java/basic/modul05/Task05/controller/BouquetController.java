@@ -2,7 +2,6 @@ package by.epam.introduction_to_java.basic.modul05.Task05.controller;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.CompoundCommand;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.DaoCommander;
-import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.BouquetType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
@@ -64,7 +63,6 @@ public class BouquetController {
     BouquetType.TWO = FlowerType.TULIP (100 piece) + WrapType.CELLOPHANE (1 piece);
     BouquetType.THREE = FlowerType.PEONY (18 piece) + FlowerType.ROSE (36 piece) +  + WrapType.NYLON (1 piece);
     */
-
 
     public boolean checkProductAvailable(BouquetType type) {
         //0 - DaoFlower

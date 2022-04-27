@@ -19,10 +19,6 @@ public class Shop implements Serializable, FlowerShop {
     public Shop() {
     }
 
-    public Shop(BouquetController bouquetController){
-        this.bouquetController = bouquetController;
-    }
-
     public BouquetController getBouquetController() {
         return bouquetController;
     }
