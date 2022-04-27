@@ -11,14 +11,15 @@ import by.epam.introduction_to_java.basic.modul05.Task05.view.View;
 public class BouquetController {
     private View view;
     private DaoCommander daoCommander;
-    private CompoundCommand command = new CompoundCommand();
+    private CompoundCommand compoundCommand;
 
     public BouquetController() {
     }
 
-    public BouquetController(View view, DaoCommander daoCommander) {
+    public BouquetController(View view, DaoCommander daoCommander, CompoundCommand compoundCommand) {
         this.view = view;
         this.daoCommander = daoCommander;
+        this.compoundCommand = compoundCommand;
     }
 
     public View getView() {
@@ -37,23 +38,23 @@ public class BouquetController {
         this.daoCommander = daoCommander;
     }
 
-    public CompoundCommand getCommand() {
-        return command;
+    public CompoundCommand getCompoundCommand() {
+        return compoundCommand;
     }
 
-    public void setCommand(CompoundCommand command) {
-        this.command = command;
+    public void setCompoundCommand(CompoundCommand compoundCommand) {
+        this.compoundCommand = compoundCommand;
     }
 
     public Bouquet createBouquet(BouquetType type) {
         if (!checkProductAvailable(type)) {
-            String s = "Не хватает материалов.";
+            String s = "Не хватает материалов на букет типа " + type;
             view.print(s);
 
             return null;
         }
 
-        return command.executeCommand(type);
+        return compoundCommand.executeCommand(type);
     }
 
     /*
@@ -76,6 +77,8 @@ public class BouquetController {
 
                 if (count >= 30 && count2 >= 1) {
                     return true;
+                } else {
+                    view.print(FlowerType.ROSE + " " + count + "; " + WrapType.PAPER + " " + count2);
                 }
             }
             case TWO -> {
@@ -84,6 +87,8 @@ public class BouquetController {
 
                 if (count >= 100 && count2 >= 1) {
                     return true;
+                } else {
+                    view.print(FlowerType.TULIP + " " + count + "; " + WrapType.CELLOPHANE + " " + count2);
                 }
             }
             case THREE -> {
@@ -93,6 +98,8 @@ public class BouquetController {
 
                 if (count >= 18 && count2 >= 36 && count3 >= 1) {
                     return true;
+                } else {
+                    view.print(FlowerType.PEONY + " " + count + "; " + FlowerType.ROSE + " " + count2 + "; " + WrapType.NYLON + " " + count3);
                 }
             }
             default -> {

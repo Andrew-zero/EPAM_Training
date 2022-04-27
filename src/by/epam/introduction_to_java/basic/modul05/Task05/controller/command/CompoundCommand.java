@@ -13,16 +13,15 @@ public class CompoundCommand {
     private Map<BouquetType, Command> commandMap = new HashMap<>();
     private Shop shop;
 
-    {
+    public CompoundCommand(){}
+
+    public void init(){
         commandMap.put(BouquetType.ONE, new BouquetOneCommand(shop));
         commandMap.put(BouquetType.TWO, new BouquetTwoCommand(shop));
         commandMap.put(BouquetType.THREE, new BouquetThreeCommand(shop));
     }
 
-    public CompoundCommand() {
-    }
-
-    public CompoundCommand(Shop shop) {
+    public void setShop(Shop shop) {
         this.shop = shop;
     }
 
