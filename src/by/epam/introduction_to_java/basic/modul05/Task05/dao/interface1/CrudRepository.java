@@ -22,4 +22,5 @@ public interface CrudRepository<T> {
     void deleteAll();
 
     void deleteAllType(T t);
+
 }
