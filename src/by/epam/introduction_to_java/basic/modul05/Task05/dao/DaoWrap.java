@@ -2,8 +2,8 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.mockDB.MockDB;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -12,17 +12,17 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-public class DaoWrap implements CrudRepository<Wrap> {
+public class DaoWrap implements CrudRepository<Wrap, WrapType> {
 
     public DaoWrap() {
     }
 
     @Override
-    public long count(Wrap entity) {
+    public long count(WrapType type) {
         return MockDB.getMockMapWrap()
                 .values()
                 .stream()
-                .filter(e -> e.getType().equals(entity.getType()))
+                .filter(e -> e.getType().equals(type))
                 .count();
     }
 
@@ -60,10 +60,10 @@ public class DaoWrap implements CrudRepository<Wrap> {
     }
 
     @Override
-    public List<Wrap> findAllType(Wrap wrap) {
+    public List<Wrap> findAllType(WrapType type) {
         return MockDB.getMockMapWrap().values()
                 .stream()
-                .filter(e -> e.getType().equals(wrap.getType()))
+                .filter(e -> e.getType().equals(type))
                 .collect(Collectors.toList());
     }
 

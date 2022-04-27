@@ -11,14 +11,19 @@ import java.util.Map;
 
 public class CompoundCommand {
     private Map<BouquetType, Command> commandMap = new HashMap<>();
+    private Shop shop;
+
+    {
+        commandMap.put(BouquetType.ONE, new BouquetOneCommand(shop));
+        commandMap.put(BouquetType.TWO, new BouquetTwoCommand(shop));
+        commandMap.put(BouquetType.THREE, new BouquetThreeCommand(shop));
+    }
 
     public CompoundCommand() {
     }
 
     public CompoundCommand(Shop shop) {
-        commandMap.put(BouquetType.ONE, new BouquetOneCommand(shop));
-        commandMap.put(BouquetType.TWO, new BouquetTwoCommand(shop));
-        commandMap.put(BouquetType.THREE, new BouquetThreeCommand(shop));
+        this.shop = shop;
     }
 
     public Bouquet executeCommand(BouquetType type) {

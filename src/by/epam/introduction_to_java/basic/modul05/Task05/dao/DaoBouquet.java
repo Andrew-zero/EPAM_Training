@@ -3,6 +3,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.mockDB.MockDB;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.type.BouquetType;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -11,17 +12,17 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-public class DaoBouquet implements CrudRepository<Bouquet> {
+public class DaoBouquet implements CrudRepository<Bouquet, BouquetType> {
 
     public DaoBouquet() {
     }
 
     @Override
-    public long count(Bouquet entity) {
+    public long count(BouquetType type) {
         return MockDB.getMockMapBouquet()
                 .values()
                 .stream()
-                .filter(e -> e.getType().equals(entity.getType()))
+                .filter(e -> e.getType().equals(type))
                 .count();
     }
 
@@ -59,10 +60,10 @@ public class DaoBouquet implements CrudRepository<Bouquet> {
     }
 
     @Override
-    public List<Bouquet> findAllType(Bouquet bouquet) {
+    public List<Bouquet> findAllType(BouquetType type) {
         return MockDB.getMockMapBouquet().values()
                 .stream()
-                .filter(e -> e.getType().equals(bouquet.getType()))
+                .filter(e -> e.getType().equals(type))
                 .collect(Collectors.toList());
     }
 
