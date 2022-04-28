@@ -38,7 +38,7 @@ public class DaoBouquet implements CrudRepository<Bouquet, BouquetType> {
 
         bouquetMap.values().stream()
                 .filter(v -> v.getType().equals(bouquet.getType()))
-                .forEach(v -> v.setTotalPrice(price));
+                .forEach(v -> v.setPrice(price));
     }
 
     @Override

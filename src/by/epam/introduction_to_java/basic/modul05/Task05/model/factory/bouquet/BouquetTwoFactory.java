@@ -35,7 +35,7 @@ public class BouquetTwoFactory implements BouquetFactory {
         for (int i = 0; i < 100; i++) {
             Flower flower = tulipFlower.get(i);
             bouquet.getFlowerList().add(flower);
-            bouquet.setTotalPrice(bouquet.getTotalPrice().add(flower.getPrice()));
+            bouquet.setPrice(bouquet.getPrice().add(flower.getPrice()));
 
             flowerRepository.delete(flower);
         }
@@ -45,7 +45,7 @@ public class BouquetTwoFactory implements BouquetFactory {
 
         Wrap wrap = paperWrap.get(0);
         bouquet.setWrap(wrap);
-        bouquet.setTotalPrice(bouquet.getTotalPrice().add(wrap.getPrice()));
+        bouquet.setPrice(bouquet.getPrice().add(wrap.getPrice()));
 
         wrapRepository.delete(wrap);
 

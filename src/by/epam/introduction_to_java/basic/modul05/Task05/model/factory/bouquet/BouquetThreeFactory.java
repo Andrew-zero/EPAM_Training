@@ -37,7 +37,7 @@ public class BouquetThreeFactory implements BouquetFactory {
         for (int i = 0; i < 18; i++) {
             Flower flower = peonyFlower.get(i);
             bouquet.getFlowerList().add(flower);
-            bouquet.setTotalPrice(bouquet.getTotalPrice().add(flower.getPrice()));
+            bouquet.setPrice(bouquet.getPrice().add(flower.getPrice()));
 
             flowerRepository.delete(flower);
         }
@@ -45,7 +45,7 @@ public class BouquetThreeFactory implements BouquetFactory {
         for (int i = 0; i < 36; i++) {
             Flower flower = roseFlower.get(i);
             bouquet.getFlowerList().add(flower);
-            bouquet.setTotalPrice(bouquet.getTotalPrice().add(flower.getPrice()));
+            bouquet.setPrice(bouquet.getPrice().add(flower.getPrice()));
 
             flowerRepository.delete(flower);
         }
@@ -55,7 +55,7 @@ public class BouquetThreeFactory implements BouquetFactory {
 
         Wrap wrap = paperWrap.get(0);
         bouquet.setWrap(wrap);
-        bouquet.setTotalPrice(bouquet.getTotalPrice().add(wrap.getPrice()));
+        bouquet.setPrice(bouquet.getPrice().add(wrap.getPrice()));
 
         wrapRepository.delete(wrap);
 

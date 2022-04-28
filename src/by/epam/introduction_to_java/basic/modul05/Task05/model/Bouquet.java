@@ -29,11 +29,11 @@ public class Bouquet implements Serializable {
         return type;
     }
 
-    public BigDecimal getTotalPrice() {
+    public BigDecimal getPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
+    public void setPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 
