@@ -40,7 +40,7 @@ public class Main {
         shop.setBouquetController(bouquetController);
 
         Random random = new Random();
-        for(int i = 0; i < 30; i++) {
+        for (int i = 0; i < 30; i++) {
             int number = random.nextInt(BouquetType.values().length);
             Bouquet bouquet = bouquetController.createBouquet(BouquetType.values()[number]);
             view.viewBouquet(bouquet);
