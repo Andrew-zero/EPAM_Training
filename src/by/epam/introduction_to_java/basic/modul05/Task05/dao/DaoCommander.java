@@ -19,7 +19,7 @@ public class DaoCommander {
         hashMap.put(2, new DaoBouquet());
     }
 
-    public BasicDaoType getDao(int i) {
+    public CrudRepository<BasicDaoType> getDao(int i) {
         return hashMap.get(i);
     }
 }

@@ -5,17 +5,17 @@ import java.util.List;
 
 public interface CrudRepository<T> {
 
-    long count(T t);
+    long count(Enum e);
 
-    ? extends T save(T entity);
+    T save(T entity);
 
     void update(T t, BigDecimal price);
 
-    ? extends T find(T t);
+    T find(T t);
 
     List<? extends T> findAll();
 
-    List<? extends T> findAllType(T t);
+    List<? extends T> findAllType(Enum e);
 
     void delete(T t);
 
