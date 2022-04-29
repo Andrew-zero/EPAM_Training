@@ -13,41 +13,41 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-public class DaoWrap implements CrudRepository<BasicDaoType<WrapType>> {
+public class DaoWrap implements CrudRepository<BasicDaoType> {
 
     public DaoWrap() {
     }
 
     @Override
-    public long count(WrapType type) {
+    public long count(BasicDaoType type) {
         return MockDB.getMockMapWrap()
                 .values()
                 .stream()
-                .filter(e -> e.getType().equals(type))
+                .filter(e -> e.getType().equals(type.getType()))
                 .count();
     }
 
     @Override
-    public Wrap save(Wrap w) {
+    public Wrap save(BasicDaoType w) {
         return MockDB.getMockMapWrap()
                 .put(MockDB.getWrapId().incrementAndGet(), w);
     }
 
     @Override
-    public void update(Wrap wrap, BigDecimal price) {
+    public void update(BasicDaoType basicDaoType, BigDecimal price) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
         wrapMap.values().stream()
-                .filter(v -> v.getType().equals(wrap.getType()))
+                .filter(v -> v.getType().equals(basicDaoType.getType()))
                 .forEach(v -> v.setPrice(price));
     }
 
     @Override
-    public Wrap find(Wrap wrap) {
+    public Wrap find(BasicDaoType basicDaoType) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
         for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
-            if (entry.getValue().equals(wrap)) {
+            if (entry.getValue().equals(basicDaoType)) {
                 return entry.getValue();
             }
         }
@@ -56,24 +56,24 @@ public class DaoWrap implements CrudRepository<BasicDaoType<WrapType>> {
     }
 
     @Override
-    public List<Wrap> findAll() {
+    public List<BasicDaoType> findAll() {
         return MockDB.getMockMapWrap().values().stream().toList();
     }
 
     @Override
-    public List<Wrap> findAllType(Wrap wrap) {
+    public List<BasicDaoType> findAllType(BasicDaoType basicDaoType) {
         return MockDB.getMockMapWrap().values()
                 .stream()
-                .filter(e -> e.getType().equals(wrap.getType()))
+                .filter(e -> e.getType().equals(basicDaoType.getType()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public void delete(Wrap wrap) {
+    public void delete(BasicDaoType basicDaoType) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
         for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
-            if (entry.getValue().equals(wrap)) {
+            if (entry.getValue().equals(basicDaoType)) {
                 wrapMap.remove(entry.getKey());
                 return;
             }
