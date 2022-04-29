@@ -7,15 +7,15 @@ public interface CrudRepository<T> {
 
     long count(T t);
 
-    T save(T entity);
+    ? extends T save(T entity);
 
     void update(T t, BigDecimal price);
 
-    T find(T t);
+    ? extends T find(T t);
 
-    List<T> findAll();
+    List<? extends T> findAll();
 
-    List<T> findAllType(T t);
+    List<? extends T> findAllType(T t);
 
     void delete(T t);
 
