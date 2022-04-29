@@ -19,36 +19,36 @@ public class DaoFlower implements CrudRepository<BasicDaoType> {
     }
 
     @Override
-    public long count(Flower flower) {
+    public long count(BasicDaoType basicDaoType) {
         return MockDB.getMockMapFlower()
                 .values()
                 .stream()
-                .filter(f -> f.getType().equals(flower.getType()))
+                .filter(f -> f.getType().equals(basicDaoType.getType()))
                 .count();
     }
 
     @Override
-    public Flower save(Flower f) {
+    public Flower save(BasicDaoType basicDaoType) {
         return MockDB.getMockMapFlower()
-                .put(MockDB.getFlowerId().incrementAndGet(), f);
+                .put(MockDB.getFlowerId().incrementAndGet(), (Flower)basicDaoType);
     }
 
     @Override
-    public void update(Flower flower, BigDecimal price) {
+    public void update(BasicDaoType basicDaoType, BigDecimal price) {
         Map<Long, Flower> flowerMap = MockDB.getMockMapFlower();
 
         flowerMap.values().stream()
-                .filter(v -> v.getType().equals(flower.getType()))
+                .filter(v -> v.getType().equals(basicDaoType.getType()))
                 .forEach(v -> v.setPrice(price));
     }
 
     @Override
-    public Flower find(Flower flower) {
-        Map<Long, Flower> flowerMap = MockDB.getMockMapFlower();
+    public Flower find(BasicDaoType flower) {
+        Map<Long,? extends BasicDaoType> flowerMap = MockDB.getMockMapFlower();
 
-        for (Map.Entry<Long, Flower> entry : flowerMap.entrySet()) {
+        for (Map.Entry<Long,? extends BasicDaoType> entry : flowerMap.entrySet()) {
             if (entry.getValue().equals(flower)) {
-                return entry.getValue();
+                return (Flower)entry.getValue();
             }
         }
 
@@ -61,19 +61,19 @@ public class DaoFlower implements CrudRepository<BasicDaoType> {
     }
 
     @Override
-    public List<Flower> findAllType(Flower flower) {
+    public List<Flower> findAllType(BasicDaoType basicDaoType) {
         return MockDB.getMockMapFlower().values()
                 .stream()
-                .filter(e -> e.getType().equals(flower.getType()))
+                .filter(e -> e.getType().equals(basicDaoType.getType()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public void delete(Flower flower) {
+    public void delete(BasicDaoType basicDaoType) {
         Map<Long, Flower> flowerMap = MockDB.getMockMapFlower();
 
-        for (Map.Entry<Long, Flower> entry : flowerMap.entrySet()) {
-            if (entry.getValue().equals(flower)) {
+//        for (Map.Entry<Long, Flower> entry : flowerMap.entrySet()) {
+            if (entry.getValue().equals(basicDaoType)) {
                 flowerMap.remove(entry.getKey());
                 return;
             }
@@ -87,11 +87,11 @@ public class DaoFlower implements CrudRepository<BasicDaoType> {
     }
 
     @Override
-    public void deleteAllType(Flower flower) {
+    public void deleteAllType(BasicDaoType basicDaoType) {
         Map<Long, Flower> flowerMap = MockDB.getMockMapFlower();
 
         for (Map.Entry<Long, Flower> entry : flowerMap.entrySet()) {
-            if (entry.getValue().getType().equals(flower.getType())) {
+            if (entry.getValue().getType().equals(basicDaoType.getType())) {
                 flowerMap.remove(entry.getKey());
             }
         }

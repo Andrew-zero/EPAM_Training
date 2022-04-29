@@ -71,7 +71,7 @@ public class DaoWrap implements CrudRepository<BasicDaoType> {
     public void delete(BasicDaoType basicDaoType) {
         Map<Long, Wrap> wrapMap = MockDB.getMockMapWrap();
 
-        for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
+//        for (Map.Entry<Long, Wrap> entry : wrapMap.entrySet()) {
             if (entry.getValue().equals(basicDaoType)) {
                 wrapMap.remove(entry.getKey());
                 return;
