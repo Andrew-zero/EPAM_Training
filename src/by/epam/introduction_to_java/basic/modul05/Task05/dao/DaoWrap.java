@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.mockDB.MockDB;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.BasicDaoType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.WrapType;
 
@@ -12,7 +13,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-public class DaoWrap implements CrudRepository<Wrap, WrapType> {
+public class DaoWrap implements CrudRepository<BasicDaoType<WrapType>> {
 
     public DaoWrap() {
     }
@@ -60,10 +61,10 @@ public class DaoWrap implements CrudRepository<Wrap, WrapType> {
     }
 
     @Override
-    public List<Wrap> findAllType(WrapType type) {
+    public List<Wrap> findAllType(Wrap wrap) {
         return MockDB.getMockMapWrap().values()
                 .stream()
-                .filter(e -> e.getType().equals(type))
+                .filter(e -> e.getType().equals(wrap.getType()))
                 .collect(Collectors.toList());
     }
 

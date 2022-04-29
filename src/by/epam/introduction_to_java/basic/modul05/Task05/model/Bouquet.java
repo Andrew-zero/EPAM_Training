@@ -9,12 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Bouquet implements Serializable {
+public class Bouquet extends BasicDaoType<BouquetType> implements Serializable {
     @Serial
     private static final long serialVersionUID = 343L;
 
-    private BouquetType type;
-    private BigDecimal totalPrice = BigDecimal.ZERO;
     private Wrap wrap;
     private List<Flower> flowerList = new ArrayList<>();
 
@@ -22,19 +20,11 @@ public class Bouquet implements Serializable {
     }
 
     public Bouquet(BouquetType bouquetType) {
-        this.type = bouquetType;
+        super(bouquetType);
     }
 
-    public BouquetType getType() {
-        return type;
-    }
-
-    public BigDecimal getPrice() {
-        return totalPrice;
-    }
-
-    public void setPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
+    public Bouquet(BouquetType type, BigDecimal price) {
+        super(type, price);
     }
 
     public Wrap getWrap() {
@@ -57,20 +47,23 @@ public class Bouquet implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Bouquet that = (Bouquet) o;
-        return type == that.type && Objects.equals(totalPrice, that.totalPrice) && Objects.equals(wrap, that.wrap) && Objects.equals(flowerList, that.flowerList);
+        Bouquet bouquet = (Bouquet) o;
+        return Objects.equals(getType(), bouquet.getType())
+                && Objects.equals(getPrice(), bouquet.getPrice())
+                && Objects.equals(wrap, bouquet.wrap)
+                && Objects.equals(flowerList, bouquet.flowerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, totalPrice, wrap, flowerList);
+        return Objects.hash(getType(), getPrice(), wrap, flowerList);
     }
 
     @Override
     public String toString() {
         return "Bouquet{" +
-                "bouquetType=" + type +
-                ", totalPrice=" + totalPrice +
+                "type=" + getType() +
+                ", totalPrice=" + getPrice() +
                 ", wrap=" + wrap +
                 ", flowerList=" + flowerList +
                 '}';

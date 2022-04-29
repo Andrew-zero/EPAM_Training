@@ -8,55 +8,40 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Flower implements Serializable {
+public class Flower extends BasicDaoType<FlowerType> implements Serializable {
     @Serial
     private static final long serialVersionUID = 243L;
 
-    private FlowerType type;
-    private BigDecimal price;
-
     public Flower() {
+
     }
 
     public Flower(FlowerType type) {
-        this.type = type;
+        super(type);
     }
 
     public Flower(FlowerType type, BigDecimal price) {
-        this.type = type;
-        this.price = price;
-    }
-
-    public FlowerType getType() {
-        return type;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+        super(type, price);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Flower that = (Flower) o;
-        return type == that.type && Objects.equals(price, that.price);
+        Flower flower = (Flower) o;
+        return Objects.equals(super.getType(), flower.getType()) && Objects.equals(getPrice(), flower.getPrice());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, price);
+        return Objects.hash(getType(), getPrice());
     }
 
     @Override
     public String toString() {
-        return "AbstractFlower{" +
-                "type=" + type +
-                ", price=" + price +
-                '}';
+        return "Flower{" +
+                "type=" + getType() +
+                "price=" + getPrice() +
+                "}";
     }
 }

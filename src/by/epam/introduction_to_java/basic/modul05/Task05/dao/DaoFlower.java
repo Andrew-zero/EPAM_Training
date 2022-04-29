@@ -3,8 +3,8 @@ package by.epam.introduction_to_java.basic.modul05.Task05.dao;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
 import by.epam.introduction_to_java.basic.modul05.Task05.mockDB.MockDB;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.BasicDaoType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
-import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -13,17 +13,17 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-public class DaoFlower implements CrudRepository<Flower, FlowerType> {
+public class DaoFlower implements CrudRepository<BasicDaoType> {
 
     public DaoFlower() {
     }
 
     @Override
-    public long count(FlowerType type) {
+    public long count(Flower flower) {
         return MockDB.getMockMapFlower()
                 .values()
                 .stream()
-                .filter(f -> f.getType().equals(type))
+                .filter(f -> f.getType().equals(flower.getType()))
                 .count();
     }
 
@@ -61,10 +61,10 @@ public class DaoFlower implements CrudRepository<Flower, FlowerType> {
     }
 
     @Override
-    public List<Flower> findAllType(FlowerType type) {
+    public List<Flower> findAllType(Flower flower) {
         return MockDB.getMockMapFlower().values()
                 .stream()
-                .filter(e -> e.getType().equals(type))
+                .filter(e -> e.getType().equals(flower.getType()))
                 .collect(Collectors.toList());
     }
 
