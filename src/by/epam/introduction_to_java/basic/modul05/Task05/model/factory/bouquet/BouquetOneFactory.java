@@ -31,7 +31,7 @@ public class BouquetOneFactory implements BouquetFactory {
     public Bouquet createBouquet(BouquetType type, BouquetController bouquetController) {
         Bouquet bouquet = new Bouquet(type);
         CrudRepository<BasicDaoType> flowerRepository = bouquetController.getDaoCommander().getDao(0);
-        List<Flower> roseFlower = (List<Flower>) flowerRepository.findAllType(FlowerType.ROSE);
+        List<Flower> roseFlower = (List<Flower>) flowerRepository.findAllEqualType(FlowerType.ROSE);
 
         for (int i = 0; i < 30; i++) {
             Flower flower = roseFlower.get(i);
@@ -42,7 +42,7 @@ public class BouquetOneFactory implements BouquetFactory {
         }
 
         CrudRepository<BasicDaoType> wrapRepository = bouquetController.getDaoCommander().getDao(1);
-        List<Wrap> paperWrap = (List<Wrap>) wrapRepository.findAllType(WrapType.PAPER);
+        List<Wrap> paperWrap = (List<Wrap>) wrapRepository.findAllEqualType(WrapType.PAPER);
 
         Wrap wrap = paperWrap.get(0);
         bouquet.setWrap(wrap);

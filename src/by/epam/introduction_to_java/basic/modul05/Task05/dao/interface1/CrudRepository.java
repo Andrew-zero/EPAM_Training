@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CrudRepository<T> {
 
-    long count(Enum e);
+    long count(T t);
 
     T save(T entity);
 
@@ -15,7 +15,7 @@ public interface CrudRepository<T> {
 
     List<? extends T> findAll();
 
-    List<? extends T> findAllType(Enum e);
+    List<? extends T> findAllEqualType(Enum e);
 
     void delete(T t);
 

@@ -17,11 +17,11 @@ public abstract class AbstractDao implements CrudRepository<BasicDaoType> {
     }
 
     @Override
-    public long count(Enum e) {
+    public long count(BasicDaoType basicDaoType) {
         return MockDB.getMockMapFlower()
                 .values()
                 .stream()
-                .filter(f -> f.getType().equals(e))
+                .filter(f -> f.getType().equals(basicDaoType.getType()))
                 .count();
     }
 
@@ -56,7 +56,7 @@ public abstract class AbstractDao implements CrudRepository<BasicDaoType> {
     }
 
     @Override
-    public List<? extends BasicDaoType> findAllType(Enum e) {
+    public List<? extends BasicDaoType> findAllEqualType(Enum e) {
         return MockDB.getMockMapFlower().values()
                 .stream()
                 .filter(e1 -> e1.getType().equals(e))
