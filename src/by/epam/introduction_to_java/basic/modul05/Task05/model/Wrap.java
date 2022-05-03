@@ -7,63 +7,39 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Wrap implements Serializable {
+public class Wrap extends BasicDaoType<WrapType> implements Serializable {
     @Serial
     private static final long serialVersionUID = 143L;
-
-    private WrapType type;
-    private BigDecimal price;
 
     public Wrap() {
     }
 
     public Wrap(WrapType type) {
-        this.type = type;
+        super(type);
     }
 
     public Wrap(WrapType type, BigDecimal price) {
-        this.type = type;
-        this.price = price;
-    }
-
-    public WrapType getType() {
-        return type;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void packagingFlower() {
-        if (type.equals(WrapType.PAPER)) {
-            System.out.println("Упаковываю в " + getType().getName().replaceFirst("а$", "у"));
-        } else {
-            System.out.println("Упаковываю в " + getType().getName());
-        }
+        super(type, price);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Wrap that = (Wrap) o;
-        return type == that.type && Objects.equals(price, that.price);
+        Wrap wrap = (Wrap) o;
+        return Objects.equals(getType(), wrap.getType()) && Objects.equals(getPrice(), wrap.getPrice());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, price);
+        return Objects.hash(getType(), getPrice());
     }
 
     @Override
     public String toString() {
         return "Wrap{" +
-                "type=" + type +
-                ", price=" + price +
+                "type=" + getType() +
+                ", price=" + getPrice() +
                 '}';
     }
 }
