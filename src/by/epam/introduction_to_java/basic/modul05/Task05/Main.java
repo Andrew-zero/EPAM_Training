@@ -27,6 +27,12 @@ import by.epam.introduction_to_java.basic.modul05.Task05.view.View;
 
 import java.util.Random;
 
+
+/*
+    BouquetType.ONE = FlowerType.ROSE (30 piece) + WrapType.PAPER (1 piece);
+    BouquetType.TWO = FlowerType.TULIP (100 piece) + WrapType.CELLOPHANE (1 piece);
+    BouquetType.THREE = FlowerType.PEONY (18 piece) + FlowerType.ROSE (36 piece) +  + WrapType.NYLON (1 piece);
+ */
 public class Main {
     public static void main(String[] args) {
         Shop shop = new Shop();
