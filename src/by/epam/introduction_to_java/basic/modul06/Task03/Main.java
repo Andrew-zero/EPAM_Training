@@ -16,4 +16,5 @@ package by.epam.introduction_to_java.basic.modul06.Task03;
 
  */
 public class Main {
+
 }
