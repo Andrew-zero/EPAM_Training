@@ -49,7 +49,7 @@ public class BouquetController {
 
     public Bouquet createBouquet(BouquetType type) {
         if (!checkProductAvailable(type)) {
-            String message = "Не хватает материалов на букет %s. Пополните склад." + type;
+            String message = "Не хватает материалов на букет " + type + ". Пополните склад.";
 
             throw new ControllerException(message);
         }
