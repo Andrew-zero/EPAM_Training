@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.controller;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.controller.command.CompoundCommand;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.DaoCommander;
+import by.epam.introduction_to_java.basic.modul05.Task05.exception.ControllerException;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.BouquetType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.type.FlowerType;
@@ -48,10 +49,9 @@ public class BouquetController {
 
     public Bouquet createBouquet(BouquetType type) {
         if (!checkProductAvailable(type)) {
-            String s = "Не хватает материалов на букет типа " + type;
-            view.print(s);
+            String message = "Не хватает материалов на букет %s. Пополните склад." + type;
 
-            return null;
+            throw new ControllerException(message);
         }
 
         return compoundCommand.executeCommand(type);
