@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.bouquet;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.controller.BouquetController;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.BasicDaoType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
@@ -29,8 +30,8 @@ public class BouquetTwoFactory implements BouquetFactory {
     @Override
     public Bouquet createBouquet(BouquetType type, BouquetController bouquetController) {
         Bouquet bouquet = new Bouquet(type);
-        CrudRepository<Flower, FlowerType> flowerRepository = bouquetController.getDaoCommander().getDao(0);
-        List<Flower> tulipFlower = flowerRepository.findAllType(FlowerType.TULIP);
+        CrudRepository<BasicDaoType> flowerRepository = bouquetController.getDaoCommander().getDao(0);
+        List<Flower> tulipFlower = (List<Flower>) flowerRepository.findAllEqualType(FlowerType.TULIP);
 
         for (int i = 0; i < 100; i++) {
             Flower flower = tulipFlower.get(i);
@@ -40,8 +41,8 @@ public class BouquetTwoFactory implements BouquetFactory {
             flowerRepository.delete(flower);
         }
 
-        CrudRepository<Wrap, WrapType> wrapRepository = bouquetController.getDaoCommander().getDao(1);
-        List<Wrap> paperWrap = wrapRepository.findAllType(WrapType.CELLOPHANE);
+        CrudRepository<BasicDaoType> wrapRepository = bouquetController.getDaoCommander().getDao(1);
+        List<Wrap> paperWrap = (List<Wrap>) wrapRepository.findAllEqualType(WrapType.CELLOPHANE);
 
         Wrap wrap = paperWrap.get(0);
         bouquet.setWrap(wrap);

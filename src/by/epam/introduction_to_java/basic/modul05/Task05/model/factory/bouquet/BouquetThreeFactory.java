@@ -2,6 +2,7 @@ package by.epam.introduction_to_java.basic.modul05.Task05.model.factory.bouquet;
 
 import by.epam.introduction_to_java.basic.modul05.Task05.controller.BouquetController;
 import by.epam.introduction_to_java.basic.modul05.Task05.dao.interface1.CrudRepository;
+import by.epam.introduction_to_java.basic.modul05.Task05.model.BasicDaoType;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Bouquet;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Flower;
 import by.epam.introduction_to_java.basic.modul05.Task05.model.Wrap;
@@ -29,10 +30,10 @@ public class BouquetThreeFactory implements BouquetFactory {
     @Override
     public Bouquet createBouquet(BouquetType type, BouquetController bouquetController) {
         Bouquet bouquet = new Bouquet(type);
-        CrudRepository<Flower, FlowerType> flowerRepository = bouquetController.getDaoCommander().getDao(0);
+        CrudRepository<BasicDaoType> flowerRepository = bouquetController.getDaoCommander().getDao(0);
 
-        List<Flower> peonyFlower = flowerRepository.findAllType(FlowerType.PEONY);
-        List<Flower> roseFlower = flowerRepository.findAllType(FlowerType.ROSE);
+        List<Flower> peonyFlower = (List<Flower>) flowerRepository.findAllEqualType(FlowerType.PEONY);
+        List<Flower> roseFlower = (List<Flower>) flowerRepository.findAllEqualType(FlowerType.ROSE);
 
         for (int i = 0; i < 18; i++) {
             Flower flower = peonyFlower.get(i);
@@ -50,8 +51,8 @@ public class BouquetThreeFactory implements BouquetFactory {
             flowerRepository.delete(flower);
         }
 
-        CrudRepository<Wrap, WrapType> wrapRepository = bouquetController.getDaoCommander().getDao(1);
-        List<Wrap> paperWrap = wrapRepository.findAllType(WrapType.NYLON);
+        CrudRepository<BasicDaoType> wrapRepository = bouquetController.getDaoCommander().getDao(1);
+        List<Wrap> paperWrap = (List<Wrap>) wrapRepository.findAllEqualType(WrapType.NYLON);
 
         Wrap wrap = paperWrap.get(0);
         bouquet.setWrap(wrap);
