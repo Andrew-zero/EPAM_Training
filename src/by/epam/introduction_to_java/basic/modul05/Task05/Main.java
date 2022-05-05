@@ -45,6 +45,5 @@ public class Main {
             Bouquet bouquet = bouquetController.createBouquet(BouquetType.values()[number]);
             view.viewBouquet(bouquet);
         }
-
     }
 }
